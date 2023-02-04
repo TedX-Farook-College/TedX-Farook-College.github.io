@@ -1,2 +1,2 @@
-# TedX-Farook-College.github.io
-Official-Website for TEDX Farook College
+# official-website
+Official Website for TEDx Farook College

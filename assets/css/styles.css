@@ -1,0 +1,789 @@
+:root {
+  --red: #eb0028;
+  --black: #000000;
+  --white: #ffffff;
+  --footer-text: #979797;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  padding: 0 10px;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+.nav {
+  top: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 3.2rem;
+  position: fixed;
+}
+.nav-bg {
+  background-color: var(--black);
+}
+
+.nav .nav-logo img {
+  width: 20rem;
+}
+
+.nav .nav-links a {
+  margin: 0 2rem;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 20px;
+}
+.nav .nav-links a:hover {
+  border-bottom: 1px solid var(--red);
+  padding-bottom: 0.5rem;
+}
+#toggle,
+#sidebar {
+  display: none;
+}
+
+.gradient {
+  width: 1200px;
+  z-index: -1;
+  position: absolute;
+  top: 25px;
+  left: 120px;
+}
+.gradient-mobile {
+  display: none;
+}
+.hero {
+  padding-top: 10rem;
+}
+
+.hero h1 {
+  font-size: 10rem;
+  letter-spacing:5px;
+  text-align: center;
+  font-weight: 550;
+  text-transform: capitalize;
+}
+
+.hero h3{
+  font-size: 2.5rem;
+  margin-top: 40px;
+  text-align: center;
+  margin: auto;
+  font-weight: 500;
+  letter-spacing: 2px;
+  /* font-size: 20px; */
+  /* line-height: 24px; */
+  max-width: 550px;
+}
+
+.container {
+  margin-top: 100px;
+  padding: 0 5rem;
+}
+
+ /* ============================= Tab Section Start =============================   */
+
+.section-sub {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 25px;
+}
+
+.section-sub img {
+  width: 12px;
+}
+
+.section-sub h6 {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.tabs {
+  border: 2px solid var(--white);
+  border-radius: 20px;
+  min-height: 250px;
+}
+
+.tab__sidebar {
+  padding: 0 12px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.tab__button {
+  flex: 1;
+  padding-top: 10px;
+  color: rgba(255, 255, 255, 0.912);
+  font-size: 1rem;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.tab__button--active {
+  color: var(--red);
+  border-top: 5px solid var(--red);
+}
+
+.tab__content {
+  font-size: 20px;
+  padding: 2.5rem;
+  line-height: 25px;
+  display: none;
+  letter-spacing: 0.5px;
+}
+
+.tab__content--active {
+  display: block;
+}
+/* ============================= Tab Section End =============================   */
+
+/* ============================= Event Section Start =============================   */
+.event h1 {
+  background: linear-gradient(90deg, #ff2500 -1.21%, #ffffff 29.71%);
+  font-weight: 700;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.event p {
+  margin-top: 25px;
+  font-size: 20px;
+  line-height: 25px;
+}
+/* ============================= Event Section End =============================   */
+
+/* ============================= Contact Section Start ============================= */
+.contact-sub {
+  margin-top: 10rem;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  margin-bottom: 50px;
+}
+
+.contact .left-section {
+  margin-top: -7px;
+}
+
+.contact .left-section .content h1 {
+  background: linear-gradient(90deg, #ff2500 0.21%, #ffffff 23.71%);
+  font-weight: 700;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact .left-section .content p {
+  max-width: 230px;
+  line-height: 20px;
+}
+
+.contact .left-section .map {
+  margin-top: 1.45rem;
+}
+
+.contact .left-section .map img {
+  width: 309px;
+}
+
+.contact .left-section .map img:hover {
+  cursor: pointer;
+  scale: 0.9;
+  transition-duration: 1s;
+}
+
+.contact .left-section .map fieldset {
+  border-radius: 20px;
+  width: 0px;
+}
+
+.contact .left-section .map fieldset legend {
+  margin-left: 15px;
+  padding: 0 2px;
+}
+
+.contact .right-section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact .right-section .right-field {
+  padding: 1.5rem 1.5rem;
+  border-radius: 20px;
+  width: 96%;
+}
+
+.contact .right-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact .right-section form ::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.contact .right-section .right-field form fieldset {
+  margin-top: 1.4rem;
+  border-radius: 6px;
+}
+
+.contact .right-section .right-field form fieldset legend {
+  margin-left: 15px;
+  padding: 0 2px;
+}
+
+.contact .right-section .right-field form input {
+  border: none;
+  background-color: var(--black);
+  outline: none;
+  padding: 10px 0 15px 17px;
+  color: var(--white);
+  font-size: medium;
+  width: 100%;
+}
+
+.contact .right-section .right-field form textarea {
+  border: none;
+  background-color: var(--black);
+  outline: none;
+  resize: none;
+  padding: 10px 10px 10px 17px;
+  color: var(--white);
+  font-size: medium;
+  width: 100%;
+  font-family:"Arial"
+}
+
+.contact .right-section .right-field form .form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+.contact .right-section .right-field form .form-footer a {
+  font-size: small;
+  color: var(--red);
+}
+
+.contact .right-section .right-field form .form-footer a:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.contact .right-section .right-field form .form-footer button {
+  padding: 15px 40px;
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 8px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+}
+
+.contact .right-section .right-field form .form-footer button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.contact-email{
+  color: var(--white);
+  padding: 0.45rem 0.45rem;
+  border-radius: 8px;
+  width: 96%;
+  text-align: center;
+}
+/* ============================= Contact Section End ============================= */
+
+/* ============================= Footer Section Start ============================= */
+.footer-distributed {
+  width: 100%;
+  padding-bottom: 20px;
+  margin-top: 100px;
+}
+.footer-main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  /* display: inline-block; */
+  vertical-align: top;
+}
+
+/* Footer left */
+.footer-distributed .footer-left {
+  width: 40%;
+}
+
+/* Footer Center */
+.footer-distributed .footer-center {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-distributed .footer-center p,
+.footer-distributed .footer-right p {
+  color: var(--white);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-center a,
+.footer-distributed .footer-right a {
+  display: block;
+  color: var(--footer-text);
+  font-size: 14px;
+  line-height: 20px;
+}
+.footer-distributed .footer-center .socials{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.footer-distributed .footer-center .socials svg,
+.footer-distributed .footer-right svg{
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.footer-distributed .footer-center .socials svg:hover,
+.footer-distributed .footer-right svg:hover{
+  color: var(--red);
+}
+
+/* Footer Right */
+.footer-distributed .footer-right {
+  width: 15%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: var(--footer-text);
+  font-size: 13px;
+}
+.footer-distributed .footer-credits {
+  margin: auto;
+  width: 700px;
+  text-align: center;
+  padding: 50px 0 0 0;
+  color: var(--footer-text);
+  font-size: small;
+}
+.footer-distributed .footer-credits svg {
+  width: 13px;
+}
+.footer-distributed .footer-credits a {
+  color: var(--footer-text);
+}
+.footer-distributed .footer-credits a:hover {
+  color: var(--white);
+}
+/* ============================= Footer Section End ============================= */
+
+/* Media Query */
+/* ================================================================ */
+
+@media (max-width: 600px) {
+
+  *{
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  /* container class */
+  .container {
+    padding: 0 2rem;
+  }
+
+  /* Hamburger Menu */
+  #toggle {
+    position: fixed;
+    z-index: 1;
+    top: 0.7rem;
+    left: 2rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  #toggle::before {
+    content: '';
+    position: fixed;
+    height: 2px;
+    width: 1.5rem;
+    background: var(--white);
+    transform: translateY(-0.25rem);
+    transition: 0.2s;
+  }
+  #toggle::after {
+    content: '';
+    position: fixed;
+    height: 2px;
+    width: 1.5rem;
+    background: var(--white);
+    transform: translateY(0.25rem);
+    transition: 0.2s;
+  }
+  #toogle::selection {
+    content: '';
+    position: fixed;
+    height: 2px;
+    width: 1.5rem;
+    background: var(--white);
+    transition: 0.2s;
+  }
+  #toggle.active {
+    left: 265px;
+  }
+  #toggle.active::before {
+    transform: translateY(0rem) rotate(45deg);
+  }
+  #toggle.active::after {
+    transform: translateY(0rem) rotate(-45deg);
+  }
+
+  #sidebar {
+    display: block;
+    position: fixed;
+    padding-left: 1rem;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: var(--black);
+    transition: 0.5s;
+  }
+  #sidebar.active {
+    left: 0px;
+    position: fixed;
+  }
+  #sidebar ul {
+    position: relative;
+    margin-top: 50px;
+  }
+  #sidebar ul li {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0px;
+  }
+  #sidebar ul li img {
+    height: 2rem;
+    transform: translateY(-1rem);
+  }
+  #sidebar ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+  }
+  #sidebar .sidebar_logo {
+    margin-bottom: 40px;
+  }
+
+  /* Navbar Section */
+  .nav .nav-logo img {
+    width: 12rem;
+    margin-left: 3rem;
+  }
+  .nav .nav-links {
+    display: none;
+  }
+  /* Radial Gradient */
+  .gradient {
+    display: none;
+  }
+  .gradient-mobile {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    top: 60px;
+    height: 300px;
+    width:100%;
+  }
+  /* ============================= Hero Section Start ============================= */
+  .hero {
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero h1 {
+    /* padding-left: 2rem; */
+    font-size: 5.5rem;
+    /* line-height: 3.8rem; */
+    letter-spacing: 3.5px;
+    text-align: center;
+    font-weight: 700;
+  }
+  .hero h3 {
+    /* padding-left: 2rem; */
+    /* margin-top: 20px; */
+    text-align:center;
+    font-size: 1.5rem;
+    /* line-height: 22px; */
+  }
+  /* ============================= Hero Section End ============================= */
+  .container {
+    margin-top: 150px;
+  }
+  /* ============================= Tab Box Section Start ============================= */
+  .tab__content {
+    font-size: 16px;
+    padding: 1.5rem 1.5rem;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+  }
+  /* .tabs .tab__sidebar .tab__button {
+    width: 100%;
+  } */
+  .tabs .tab__sidebar .tab__button--active {
+    height: auto;
+    border-top: 5px solid var(--red);
+  }
+
+  /* ============================= Tab Box Section End ============================= */
+  /* ============================= Event Section Start ============================= */
+  .event h1 {
+    background: linear-gradient(90deg, #ff2500 19.79%, #fff 59.71%);
+    font-weight: 700;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+  }
+  .event p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  /* ============================= Event Section End ============================= */
+  /* ============================= Contact Section Start ============================= */
+  .contact-sub {
+    margin-top: 3rem;
+  }
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .contact .left-section .content h1 {
+    background:linear-gradient(90deg, #ff2500 6.21%, #fff 45.71%);
+    font-weight: 700;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .contact .left-section .content p {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  /* ============================= Contact Section Start ============================= */
+  /* ============================= Footer Section Start ============================= */
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    /* display: block; */
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .footer-distributed .footer-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .footer-distributed .footer-center,
+  .footer-right {
+    padding-left:1rem;
+  }
+  .footer-distributed .footer-main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* justify-content: space-between; */
+  }
+  .footer-distributed .footer-main .footer-left img {
+    width: 250px;
+  }
+  .footer-distributed .footer-center .socials svg,
+  .footer-distributed .footer-right svg{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .footer-distributed .footer-credits {
+    max-width: 300px;
+  }
+  /* ============================= Footer Section End ============================= */
+
+  /* ===================About Page Start================= */
+  .about-container .about-content{
+    font-size: 16px;
+    /* padding: 1.5rem 1.5rem; */
+    line-height: 22px;
+    letter-spacing: 0.6px;
+  }
+  .about-container .about-content p{
+    font-size: 18px;
+  }
+}
+.about-container .about-content h2{
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.about-container .content-tedxfc  h2{
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 60.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.about-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+}
+.about-container .about-content{
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+}
+.about-container .about-content h2{
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 23.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.about-container .content-tedxfc  h2{
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 40.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (min-width: 600px) {
+  .about-container{
+    padding: 70px;
+  }
+  
+}
+
+/* ====================About page End============ */
+
+
+/* ====================Sponsor Page============= */
+.sponsor-container{
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+.sponsor-container .sponsor-logo{
+  display: block !important;
+  width: 50%;
+  /* height: 100px; */
+  align-self: center;
+  justify-self: center;
+  
+}
+
+@media (max-width: 600px){
+  .sponsor-container{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =============contact page ================== */
+.organizer-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+}
+.organizer,.co-organizer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  /* background-color: rgb(227, 61, 61); */
+}
+.organizer-image{
+  height: 300px;
+  border-radius:50px;
+}
+.organizer h3,.co-organizer h3{
+  font-size:1.5rem;
+}
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-top: 150px;
+  padding: 0 5rem;
+}
+@media (max-width: 600px){
+  .organizer-container{
+    grid-template-columns: 1fr;
+  }
+  .organizer-image{
+    height: 250px;
+  }
+  .contact-container{
+    padding:0 2rem;
+  } 
+}
