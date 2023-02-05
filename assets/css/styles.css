@@ -417,7 +417,10 @@ a:hover {
 }
 /* ============================= Footer Section End ============================= */
 
+/* ================================================================ */
+/* ================================================================ */
 /* Media Query */
+/* ================================================================ */
 /* ================================================================ */
 
 @media (max-width: 850px) {
@@ -724,26 +727,56 @@ a:hover {
 
 
 /* ====================Sponsor Page============= */
-.sponsor-container{
-  height: 500px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+.sponsor-title {
+  padding-top: 2rem;
+ font-size: 2rem;
+ background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
 }
-.sponsor-container .sponsor-logo{
-  display: block !important;
-  width: 50%;
-  /* height: 100px; */
-  align-self: center;
-  justify-self: center;
-  
+.sponsor-container{
+  display: flex;
+  gap: 4rem;
+}
+.sponsor-container .box {
+  padding: 2.5rem;
+  border: 1px solid var(--white);
+  display: flex;
+  border-radius: 12px;
+}
+.sponsor-container .box:hover {
+  border: 1px solid var(--red);
+  cursor: pointer;
+}
+.sponsor-container .box .first {
+  width: 15rem;
+  height: 7rem;
+}
+.sponsor-container .box .second {
+  width: 8rem;
 }
 
-@media (max-width: 850px){
-  .sponsor-container{
-    grid-template-columns: 1fr;
+@media only screen and (max-width: 600px) {
+  .sponsor-title {
+    padding-top: 0px;
+  }
+  .sponsor-container {
+    gap: 1.8rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sponsor-container .box {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }
+/* @media only screen and (min-width: 768px) {
+  .sponsor-title {
+    padding-top: 0px;
+  }
+} */
 
 
 /* =============contact page ================== */
