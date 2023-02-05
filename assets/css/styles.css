@@ -14,13 +14,16 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  height: 100vh;
   background-color: var(--black);
   color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
 h1 {
   font-weight: 700;
 }
@@ -336,8 +339,8 @@ a:hover {
 .footer-main{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  padding: 0 50px;
+  justify-content:flex-start;
+  padding: 0 6rem;
 }
 
 .footer-distributed .footer-left,
@@ -417,13 +420,133 @@ a:hover {
 }
 /* ============================= Footer Section End ============================= */
 
+/* ================= About Page Start ====================== */
+.about-container .about-content h2{
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.about-container .content-tedxfc  h2{
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 60.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.about-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+  padding: 70px;
+}
+
+.about-container .about-content{
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+}
+.about-container .about-content h2{
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 23.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.about-container .content-tedxfc  h2{
+  line-height: normal;
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 40.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* ====================About page End============ */
+
+
+/* ====================Sponsor Page Start ============= */
+.sponsor-title {
+  padding-top: 2rem;
+ font-size: 2rem;
+ background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+.sponsor-container{
+  display: flex;
+  gap: 4rem;
+}
+.sponsor-container .box {
+  padding: 2.5rem;
+  border: 1px solid var(--white);
+  display: flex;
+  border-radius: 12px;
+}
+.sponsor-container .box:hover {
+  border: 1px solid var(--red);
+  cursor: pointer;
+}
+.sponsor-container .box .first {
+  width: 15rem;
+  height: 7rem;
+}
+.sponsor-container .box .second {
+  width: 8rem;
+}
+/* @media only screen and (min-width: 768px) {
+  .sponsor-title {
+    padding-top: 0px;
+  }
+} */
+/* ==================== Sponsor Page End =============== */
+
+/* =============contact page Start ================== */
+.organizer-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+}
+.organizer,.co-organizer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  /* background-color: rgb(227, 61, 61); */
+}
+.organizer-image{
+  height: 300px;
+  border-radius:50px;
+}
+.organizer h3,.co-organizer h3{
+  font-size:1.5rem;
+}
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-top: 150px;
+  padding: 0 5rem;
+}
+/* ======================= Contact Page End ==================== */
+
+
+
 /* ================================================================ */
 /* ================================================================ */
 /* Media Query */
 /* ================================================================ */
 /* ================================================================ */
 
-@media (max-width: 850px) {
+@media (max-width: 600px) {
 
   *{
     -webkit-tap-highlight-color: transparent;
@@ -624,7 +747,7 @@ a:hover {
     font-size: 16px;
     line-height: 22px;
   }
-  /* ============================= Contact Section Start ============================= */
+  /* ============================= Contact Section End ============================= */
   /* ============================= Footer Section Start ============================= */
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
@@ -648,6 +771,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 0 3rem;
     /* justify-content: space-between; */
   }
   .footer-distributed .footer-main .footer-left img {
@@ -664,6 +788,9 @@ a:hover {
   /* ============================= Footer Section End ============================= */
 
   /* ===================About Page Start================= */
+  .about-container{
+    padding:0;
+  }
   .about-container .about-content{
     font-size: 16px;
     /* padding: 1.5rem 1.5rem; */
@@ -673,91 +800,10 @@ a:hover {
   .about-container .about-content p{
     font-size: 18px;
   }
-}
-.about-container .about-content h2{
-  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.about-container .content-tedxfc  h2{
-  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 60.71%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
+  /* ================ About Page End =================== */
 
-.about-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 70px;
-}
-.about-container .about-content{
-  font-size: 20px;
-  line-height: 25px;
-  letter-spacing: 0.5px;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-
-}
-.about-container .about-content h2{
-  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 23.71%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.about-container .content-tedxfc  h2{
-  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 40.71%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@media (min-width: 850px) {
-  .about-container{
-    padding: 70px;
-  }
-  
-}
-
-/* ====================About page End============ */
-
-
-/* ====================Sponsor Page============= */
-.sponsor-title {
-  padding-top: 2rem;
- font-size: 2rem;
- background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
-  margin-bottom: 2rem;
-}
-.sponsor-container{
-  display: flex;
-  gap: 4rem;
-}
-.sponsor-container .box {
-  padding: 2.5rem;
-  border: 1px solid var(--white);
-  display: flex;
-  border-radius: 12px;
-}
-.sponsor-container .box:hover {
-  border: 1px solid var(--red);
-  cursor: pointer;
-}
-.sponsor-container .box .first {
-  width: 15rem;
-  height: 7rem;
-}
-.sponsor-container .box .second {
-  width: 8rem;
-}
-
-@media only screen and (max-width: 600px) {
+  /* =================== Sponsor Page Start ==============  */
   .sponsor-title {
     padding-top: 0px;
   }
@@ -769,55 +815,272 @@ a:hover {
   .sponsor-container .box {
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 85%;
   }
-}
-/* @media only screen and (min-width: 768px) {
-  .sponsor-title {
-    padding-top: 0px;
+  /* ===================== Sponsor Page End ============== */
+
+  /* =============== Contact Page Start ================ */
+  .contact-container{
+    padding:0 2rem;
+    margin-top: 100px;
   }
-} */
-
-
-/* =============contact page ================== */
-.organizer-container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 50px;
-}
-.organizer,.co-organizer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  align-self: center;
-  justify-self: center;
-  width: 100%;
-  /* background-color: rgb(227, 61, 61); */
-}
-.organizer-image{
-  height: 300px;
-  border-radius:50px;
-}
-.organizer h3,.co-organizer h3{
-  font-size:1.5rem;
-}
-.contact-container{
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  margin-top: 150px;
-  padding: 0 5rem;
-}
-@media (max-width: 850px){
   .organizer-container{
     grid-template-columns: 1fr;
   }
   .organizer-image{
     height: 250px;
   }
+  
+  /* =============== Contact Page End ================ */
+}
+
+
+@media (max-width: 950px) and (min-width:600px){
+  
+  *{
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  /* container class */
+  .container {
+    padding: 0 2rem;
+  }
+
+  /* Hamburger Menu */
+  #toggle {
+    position: fixed;
+    z-index: 1;
+    top: 0.7rem;
+    left: 2rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  #toggle::before {
+    content: '';
+    position: fixed;
+    height: 2px;
+    width: 1.5rem;
+    background: var(--white);
+    transform: translateY(-0.25rem);
+    transition: 0.2s;
+  }
+  #toggle::after {
+    content: '';
+    position: fixed;
+    height: 2px;
+    width: 1.5rem;
+    background: var(--white);
+    transform: translateY(0.25rem);
+    transition: 0.2s;
+  }
+  #toogle::selection {
+    content: '';
+    position: fixed;
+    height: 2px;
+    width: 1.5rem;
+    background: var(--white);
+    transition: 0.2s;
+  }
+  #toggle.active {
+    left: 265px;
+  }
+  #toggle.active::before {
+    transform: translateY(0rem) rotate(45deg);
+  }
+  #toggle.active::after {
+    transform: translateY(0rem) rotate(-45deg);
+  }
+
+  #sidebar {
+    display: block;
+    position: fixed;
+    padding-left: 1rem;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: var(--black);
+    transition: 0.5s;
+  }
+  #sidebar.active {
+    left: 0px;
+    position: fixed;
+  }
+  #sidebar ul {
+    position: relative;
+    margin-top: 50px;
+  }
+  #sidebar ul li {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0px;
+  }
+  #sidebar ul li img {
+    height: 2rem;
+    transform: translateY(-1rem);
+  }
+  #sidebar ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+  }
+  #sidebar .sidebar_logo {
+    margin-bottom: 40px;
+  }
+
+  /* Navbar Section */
+  .nav .nav-logo img {
+    margin-top: 0.2rem;
+    width: 12rem;
+    margin-left: 3rem;
+  }
+  .nav .nav-links {
+    display: none;
+  }
+  /* Radial Gradient */
+  .gradient {
+    display: none;
+  }
+  .gradient-mobile {
+    z-index: -1;
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    height: 300px;
+    width:100%;
+  }
+
+  /* ============================= Hero Section Start ============================= */
+  .hero {
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero h1 {
+    /* padding-left: 2rem; */
+    font-size: 5.5rem;
+    /* line-height: 3.8rem; */
+    letter-spacing: 3.5px;
+    text-align: center;
+    font-weight: 700;
+  }
+  .hero h3 {
+    /* padding-left: 2rem; */
+    /* margin-top: 20px; */
+    text-align:center;
+    font-size: 1.5rem;
+    /* line-height: 22px; */
+  }
+  /* ============================= Hero Section End ============================= */
+  .container {
+    margin-top: 150px;
+  }
+  /* ============================= Tab Box Section Start ============================= */
+  .tab__content {
+    font-size: 16px;
+    padding: 1.5rem 1.5rem;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+  }
+  /* .tabs .tab__sidebar .tab__button {
+    width: 100%;
+  } */
+  .tabs .tab__sidebar .tab__button--active {
+    height: auto;
+    border-top: 5px solid var(--red);
+  }
+
+  /* ============================= Tab Box Section End ============================= */
+  /* ============================= Event Section Start ============================= */
+  .event h1 {
+    background: linear-gradient(90deg, #ff2500 19.79%, #fff 59.71%);
+    font-weight: 700;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+  }
+  .event p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  /* ============================= Event Section End ============================= */
+  /* ============================= Contact Section Start ============================= */
+  .contact-sub {
+    margin-top: 3rem;
+  }
+  .contact {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 25px;
+  }
+  .contact .left-section .content h1 {
+    background:linear-gradient(90deg, #ff2500 6.21%, #fff 45.71%);
+    font-weight: 700;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .contact .left-section .content p {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  /* ============================= Contact Section End ============================= */
+
+
+  /* =============================== Footer Section Start =========================  */
+  /* .footer-main .footer-left{
+    display: none;
+  } */
+  .footer-main{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  /* ================================= Footer Section End =========================== */
+
+  /* ============================= About Page Start ======================== */
+  .about-container{
+    padding:0 3rem;
+  }
+  /* =============================== About Page End ====================== */
+
+  /* =============================== Sponsor Page Start ==================== */
+  .container-sponsor{
+    margin-top: 100px;
+  }
+  .sponsor-title {
+    padding-top: 0px;
+  }
+  .sponsor-container {
+    gap: 3rem;
+  }
+  .sponsor-container .box {
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+  }
+  /* ===================== Sponsor Page End ============== */
+
+  /* =============== Contact Page Start ================ */
   .contact-container{
-    padding:0 2rem;
-  } 
+    margin-top: 100px;
+  }
+  .organizer-image{
+    height: 250px;
+  }
+  /* =============== Contact Page End ================ */
 }
