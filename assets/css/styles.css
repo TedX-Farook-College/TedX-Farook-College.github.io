@@ -10,9 +10,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   height: 100vh;
   background-color: var(--black);
@@ -24,6 +26,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
 h1 {
   font-weight: 700;
 }
@@ -43,6 +46,7 @@ a:hover {
   padding: 0.75rem 3.2rem;
   position: fixed;
 }
+
 .nav-bg {
   background-color: var(--black);
 }
@@ -57,55 +61,66 @@ a:hover {
   font-weight: 500;
   font-size: 20px;
 }
+
 .nav .nav-links a:hover {
   border-bottom: 1px solid var(--red);
   padding-bottom: 0.5rem;
 }
+
 #toggle,
 #sidebar {
   display: none;
 }
 
 .gradient {
-  width: 1200px;
+  width:calc(100% - 4rem);
   z-index: -1;
   position: absolute;
-  top: 25px;
-  left: 120px;
+  top: 1.5rem;
+  left:5rem;
 }
+
 .gradient-mobile {
   display: none;
 }
+
 .hero {
-  padding-top: 10rem;
+  margin-top: 10rem;
+  /* padding:10rem 2rem 6rem 2rem;
+  background: rgb(235, 0, 40);
+  background: -moz-radial-gradient(ellipse, rgba(235, 0, 40, 5) 0%, rgba(0, 0, 0, 0.5887605042016807) 55%);
+  background: -webkit-radial-gradient(ellipse, rgba(235, 0, 40, 5) 0%, rgba(0, 0, 0, 0.5887605042016807) 55%);
+  background: radial-gradient(ellipse, rgba(235, 0, 40, 5) 0%, rgba(0, 0, 0, 0.5887605042016807) 55%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb0028", endColorstr="#000000", GradientType=1);
+  background-size:100vw;
+  background-repeat: no-repeat;
+  background: position y 50px ; */
 }
 
 .hero h1 {
   font-size: 10rem;
-  letter-spacing:5px;
+  letter-spacing: 5px;
   text-align: center;
   font-weight: 550;
   text-transform: capitalize;
 }
 
-.hero h3{
+.hero h3 {
   font-size: 2.8rem;
   margin-top: 40px;
   text-align: center;
   margin: auto;
   font-weight: 700;
   letter-spacing: 2px;
-  /* font-size: 20px; */
-  /* line-height: 24px; */
   max-width: 550px;
 }
 
 .container {
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 0 5rem;
 }
 
- /* ============================= Tab Section Start =============================   */
+/* ============================= Tab Section Start =============================   */
 
 .section-sub {
   margin-top: 4rem;
@@ -164,6 +179,7 @@ a:hover {
 .tab__content--active {
   display: block;
 }
+
 /* ============================= Tab Section End =============================   */
 
 /* ============================= Event Section Start =============================   */
@@ -180,6 +196,7 @@ a:hover {
   font-size: 20px;
   line-height: 25px;
 }
+
 /* ============================= Event Section End =============================   */
 
 /* ============================= Contact Section Start ============================= */
@@ -234,7 +251,7 @@ a:hover {
   padding: 0 2px;
 }
 
-.contact .right-section{
+.contact .right-section {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -285,7 +302,7 @@ a:hover {
   color: var(--white);
   font-size: medium;
   width: 100%;
-  font-family:"Arial"
+  font-family: "Arial"
 }
 
 .contact .right-section .right-field form .form-footer {
@@ -321,13 +338,14 @@ a:hover {
   opacity: 0.9;
 }
 
-.contact-email{
+.contact-email {
   color: var(--white);
   padding: 0.45rem 0.45rem;
   border-radius: 8px;
   width: 96%;
   text-align: center;
 }
+
 /* ============================= Contact Section End ============================= */
 
 /* ============================= Footer Section Start ============================= */
@@ -336,17 +354,17 @@ a:hover {
   padding-bottom: 20px;
   margin-top: 100px;
 }
-.footer-main{
+
+.footer-main {
   display: flex;
   flex-direction: row;
-  justify-content:flex-start;
+  justify-content: flex-start;
   padding: 0 6rem;
 }
 
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
 .footer-distributed .footer-right {
-  /* display: inline-block; */
   vertical-align: top;
 }
 
@@ -376,18 +394,21 @@ a:hover {
   font-size: 14px;
   line-height: 20px;
 }
-.footer-distributed .footer-center .socials{
+
+.footer-distributed .footer-center .socials {
   display: flex;
   flex-direction: row;
   gap: 50px;
 }
+
 .footer-distributed .footer-center .socials svg,
-.footer-distributed .footer-right svg{
+.footer-distributed .footer-right svg {
   width: 1.7rem;
   height: 1.7rem;
 }
+
 .footer-distributed .footer-center .socials svg:hover,
-.footer-distributed .footer-right svg:hover{
+.footer-distributed .footer-right svg:hover {
   color: var(--red);
 }
 
@@ -401,6 +422,7 @@ a:hover {
   color: var(--footer-text);
   font-size: 13px;
 }
+
 .footer-distributed .footer-credits {
   margin: auto;
   width: 700px;
@@ -409,25 +431,30 @@ a:hover {
   color: var(--footer-text);
   font-size: small;
 }
+
 .footer-distributed .footer-credits svg {
   width: 13px;
 }
+
 .footer-distributed .footer-credits a {
   color: var(--footer-text);
 }
+
 .footer-distributed .footer-credits a:hover {
   color: var(--white);
 }
+
 /* ============================= Footer Section End ============================= */
 
 /* ================= About Page Start ====================== */
-.about-container .about-content h2{
+.about-container .about-content h2 {
   background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.about-container .content-tedxfc  h2{
+
+.about-container .content-tedxfc h2 {
   background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 60.71%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -435,7 +462,7 @@ a:hover {
 }
 
 
-.about-container{
+.about-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -443,7 +470,7 @@ a:hover {
   padding: 70px;
 }
 
-.about-container .about-content{
+.about-container .about-content {
   font-size: 20px;
   line-height: 25px;
   letter-spacing: 0.5px;
@@ -452,18 +479,23 @@ a:hover {
   gap: 50px;
 
 }
-.about-container .about-content h2{
+
+.about-container .about-content h2 {
   background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 23.71%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.about-container .content-tedxfc  h2{
+
+.about-container .content-tedxfc h2 {
   line-height: normal;
   background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 40.71%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+.container-as{
+  margin-top: 150px;
 }
 /* ====================About page End============ */
 
@@ -471,71 +503,75 @@ a:hover {
 /* ====================Sponsor Page Start ============= */
 .sponsor-title {
   padding-top: 2rem;
- font-size: 2rem;
- background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 2rem;
 }
-.sponsor-container{
+
+.sponsor-container {
   display: flex;
   gap: 4rem;
 }
+
 .sponsor-container .box {
   padding: 2.5rem;
   border: 1px solid var(--white);
   display: flex;
   border-radius: 12px;
 }
+
 .sponsor-container .box:hover {
   border: 1px solid var(--red);
   cursor: pointer;
 }
+
 .sponsor-container .box .first {
   width: 15rem;
   height: 7rem;
 }
+
 .sponsor-container .box .second {
   width: 8rem;
 }
-/* @media only screen and (min-width: 768px) {
-  .sponsor-title {
-    padding-top: 0px;
-  }
-} */
+
 /* ==================== Sponsor Page End =============== */
 
 /* =============contact page Start ================== */
-.organizer-container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 50px;
+.organizer-container {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
 }
-.organizer,.co-organizer{
+.organizer,
+.co-organizer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   gap: 5px;
-  align-self: center;
-  justify-self: center;
-  width: 100%;
-  /* background-color: rgb(227, 61, 61); */
+  /* width: 100%; */
 }
-.organizer-image{
+
+.organizer-image {
   height: 300px;
-  border-radius:50px;
+  border-radius: 50px;
 }
-.organizer h3,.co-organizer h3{
-  font-size:1.5rem;
+
+.organizer h3,
+.co-organizer h3 {
+  font-size: 1.5rem;
 }
-.contact-container{
+
+.contact-container {
   display: flex;
   flex-direction: column;
   gap: 100px;
   margin-top: 150px;
   padding: 0 5rem;
 }
+
 /* ======================= Contact Page End ==================== */
 
 
@@ -548,14 +584,15 @@ a:hover {
 
 @media (max-width: 600px) {
 
-  *{
+  * {
     -webkit-tap-highlight-color: transparent;
   }
 
-  body{
+  body {
     margin: 0;
     padding: 0;
   }
+
   /* container class */
   .container {
     padding: 0 2rem;
@@ -574,6 +611,7 @@ a:hover {
     align-items: center;
     transition: 0.5s;
   }
+
   #toggle::before {
     content: '';
     position: fixed;
@@ -583,6 +621,7 @@ a:hover {
     transform: translateY(-0.25rem);
     transition: 0.2s;
   }
+
   #toggle::after {
     content: '';
     position: fixed;
@@ -592,6 +631,7 @@ a:hover {
     transform: translateY(0.25rem);
     transition: 0.2s;
   }
+
   #toogle::selection {
     content: '';
     position: fixed;
@@ -600,12 +640,15 @@ a:hover {
     background: var(--white);
     transition: 0.2s;
   }
+
   #toggle.active {
     left: 265px;
   }
+
   #toggle.active::before {
     transform: translateY(0rem) rotate(45deg);
   }
+
   #toggle.active::after {
     transform: translateY(0rem) rotate(-45deg);
   }
@@ -621,30 +664,36 @@ a:hover {
     background-color: var(--black);
     transition: 0.5s;
   }
+
   #sidebar.active {
     left: 0px;
     position: fixed;
   }
+
   #sidebar ul {
     position: relative;
     margin-top: 50px;
   }
+
   #sidebar ul li {
     list-style: none;
     display: inline-block;
     width: 100%;
     padding: 10px 0px;
   }
+
   #sidebar ul li img {
     height: 2rem;
     transform: translateY(-1rem);
   }
+
   #sidebar ul li a {
     color: var(--white);
     text-decoration: none;
     font-size: 1.25rem;
     letter-spacing: 1px;
   }
+
   #sidebar .sidebar_logo {
     margin-bottom: 40px;
   }
@@ -655,47 +704,62 @@ a:hover {
     width: 12rem;
     margin-left: 3rem;
   }
+
   .nav .nav-links {
     display: none;
   }
+
   /* Radial Gradient */
   .gradient {
     display: none;
   }
+
   .gradient-mobile {
     z-index: -1;
     display: block;
     position: absolute;
     top: 60px;
     height: 300px;
-    width:100%;
+    width: 100%;
   }
+
   /* ============================= Hero Section Start ============================= */
   .hero {
-    padding-top: 8rem;
+    padding: 4rem 0;
+    /* background: rgb(235, 0, 40);
+    background: -moz-radial-gradient(ellipse, rgba(235, 0, 40) 0%, rgba(0, 0, 0, 0.5887605042016807) 70%);
+    background: -webkit-radial-gradient(ellipse, rgba(235, 0, 40) 0%, rgba(0, 0, 0, 0.5887605042016807) 70%);
+    background: radial-gradient(ellipse, rgba(235, 0, 40) 0%, rgba(0, 0, 0, 0.5887605042016807) 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb0028", endColorstr="#000000", GradientType=1);
+    background-size: 500px;
+    background-position-x:-50px;
+    background-repeat: no-repeat; */
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
+
   .hero h1 {
-    /* padding-left: 2rem; */
     font-size: 5.5rem;
-    /* line-height: 3.8rem; */
     letter-spacing: 3.5px;
     text-align: center;
     font-weight: 700;
+    margin-top: -5rem;
   }
+
   .hero h3 {
-    /* padding-left: 2rem; */
-    /* margin-top: 20px; */
-    text-align:center;
+    text-align: center;
     font-size: 1.5rem;
-    /* line-height: 22px; */
   }
+
   /* ============================= Hero Section End ============================= */
   .container {
-    margin-top: 150px;
+    margin-top:100px;
   }
+  .container-index{
+    margin-top: -5rem;
+  }
+
   /* ============================= Tab Box Section Start ============================= */
   .tab__content {
     font-size: 16px;
@@ -703,9 +767,7 @@ a:hover {
     line-height: 22px;
     letter-spacing: 0.6px;
   }
-  /* .tabs .tab__sidebar .tab__button {
-    width: 100%;
-  } */
+
   .tabs .tab__sidebar .tab__button--active {
     height: auto;
     border-top: 5px solid var(--red);
@@ -721,84 +783,100 @@ a:hover {
     background-clip: text;
 
   }
+
   .event p {
     font-size: 16px;
     line-height: 22px;
   }
+
   /* ============================= Event Section End ============================= */
   /* ============================= Contact Section Start ============================= */
   .contact-sub {
     margin-top: 3rem;
   }
+
   .contact {
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
   }
+
   .contact .left-section .content h1 {
-    background:linear-gradient(90deg, #ff2500 6.21%, #fff 45.71%);
+    background: linear-gradient(90deg, #ff2500 6.21%, #fff 45.71%);
     font-weight: 700;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
   .contact .left-section .content p {
     margin-top: 12px;
     font-size: 16px;
     line-height: 22px;
   }
+
   /* ============================= Contact Section End ============================= */
   /* ============================= Footer Section Start ============================= */
   .footer-distributed .footer-left,
   .footer-distributed .footer-center,
   .footer-distributed .footer-right {
-    /* display: block; */
     width: 100%;
     margin-bottom: 10px;
     text-align: left;
   }
-  .footer-distributed .footer-left{
+
+  .footer-distributed .footer-left {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
   }
+
   .footer-distributed .footer-center,
   .footer-right {
-    padding-left:1rem;
+    padding-left: 1rem;
   }
+
   .footer-distributed .footer-main {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 0 3rem;
-    /* justify-content: space-between; */
   }
+
   .footer-distributed .footer-main .footer-left img {
     width: 250px;
   }
+
   .footer-distributed .footer-center .socials svg,
-  .footer-distributed .footer-right svg{
+  .footer-distributed .footer-right svg {
     width: 1.5rem;
     height: 1.5rem;
   }
+
   .footer-distributed .footer-credits {
     max-width: 300px;
   }
+
   /* ============================= Footer Section End ============================= */
 
   /* ===================About Page Start================= */
-  .about-container{
-    padding:0;
+  .about-container {
+    padding: 0 2rem;
   }
-  .about-container .about-content{
+
+  .about-container .about-content {
     font-size: 16px;
-    /* padding: 1.5rem 1.5rem; */
     line-height: 22px;
     letter-spacing: 0.6px;
   }
-  .about-container .about-content p{
+
+  .about-container .about-content p {
     font-size: 18px;
+  }
+  .container-as{
+    padding: 0 0.5rem;
+    margin-top: 100px;
   }
 
   /* ================ About Page End =================== */
@@ -807,44 +885,52 @@ a:hover {
   .sponsor-title {
     padding-top: 0px;
   }
+
   .sponsor-container {
+    padding: 0;
     gap: 1.8rem;
     flex-direction: column;
     align-items: center;
   }
+
   .sponsor-container .box {
     align-items: center;
     justify-content: center;
-    width: 85%;
+    width: 100%;
   }
+
   /* ===================== Sponsor Page End ============== */
 
   /* =============== Contact Page Start ================ */
-  .contact-container{
-    padding:0 2rem;
+  .contact-container {
+    padding: 0 2rem;
     margin-top: 100px;
   }
-  .organizer-container{
-    grid-template-columns: 1fr;
+
+  .organizer-container {
+    flex-direction: column;
+    gap: 2rem;
   }
-  .organizer-image{
+
+  .organizer-image {
     height: 250px;
   }
-  
+
   /* =============== Contact Page End ================ */
 }
 
 
-@media (max-width: 950px) and (min-width:600px){
-  
-  *{
+@media (max-width: 950px) and (min-width:600px) {
+
+  * {
     -webkit-tap-highlight-color: transparent;
   }
 
-  body{
+  body {
     margin: 0;
     padding: 0;
   }
+
   /* container class */
   .container {
     padding: 0 2rem;
@@ -863,6 +949,7 @@ a:hover {
     align-items: center;
     transition: 0.5s;
   }
+
   #toggle::before {
     content: '';
     position: fixed;
@@ -872,6 +959,7 @@ a:hover {
     transform: translateY(-0.25rem);
     transition: 0.2s;
   }
+
   #toggle::after {
     content: '';
     position: fixed;
@@ -881,6 +969,7 @@ a:hover {
     transform: translateY(0.25rem);
     transition: 0.2s;
   }
+
   #toogle::selection {
     content: '';
     position: fixed;
@@ -889,12 +978,15 @@ a:hover {
     background: var(--white);
     transition: 0.2s;
   }
+
   #toggle.active {
     left: 265px;
   }
+
   #toggle.active::before {
     transform: translateY(0rem) rotate(45deg);
   }
+
   #toggle.active::after {
     transform: translateY(0rem) rotate(-45deg);
   }
@@ -910,30 +1002,36 @@ a:hover {
     background-color: var(--black);
     transition: 0.5s;
   }
+
   #sidebar.active {
     left: 0px;
     position: fixed;
   }
+
   #sidebar ul {
     position: relative;
     margin-top: 50px;
   }
+
   #sidebar ul li {
     list-style: none;
     display: inline-block;
     width: 100%;
     padding: 10px 0px;
   }
+
   #sidebar ul li img {
     height: 2rem;
     transform: translateY(-1rem);
   }
+
   #sidebar ul li a {
     color: var(--white);
     text-decoration: none;
     font-size: 1.25rem;
     letter-spacing: 1px;
   }
+
   #sidebar .sidebar_logo {
     margin-bottom: 40px;
   }
@@ -944,49 +1042,55 @@ a:hover {
     width: 12rem;
     margin-left: 3rem;
   }
+
   .nav .nav-links {
     display: none;
   }
+
   /* Radial Gradient */
   .gradient {
-    display: none;
+    width: calc(100% - 10rem);
+    top: 7rem;
+    left: 3rem;
   }
+
   .gradient-mobile {
-    z-index: -1;
+    display: none;
+    /* z-index: -1;
     display: block;
     position: absolute;
     top: 60px;
     left: 50px;
     height: 300px;
-    width:100%;
+    width: 100%; */
   }
 
   /* ============================= Hero Section Start ============================= */
   .hero {
-    padding-top: 8rem;
     display: flex;
     flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
     gap: 12px;
   }
+
   .hero h1 {
-    /* padding-left: 2rem; */
     font-size: 5.5rem;
-    /* line-height: 3.8rem; */
     letter-spacing: 3.5px;
     text-align: center;
     font-weight: 700;
   }
+
   .hero h3 {
-    /* padding-left: 2rem; */
-    /* margin-top: 20px; */
-    text-align:center;
+    text-align: center;
     font-size: 1.5rem;
-    /* line-height: 22px; */
   }
+
   /* ============================= Hero Section End ============================= */
   .container {
-    margin-top: 150px;
+    margin-top: 50px;
   }
+
   /* ============================= Tab Box Section Start ============================= */
   .tab__content {
     font-size: 16px;
@@ -994,9 +1098,7 @@ a:hover {
     line-height: 22px;
     letter-spacing: 0.6px;
   }
-  /* .tabs .tab__sidebar .tab__button {
-    width: 100%;
-  } */
+
   .tabs .tab__sidebar .tab__button--active {
     height: auto;
     border-top: 5px solid var(--red);
@@ -1012,75 +1114,85 @@ a:hover {
     background-clip: text;
 
   }
+
   .event p {
     font-size: 16px;
     line-height: 22px;
   }
+
   /* ============================= Event Section End ============================= */
   /* ============================= Contact Section Start ============================= */
   .contact-sub {
     margin-top: 3rem;
   }
+
   .contact {
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 25px;
   }
+
   .contact .left-section .content h1 {
-    background:linear-gradient(90deg, #ff2500 6.21%, #fff 45.71%);
+    background: linear-gradient(90deg, #ff2500 6.21%, #fff 45.71%);
     font-weight: 700;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
   .contact .left-section .content p {
     margin-top: 12px;
     font-size: 16px;
     line-height: 22px;
   }
+
   /* ============================= Contact Section End ============================= */
 
 
   /* =============================== Footer Section Start =========================  */
-  /* .footer-main .footer-left{
-    display: none;
-  } */
-  .footer-main{
+  .footer-main {
     display: flex;
     justify-content: space-around;
   }
-  
+
   /* ================================= Footer Section End =========================== */
 
   /* ============================= About Page Start ======================== */
-  .about-container{
-    padding:0 3rem;
+  .about-container {
+    padding: 5rem 3rem 1rem 3rem;
   }
+
   /* =============================== About Page End ====================== */
 
   /* =============================== Sponsor Page Start ==================== */
-  .container-sponsor{
+  .container-sponsor {
     margin-top: 100px;
   }
+
   .sponsor-title {
     padding-top: 0px;
   }
+
   .sponsor-container {
     gap: 3rem;
   }
+
   .sponsor-container .box {
     align-items: center;
     justify-content: center;
     width: 85%;
   }
+
   /* ===================== Sponsor Page End ============== */
 
   /* =============== Contact Page Start ================ */
-  .contact-container{
+  .contact-container {
     margin-top: 100px;
   }
-  .organizer-image{
+
+  .organizer-image {
     height: 250px;
   }
+
   /* =============== Contact Page End ================ */
 }
