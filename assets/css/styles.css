@@ -155,15 +155,6 @@ a:hover {
 
 .hero {
   margin-top: 10rem;
-  /* padding:10rem 2rem 6rem 2rem;
-  background: rgb(235, 0, 40);
-  background: -moz-radial-gradient(ellipse, rgba(235, 0, 40, 5) 0%, rgba(0, 0, 0, 0.5887605042016807) 55%);
-  background: -webkit-radial-gradient(ellipse, rgba(235, 0, 40, 5) 0%, rgba(0, 0, 0, 0.5887605042016807) 55%);
-  background: radial-gradient(ellipse, rgba(235, 0, 40, 5) 0%, rgba(0, 0, 0, 0.5887605042016807) 55%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb0028", endColorstr="#000000", GradientType=1);
-  background-size:100vw;
-  background-repeat: no-repeat;
-  background: position y 50px ; */
 }
 
 .hero h1 {
@@ -187,8 +178,10 @@ a:hover {
   margin-top: 2rem;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 .payment-button button{
   background-color: var(--black);
@@ -208,6 +201,21 @@ a:hover {
   background-color: var(--white);
   color: var(--black);
   cursor: pointer;
+}
+.payment-button h3{
+  font-size:20px;
+  font-weight: 500;
+  /* background: linear-gradient(90deg, #ff2500 -1.21%, #ffffff 80.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; */
+  letter-spacing:1px;
+  opacity: 0.9;
+}
+.payment-button span{
+  color: var(--red);
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .container {
@@ -824,14 +832,6 @@ a:hover {
   /* ============================= Hero Section Start ============================= */
   .hero {
     padding: 4rem 0;
-    /* background: rgb(235, 0, 40);
-    background: -moz-radial-gradient(ellipse, rgba(235, 0, 40) 0%, rgba(0, 0, 0, 0.5887605042016807) 70%);
-    background: -webkit-radial-gradient(ellipse, rgba(235, 0, 40) 0%, rgba(0, 0, 0, 0.5887605042016807) 70%);
-    background: radial-gradient(ellipse, rgba(235, 0, 40) 0%, rgba(0, 0, 0, 0.5887605042016807) 70%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb0028", endColorstr="#000000", GradientType=1);
-    background-size: 500px;
-    background-position-x:-50px;
-    background-repeat: no-repeat; */
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -853,6 +853,12 @@ a:hover {
     padding:0.75rem 1rem;
     font-weight: 700;
     font-size: 1.3rem;
+  }
+  .payment-button h3{
+    font-size: 16px;
+  }
+  .payment-button span{
+    font-size: 18px;
   }
 
   /* ============================= Hero Section End ============================= */
@@ -1159,13 +1165,6 @@ a:hover {
 
   .gradient-mobile {
     display: none;
-    /* z-index: -1;
-    display: block;
-    position: absolute;
-    top: 60px;
-    left: 50px;
-    height: 300px;
-    width: 100%; */
   }
 
   /* ============================= Hero Section Start ============================= */
@@ -1187,6 +1186,12 @@ a:hover {
   .hero h3 {
     text-align: center;
     font-size: 1.5rem;
+  }
+  .payment-button h3{
+    font-size: 18px;
+  }
+  .payment-button span{
+    font-size: 20px;
   }
 
   /* ============================= Hero Section End ============================= */
