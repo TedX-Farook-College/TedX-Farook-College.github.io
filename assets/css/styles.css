@@ -210,7 +210,6 @@ a:hover {
   -webkit-text-fill-color: transparent;
   background-clip: text; */
   letter-spacing:1px;
-  opacity: 0.9;
 }
 .payment-button span{
   color: var(--red);
