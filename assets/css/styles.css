@@ -613,14 +613,19 @@ a:hover {
 }
 
 .sponsor-container {
-  display: flex;
-  gap: 4rem;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  /* grid-template-rows: repeat(2,350px); */
+  gap: 2rem;
 }
 
 .sponsor-container .box {
-  padding: 2.5rem;
-  border: 1px solid var(--white);
+  padding:2.5rem 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--white);
   border-radius: 12px;
 }
 
@@ -635,10 +640,14 @@ a:hover {
 }
 
 .sponsor-container .box .second {
-  width: 8rem;
+  width: 11rem;
 }
 .sponsor-container .box .third{
   width: 11rem;
+}
+.sponsor-container .box .fourth{
+  width: 15rem;
+  /* mix-blend-mode:col; */
 }
 
 /* ==================== Sponsor Page End =============== */
@@ -678,6 +687,20 @@ a:hover {
 }
 
 /* ======================= Contact Page End ==================== */
+
+/* ====================== Speakers Page Start ================= */
+.speakers-container{
+  padding: 10rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(3, auto );
+  align-items: center;
+  justify-content: center;
+  gap: 5.5rem;
+
+}
+.speakers-container img{
+  width: 300px;
+}
 
 
 
@@ -996,6 +1019,8 @@ a:hover {
 
   .sponsor-container {
     padding: 0;
+    display: grid;
+    grid-template-columns: 300px;
     gap: 1.8rem;
     flex-direction: column;
     align-items: center;
@@ -1025,6 +1050,20 @@ a:hover {
   }
 
   /* =============== Contact Page End ================ */
+
+  /* =============== Speakers Page Start ============== */
+  .speakers-container{
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 250px;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+  }
+  .speakers-container img {
+    width: 250px;
+  }
+  /* =============== Speakers Page End ============= */
 }
 
 
@@ -1282,6 +1321,8 @@ a:hover {
 
   .sponsor-container {
     gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
   }
 
   .sponsor-container .box {
@@ -1302,4 +1343,12 @@ a:hover {
   }
 
   /* =============== Contact Page End ================ */
+
+  /* ================ Speakes Page Start ============= */
+  .speakers-container{
+    margin-top: 3rem;
+    padding:2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2 , 300px);
+  }
 }
