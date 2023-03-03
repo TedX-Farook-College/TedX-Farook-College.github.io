@@ -649,7 +649,15 @@ a:hover {
   width: 11rem;
   /* mix-blend-mode:col; */
 }
-
+.sponsor-container .box .fifth{
+  width: 11rem;
+}
+.sponsor-container .box .sixth{
+  width: 11rem;
+}
+.sponsor-container .box .seventh{
+  width: 14rem;
+}
 /* ==================== Sponsor Page End =============== */
 
 /* =============contact page Start ================== */
