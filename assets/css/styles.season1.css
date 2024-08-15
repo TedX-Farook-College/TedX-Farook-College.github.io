@@ -90,6 +90,7 @@
   .container-Lumiere {
     margin-top: 0px;
     padding-top: 0px;
+    justify-content: center;
   }
   .container-leads {
     margin-top: 10%;
@@ -107,7 +108,7 @@
   }
 
   .container-as{
-    margin-top: 150px;
+    margin-top: -150px;
   }
 
   .leads-sub-heading{
@@ -119,78 +120,86 @@
     
   }
 
+
+
+  /* ====================== Speakers Page Start ================= */
+.speakers-container{
+  padding: 20rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, auto );
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+}
+.speakers-container img{
+  width: 200px;
+}
+
+
+
+/* ================================================================ */
   /* ====================Sponsor Page Start ============= */
+.sponsor-title {
+  padding-top: 2rem;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+.sponsor-container {
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  /* grid-template-rows: repeat(2,350px); */
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor-container .box {
+  padding:2.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--white);
+  border-radius: 12px;
+}
+
+.sponsor-container .box:hover {
+  border: 1px solid var(--red);
+  cursor: pointer;
+}
+
+.sponsor-container .box .first {
+  width: 11rem;
+  height: 11rem;
+}
+
+.sponsor-container .box .second {
+  width: 11rem;
+}
+.sponsor-container .box .third{
+  width: 11rem;
+}
+.sponsor-container .box .fourth{
+  width: 11rem;
+  /* mix-blend-mode:col; */
+}
+.sponsor-container .box .fifth{
+  width: 11rem;
+}
+.sponsor-container .box .sixth{
+  width: 11rem;
+}
+.sponsor-container .box .seventh{
+  width: 11rem;
+}
+/* ==================== Sponsor Page End =============== */
 
   
- 
-    
-  
-
-  .container {
-    margin-top: 50px;
-    padding: 0 2rem;
-  }
-  
-  .container-as{
-    margin-top: 150px;
-  }
-
-  .sponsor-title {
-    padding-top: 2rem;
-    font-size: 2rem;
-    background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 2rem;
-  }
-
-  .sponsor-container {
-    /* display: flex; */
-    display: grid;
-    grid-template-columns: repeat(3, 350px);
-    /* grid-template-rows: repeat(2,350px); */
-    gap: 2rem;
-  }
-  
-  .sponsor-container .box {
-    padding:2.5rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--white);
-    border-radius: 12px;
-  }
-  
-  .sponsor-container .box:hover {
-    border: 1px solid var(--red);
-    cursor: pointer;
-  }
-
-  .sponsor-container .box .first {
-    width: 14rem;
-    height: 14rem;
-  }
-  
-  .sponsor-container .box .second {
-    width: 14rem;
-  }
-  .sponsor-container .box .third{
-    width: 14rem;
-  }
-  .sponsor-container .box .fourth{
-    width: 14rem;
-    /* mix-blend-mode:col; */
-  }
-  .sponsor-container .box .fifth{
-    width: 14rem;
-  }
-  .sponsor-container .box .sixth{
-    width: 14rem;
-  }
-  .sponsor-container .box .seventh{
-    width: 14rem;
-  }
-  /* ==================== Sponsor Page End =============== */
 
    /* ============================= Contact Section Start ============================= */
 
