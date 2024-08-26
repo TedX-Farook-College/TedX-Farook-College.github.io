@@ -56,6 +56,123 @@ a:hover {
 }
 
 .nav .nav-links a {
+  margin: 0 1.5rem;
+  color: var(--white);
+  font-weight: 550;
+  font-size: 19px;
+}
+
+.nav .nav-links a.s1 {
+  color: var(--red); /* Specifically targets the "Season 1" link */
+}
+.nav .nav-links a:hover {
+  border-bottom: 1px solid var(--red);
+  padding-bottom: 0.5rem;
+}
+
+#toggle,
+#sidebar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Lumiere {
+  width: 100%;
+  padding-top: 0%;
+  margin-top: 0%;
+}
+
+.container-leads {
+  margin-top: 10%;
+  padding-bottom: 0%;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+.nav {
+  top: 0;
+  width: 100vw;
+  display: flex;
+}
+/* h1 {
+    font-size:xx-large;
+    color: #ff2500;
+    padding-left:  20px;
+    margin-left:  70px;
+  } */
+
+.container-as {
+  margin-top: -150px;
+}
+
+.leads-sub-heading {
+  padding-left: 30px;
+}
+
+.Lumiere-container {
+  padding-top: 0px;
+}
+
+.Lumiere-container h1 {
+  line-height: normal;
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-left: 20px;
+  margin-left: 70px;
+}
+
+.container-Avenir h1 {
+  line-height: normal;
+  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-left: 20px;
+  margin-left: 70px;
+}
+
+/* ====================== Speakers Page Start ================= */
+
+.nav-bg {
+  background-color: var(--black);
+}
+
+.nav .nav-logo img {
+  width: 15rem;
+}
+
+.nav .nav-links a {
   margin: 0 2rem;
   color: var(--white);
   font-weight: 500;
