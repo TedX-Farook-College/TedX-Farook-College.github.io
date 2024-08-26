@@ -24,7 +24,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 }
 
 h1 {
@@ -36,72 +35,71 @@ a:visited,
 a:hover {
   text-decoration: none;
 }
-   /*Intro*/
+/*Intro*/
 
-   .intro-animation {
-    animation: loom 5s forwards;
-    animation-delay: 0s;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
+.intro-animation {
+  animation: loom 5s forwards;
+  animation-delay: 0s;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
 }
 
 @keyframes loom {
-    from {
-        opacity: 0;
-        font-size: 5px;
-    }
+  from {
+    opacity: 0;
+    font-size: 5px;
+  }
 
-    to {
-        opacity: 1;
-        font-size: 1550px;
-    }
+  to {
+    opacity: 1;
+    font-size: 1550px;
+  }
 }
 
 .intro-animation h1 {
-    font-weight: bold;
-    color: var(--red);
-    text-align: center;
+  font-weight: bold;
+  color: var(--red);
+  text-align: center;
 }
 
 .intro-animation.fadeout {
-    animation: fadeout 5s forwards;
-    display: none;
+  animation: fadeout 5s forwards;
+  display: none;
 }
 
 @keyframes fadeout {
-    from {
-        opacity: 1;
-        font-size: 1550px;
-    }
+  from {
+    opacity: 1;
+    font-size: 1550px;
+  }
 
-    to {
-        opacity: 0;
-        font-size: 750px;
-    }
+  to {
+    opacity: 0;
+    font-size: 750px;
+  }
 }
 
-.mains{
-    visibility: hidden;
-    animation: fadeins 6s forwards;
+.mains {
+  visibility: hidden;
+  animation: fadeins 6s forwards;
 }
 
 @keyframes fadeins {
-    from {
-        display: none;  
-        height: 0;
-        opacity: 0;
-    }
+  from {
+    display: none;
+    height: 0;
+    opacity: 0;
+  }
 
-    to {
-        display: block;
-        height: auto;
-        opacity: 1;
-    }
-
+  to {
+    display: block;
+    height: auto;
+    opacity: 1;
+  }
 }
 
 /* Intro End*/
@@ -142,11 +140,11 @@ a:hover {
 }
 
 .gradient {
-  width:calc(100% - 4rem);
+  width: calc(100% - 4rem);
   z-index: -1;
   position: absolute;
   top: 1.5rem;
-  left:5rem;
+  left: 5rem;
 }
 
 .gradient-mobile {
@@ -174,7 +172,7 @@ a:hover {
   letter-spacing: 2px;
   max-width: 550px;
 }
-.payment-button{
+.payment-button {
   margin-top: 2rem;
   width: 100%;
   display: flex;
@@ -183,11 +181,11 @@ a:hover {
   justify-content: center;
   gap: 1rem;
 }
-.payment-button button{
+.payment-button button {
   background-color: var(--black);
   color: var(--white);
   padding: 1rem 2rem;
-  font-size:1.5rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   display: flex;
   justify-content: space-between;
@@ -197,21 +195,21 @@ a:hover {
   outline: none;
   border-radius: 25px;
 }
-.payment-button button:hover{
+.payment-button button:hover {
   background-color: var(--white);
   color: var(--black);
   cursor: pointer;
 }
-.payment-button h3{
-  font-size:20px;
+.payment-button h3 {
+  font-size: 20px;
   font-weight: 500;
   /* background: linear-gradient(90deg, #ff2500 -1.21%, #ffffff 80.71%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text; */
-  letter-spacing:1px;
+  letter-spacing: 1px;
 }
-.payment-button span{
+.payment-button span {
   color: var(--red);
   font-size: 22px;
   font-weight: 700;
@@ -404,7 +402,7 @@ a:hover {
   color: var(--white);
   font-size: medium;
   width: 100%;
-  font-family: "Arial"
+  font-family: "Arial";
 }
 
 .contact .right-section .right-field form .form-footer {
@@ -563,7 +561,6 @@ a:hover {
   background-clip: text;
 }
 
-
 .about-container {
   display: flex;
   flex-direction: column;
@@ -579,7 +576,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 50px;
-
 }
 
 .about-container .about-content h2 {
@@ -596,11 +592,10 @@ a:hover {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.container-as{
+.container-as {
   margin-top: 100px;
 }
 /* ====================About page End============ */
-
 
 /* ====================Sponsor Page Start ============= */
 .sponsor-title {
@@ -621,7 +616,7 @@ a:hover {
 }
 
 .sponsor-container .box {
-  padding:2.5rem 0;
+  padding: 2.5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -642,20 +637,20 @@ a:hover {
 .sponsor-container .box .second {
   width: 11rem;
 }
-.sponsor-container .box .third{
+.sponsor-container .box .third {
   width: 11rem;
 }
-.sponsor-container .box .fourth{
+.sponsor-container .box .fourth {
   width: 11rem;
   /* mix-blend-mode:col; */
 }
-.sponsor-container .box .fifth{
+.sponsor-container .box .fifth {
   width: 11rem;
 }
-.sponsor-container .box .sixth{
+.sponsor-container .box .sixth {
   width: 11rem;
 }
-.sponsor-container .box .seventh{
+.sponsor-container .box .seventh {
   width: 14rem;
 }
 /* ==================== Sponsor Page End =============== */
@@ -670,7 +665,7 @@ a:hover {
 .co-organizer {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   gap: 5px;
   /* width: 100%; */
@@ -697,20 +692,17 @@ a:hover {
 /* ======================= Contact Page End ==================== */
 
 /* ====================== Speakers Page Start ================= */
-.speakers-container{
+.speakers-container {
   padding: 10rem 0rem;
   display: grid;
-  grid-template-columns: repeat(3, auto );
+  grid-template-columns: repeat(3, auto);
   align-items: center;
   justify-content: center;
   gap: 5.5rem;
-
 }
-.speakers-container img{
+.speakers-container img {
   width: 300px;
 }
-
-
 
 /* ================================================================ */
 /* ================================================================ */
@@ -719,7 +711,6 @@ a:hover {
 /* ================================================================ */
 
 @media (max-width: 600px) {
-
   * {
     -webkit-tap-highlight-color: transparent;
   }
@@ -749,7 +740,7 @@ a:hover {
   }
 
   #toggle::before {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -759,7 +750,7 @@ a:hover {
   }
 
   #toggle::after {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -769,7 +760,7 @@ a:hover {
   }
 
   #toogle::selection {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -879,23 +870,23 @@ a:hover {
     text-align: center;
     font-size: 1.5rem;
   }
-  .payment-button button{
-    padding:0.75rem 1rem;
+  .payment-button button {
+    padding: 0.75rem 1rem;
     font-weight: 700;
     font-size: 1.3rem;
   }
-  .payment-button h3{
+  .payment-button h3 {
     font-size: 16px;
   }
-  .payment-button span{
+  .payment-button span {
     font-size: 18px;
   }
 
   /* ============================= Hero Section End ============================= */
   .container {
-    margin-top:100px;
+    margin-top: 100px;
   }
-  .container-index{
+  .container-index {
     margin-top: -5rem;
   }
 
@@ -920,7 +911,6 @@ a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
   }
 
   .event p {
@@ -1013,7 +1003,7 @@ a:hover {
   .about-container .about-content p {
     font-size: 18px;
   }
-  .container-as{
+  .container-as {
     padding: 0 0.5rem;
     margin-top: 100px;
   }
@@ -1060,7 +1050,7 @@ a:hover {
   /* =============== Contact Page End ================ */
 
   /* =============== Speakers Page Start ============== */
-  .speakers-container{
+  .speakers-container {
     margin-top: 5rem;
     display: grid;
     grid-template-columns: 250px;
@@ -1074,9 +1064,7 @@ a:hover {
   /* =============== Speakers Page End ============= */
 }
 
-
-@media (max-width: 950px) and (min-width:600px) {
-
+@media (max-width: 950px) and (min-width: 600px) {
   * {
     -webkit-tap-highlight-color: transparent;
   }
@@ -1106,7 +1094,7 @@ a:hover {
   }
 
   #toggle::before {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -1116,7 +1104,7 @@ a:hover {
   }
 
   #toggle::after {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -1126,7 +1114,7 @@ a:hover {
   }
 
   #toogle::selection {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -1233,10 +1221,10 @@ a:hover {
     text-align: center;
     font-size: 1.5rem;
   }
-  .payment-button h3{
+  .payment-button h3 {
     font-size: 18px;
   }
-  .payment-button span{
+  .payment-button span {
     font-size: 20px;
   }
 
@@ -1266,7 +1254,6 @@ a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
   }
 
   .event p {
@@ -1301,7 +1288,6 @@ a:hover {
   }
 
   /* ============================= Contact Section End ============================= */
-
 
   /* =============================== Footer Section Start =========================  */
   .footer-main {
@@ -1353,25 +1339,26 @@ a:hover {
   /* =============== Contact Page End ================ */
 
   /* ================ Speakes Page Start ============= */
-  .speakers-container{
+  .speakers-container {
     margin-top: 3rem;
-    padding:2rem 0;
+    padding: 2rem 0;
     display: grid;
-    grid-template-columns: repeat(2 , 300px);
+    grid-template-columns: repeat(2, 300px);
   }
 }
+
+/* coming soon style */
 .main-content {
   padding-top: 10px; /* Padding from the app bar */
 }
 
 .image-container {
-  
   width: 100%;
   overflow: hidden;
 }
 
 .responsive-image {
-  object-fit:fill;
+  object-fit: fill;
   width: 100%;
   height: auto;
 }
