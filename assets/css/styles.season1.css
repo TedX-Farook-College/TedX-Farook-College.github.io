@@ -79,27 +79,83 @@
 
   
    /* __________________________Season 1 new code _________________________ */
+  
+  .container-as{
+    margin-top: -150px;
+  }
+
+  .leads-sub-heading{
+    padding-left: 30px;
+  }
+
+ 
+  .section-sub .container-index-leads{
+    margin-top: 50px;
+  } 
+
+ .pre-event-title {
+    position: absolute; 
+    padding-left:  20px;
+    margin-left:  70px;
+    background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+   
+} 
+
+
+
+ 
+
+
+
+
+
+
+ .container-Avenir h1{
+    position: absolute;
+    background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-left:  20px;
+    margin-left:  70px;
+    margin-bottom: 150px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  } 
+
+
   .leads {
     width:100%;
     height:auto;
   }
 
-  .Lumiere{
-    width:100%;
-    padding-top: 0%;
-    margin-top: 0%;
+  .Lumiere {
+    width: 100%;
+    padding-top: 30px;
+    margin-top: 30px;
   }
 
+  .Lumiere-container {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    justify-content: center;
+  }
   .container-leads {
     margin-top: 10%;
-    padding-bottom: 0%;
   }
 
   .Avenir {
     width:100%;
+    margin-top: 50px;
   }
 
-  /* h1 {
+  
+/* 
+  h1 {
     font-size:xx-large;
     color: #ff2500;
     padding-left:  20px;
@@ -115,28 +171,9 @@
   }
 
   .Lumiere-container{
-    padding-top:0px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
     
-  }
-
-  .Lumiere-container  h1{
-    line-height: normal;
-    background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    padding-left:  20px;
-    margin-left:  70px;
-  }
-
-  .container-Avenir h1{
-    line-height: normal;
-    background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    padding-left:  20px;
-    margin-left:  70px;
   }
 
   /* ====================== Speakers Page Start ================= */
@@ -377,7 +414,7 @@
     margin-left: 50px;
   }
 
-  .section-sub {
+  /* .section-sub {
     margin-top: 0rem;
     display: flex;
     align-items: center;
@@ -393,7 +430,27 @@
   .section-sub h6 {
     text-transform: uppercase;
     letter-spacing: 1.2px;
-  }
+  } */
+
+  .section-sub {
+    margin-top: 0; /* Adjust margin if needed */
+    margin-bottom: 25px; /* Adjust margin to control spacing below */
+    display: flex;
+    align-items: center; /* This centers the icon and heading vertically */
+    gap: 7px; /* This controls the space between the icon and heading */
+    padding-left: 50px;
+}
+
+.section-sub img {
+    width: 12px; /* Ensure the icon's size fits well with the text */
+}
+
+.section-sub h6 {
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 0; /* Removes any default margin */
+}
+
   
   /* ============================= Contact Section End ============================= */
   
