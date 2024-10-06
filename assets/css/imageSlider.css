@@ -1,0 +1,191 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+}
+
+.main::before,
+.main::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  width: 400%;
+  height: 500%;
+  background-color: #000;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  border: 3px solid white; /* Reduced border size */
+}
+
+.main::before {
+  top: -480%;
+}
+
+.main::after {
+  bottom: -480%;
+}
+
+.outer {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.outer::-webkit-scrollbar {
+  display: none;
+}
+
+.inner {
+  position: relative;
+  flex: 0 0 15%;
+  width: 15%;
+  height: auto;
+  scroll-snap-align: center;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main button {
+  background-color: transparent;
+  border: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+}
+
+.arrow img {
+  width: 50px;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.arrow:hover {
+  opacity: 0.8;
+}
+
+/* Hide arrows on mobile for swipe functionality */
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}
+
+/* Responsive Adjustments for slider */
+
+@media (max-width: 380px) {
+  .inner {
+    flex: 0 0 29%;
+    width: 29%;
+  }
+
+  .main {
+    height: 22vh;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 380px) {
+  .inner {
+    flex: 0 0 32%;
+    width: 32%;
+  }
+
+  .main {
+    height: 25vh;
+  }
+}
+
+@media (max-width: 650px) and (min-width: 480px) {
+  .inner {
+    flex: 0 0 20%;
+    width: 20%;
+  }
+
+  .main {
+    height: 28vh;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 650px) {
+  .inner {
+    flex: 0 0 21%;
+    width: 21%;
+  }
+
+  .main {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 1050px) and (min-width: 768px) {
+  .inner {
+    flex: 0 0 19%;
+    width: 19%;
+  }
+
+  .main {
+    height: 38vh;
+  }
+}
+
+@media (max-width: 1450px) and (min-width: 1050px) {
+  .inner {
+    flex: 0 0 17%;
+    width: 17%;
+  }
+
+  .main {
+    height: 36vh;
+  }
+}
+
+@media (min-width: 1450px) {
+  .inner {
+    flex: 0 0 14%; /* Slightly increased size for large screens */
+    width: 14%;
+  }
+
+  .main {
+    height: 34vh; /* Slightly increased height for large screens */
+  }
+}
