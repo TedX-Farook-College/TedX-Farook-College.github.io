@@ -17,11 +17,11 @@ html {
 
 body {
   height: 100vh;
+  width: 100vw;
   background-color: var(--black);
   color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
-  padding: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -35,73 +35,74 @@ a,
 a:visited,
 a:hover {
   text-decoration: none;
+  color: red;
 }
-   /*Intro*/
 
-   .intro-animation {
-    animation: loom 5s forwards;
-    animation-delay: 0s;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
+/*Intro*/
+
+.intro-animation {
+  animation: loom 5s forwards;
+  animation-delay: 0s;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
 }
 
 @keyframes loom {
-    from {
-        opacity: 0;
-        font-size: 5px;
-    }
+  from {
+    opacity: 0;
+    font-size: 5px;
+  }
 
-    to {
-        opacity: 1;
-        font-size: 1550px;
-    }
+  to {
+    opacity: 1;
+    font-size: 1550px;
+  }
 }
 
 .intro-animation h1 {
-    font-weight: bold;
-    color: var(--red);
-    text-align: center;
+  font-weight: bold;
+  color: var(--red);
+  text-align: center;
 }
 
 .intro-animation.fadeout {
-    animation: fadeout 5s forwards;
-    display: none;
+  animation: fadeout 5s forwards;
+  display: none;
 }
 
 @keyframes fadeout {
-    from {
-        opacity: 1;
-        font-size: 1550px;
-    }
+  from {
+    opacity: 1;
+    font-size: 1550px;
+  }
 
-    to {
-        opacity: 0;
-        font-size: 750px;
-    }
+  to {
+    opacity: 0;
+    font-size: 750px;
+  }
 }
 
-.mains{
-    visibility: hidden;
-    animation: fadeins 6s forwards;
+.mains {
+  visibility: hidden;
+  animation: fadeins 6s forwards;
 }
 
 @keyframes fadeins {
-    from {
-        display: none;  
-        height: 0;
-        opacity: 0;
-    }
+  from {
+    display: none;
+    height: 0;
+    opacity: 0;
+  }
 
-    to {
-        display: block;
-        height: auto;
-        opacity: 1;
-    }
-
+  to {
+    display: block;
+    height: auto;
+    opacity: 1;
+  }
 }
 
 /* Intro End*/
@@ -114,6 +115,7 @@ a:hover {
   justify-content: space-between;
   padding: 0.75rem 3.2rem;
   position: fixed;
+  z-index: 500;
 }
 
 .nav-bg {
@@ -136,17 +138,22 @@ a:hover {
   padding-bottom: 0.5rem;
 }
 
+.nav-links a.active {
+  color: red;
+  font-weight: bold;
+}
+
 #toggle,
 #sidebar {
   display: none;
 }
 
 .gradient {
-  width:calc(100% - 4rem);
+  width: calc(100% - 4rem);
   z-index: -1;
   position: absolute;
   top: 1.5rem;
-  left:5rem;
+  left: 5rem;
 }
 
 .gradient-mobile {
@@ -174,7 +181,7 @@ a:hover {
   letter-spacing: 2px;
   max-width: 550px;
 }
-.payment-button{
+.payment-button {
   margin-top: 2rem;
   width: 100%;
   display: flex;
@@ -183,11 +190,11 @@ a:hover {
   justify-content: center;
   gap: 1rem;
 }
-.payment-button button{
+.payment-button button {
   background-color: var(--black);
   color: var(--white);
   padding: 1rem 2rem;
-  font-size:1.5rem;
+  font-size: 1.5rem;
   font-weight: bolder;
   display: flex;
   justify-content: space-between;
@@ -197,21 +204,18 @@ a:hover {
   outline: none;
   border-radius: 25px;
 }
-.payment-button button:hover{
+.payment-button button:hover {
   background-color: var(--white);
   color: var(--black);
   cursor: pointer;
 }
-.payment-button h3{
-  font-size:20px;
+.payment-button h3 {
+  font-size: 20px;
   font-weight: 500;
-  /* background: linear-gradient(90deg, #ff2500 -1.21%, #ffffff 80.71%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; */
-  letter-spacing:1px;
+  
+  letter-spacing: 1px;
 }
-.payment-button span{
+.payment-button span {
   color: var(--red);
   font-size: 22px;
   font-weight: 700;
@@ -219,7 +223,7 @@ a:hover {
 
 .container {
   margin-top: 50px;
-  padding: 0 5rem;
+  padding: 0 1.65rem;
 }
 
 /* ============================= Tab Section Start =============================   */
@@ -302,14 +306,25 @@ a:hover {
 /* ============================= Event Section End =============================   */
 
 /* ============================= Contact Section Start ============================= */
+
+.contact-section {
+  margin: -1rem;
+}
+
 .contact-sub {
-  margin-top: 10rem;
+  margin-top: 5rem;
+  margin-bottom: -3rem;
+  margin-left: 2rem;
 }
 
 .contact {
   display: grid;
   grid-template-columns: 2fr 3fr;
   margin-bottom: 50px;
+}
+
+.left-section {
+  margin-left: -3rem;
 }
 
 .contact .left-section {
@@ -404,7 +419,7 @@ a:hover {
   color: var(--white);
   font-size: medium;
   width: 100%;
-  font-family: "Arial"
+  font-family: "Arial";
 }
 
 .contact .right-section .right-field form .form-footer {
@@ -563,7 +578,6 @@ a:hover {
   background-clip: text;
 }
 
-
 .about-container {
   display: flex;
   flex-direction: column;
@@ -579,7 +593,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 50px;
-
 }
 
 .about-container .about-content h2 {
@@ -596,120 +609,64 @@ a:hover {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.container-as{
-  margin-top: 150px;
+.container-as {
+  margin-top: 100px;
 }
 /* ====================About page End============ */
 
-
 /* ====================Sponsor Page Start ============= */
-.sponsor-title {
-  padding-top: 2rem;
-  font-size: 2rem;
-  background: linear-gradient(90deg, #ff2500 0.41%, #ffffff 50.71%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 2rem;
-}
 
-.sponsor-container {
-  /* display: flex; */
-  display: grid;
-  grid-template-columns: repeat(3, 350px);
-  /* grid-template-rows: repeat(2,350px); */
-  gap: 2rem;
-}
-
-.sponsor-container .box {
-  padding:2.5rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--white);
-  border-radius: 12px;
-}
-
-.sponsor-container .box:hover {
-  border: 1px solid var(--red);
-  cursor: pointer;
-}
-
-.sponsor-container .box .first {
-  width: 15rem;
-  height: 11rem;
-}
-
-.sponsor-container .box .second {
-  width: 11rem;
-}
-.sponsor-container .box .third{
-  width: 11rem;
-}
-.sponsor-container .box .fourth{
-  width: 11rem;
-  /* mix-blend-mode:col; */
-}
-.sponsor-container .box .fifth{
-  width: 11rem;
-}
-.sponsor-container .box .sixth{
-  width: 11rem;
-}
-.sponsor-container .box .seventh{
-  width: 14rem;
-}
 /* ==================== Sponsor Page End =============== */
 
 /* =============contact page Start ================== */
+
 .organizer-container {
   display: flex;
+  flex-wrap: wrap; /* Allows the items to wrap into multiple rows */
   justify-content: center;
-  gap: 10rem;
+  align-items: center;
+  gap: 3rem; /* Adds space between the organizers */
 }
+
 .organizer,
 .co-organizer {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
-  /* width: 100%; */
+  width: 300px;
+  gap: 0.45rem;
 }
 
 .organizer-image {
   height: 300px;
-  border-radius: 50px;
+  width: 50%;
+  border-radius: 30px;
+  object-fit: cover;
 }
 
-.organizer h3,
-.co-organizer h3 {
-  font-size: 1.5rem;
+.organizer-container div {
+  flex: 1 1 35%;
+  max-width: 35%;
+  box-sizing: border-box;
 }
 
 .contact-container {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
+  
   margin-top: 150px;
-  padding: 0 5rem;
+  padding: 0 2rem;
 }
+
+.contact {
+  margin: 5rem 5.5rem 5rem 5.5rem;
+}
+
+
 
 /* ======================= Contact Page End ==================== */
 
 /* ====================== Speakers Page Start ================= */
-.speakers-container{
-  padding: 10rem 0rem;
-  display: grid;
-  grid-template-columns: repeat(3, auto );
-  align-items: center;
-  justify-content: center;
-  gap: 5.5rem;
-
-}
-.speakers-container img{
-  width: 300px;
-}
-
+/* ====================== Speakers Page End ================= */
 
 
 /* ================================================================ */
@@ -718,20 +675,26 @@ a:hover {
 /* ================================================================ */
 /* ================================================================ */
 
-@media (max-width: 600px) {
 
+
+
+
+@media (max-width: 600px) {
   * {
     -webkit-tap-highlight-color: transparent;
   }
 
   body {
-    margin: 0;
+      
+    
+  
+      margin: 0;
     padding: 0;
   }
 
   /* container class */
   .container {
-    padding: 0 2rem;
+    padding: 0 1.75rem;
   }
 
   /* Hamburger Menu */
@@ -749,7 +712,7 @@ a:hover {
   }
 
   #toggle::before {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -759,7 +722,7 @@ a:hover {
   }
 
   #toggle::after {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -769,7 +732,7 @@ a:hover {
   }
 
   #toogle::selection {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -799,6 +762,9 @@ a:hover {
     height: 100%;
     background-color: var(--black);
     transition: 0.5s;
+    z-index: 9999;
+    max-height: 100vh; /* Ensure it doesn't exceed the screen height */
+    overflow-y: auto;
   }
 
   #sidebar.active {
@@ -879,23 +845,23 @@ a:hover {
     text-align: center;
     font-size: 1.5rem;
   }
-  .payment-button button{
-    padding:0.75rem 1rem;
+  .payment-button button {
+    padding: 0.75rem 1rem;
     font-weight: 700;
     font-size: 1.3rem;
   }
-  .payment-button h3{
+  .payment-button h3 {
     font-size: 16px;
   }
-  .payment-button span{
+  .payment-button span {
     font-size: 18px;
   }
 
   /* ============================= Hero Section End ============================= */
   .container {
-    margin-top:100px;
+    margin-top: 100px;
   }
-  .container-index{
+  .container-index {
     margin-top: -5rem;
   }
 
@@ -920,7 +886,6 @@ a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
   }
 
   .event p {
@@ -930,16 +895,47 @@ a:hover {
 
   /* ============================= Event Section End ============================= */
   /* ============================= Contact Section Start ============================= */
-  .contact-sub {
-    margin-top: 3rem;
+
+  .contact-section {
+    margin-left: -2rem;
+    /* margin-right: 15rem; */
   }
+  .contact-sub {
+    white-space: nowrap;
+    margin-left: 2rem;
+  }
+
+  .contact-sub img{
+    margin-left: -2rem;
+  }
+
+ 
 
   .contact {
+    
     display: grid;
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 1px;
   }
 
+  .content h1 {
+    margin-bottom: 1rem;
+  }
+
+  
+
+  .left-section {
+    margin-left: 0.1rem;
+  }
+
+  
+
+  
+
+
+  /* .right-section {
+    margin-right: 5rem;
+  } */
   .contact .left-section .content h1 {
     background: linear-gradient(90deg, #ff2500 6.21%, #fff 45.71%);
     font-weight: 700;
@@ -949,10 +945,17 @@ a:hover {
   }
 
   .contact .left-section .content p {
-    margin-top: 12px;
+    margin-top: 2px;
     font-size: 16px;
     line-height: 22px;
   }
+
+  /* .right-section {
+    margin-right: 20px;
+    margin-left: -25px;
+  } */
+
+  
 
   /* ============================= Contact Section End ============================= */
   /* ============================= Footer Section Start ============================= */
@@ -997,6 +1000,10 @@ a:hover {
     max-width: 300px;
   }
 
+  .footer-company-about,.socials,.footer-right svg{
+    margin-left: -2rem;
+  }
+
   /* ============================= Footer Section End ============================= */
 
   /* ===================About Page Start================= */
@@ -1013,7 +1020,7 @@ a:hover {
   .about-container .about-content p {
     font-size: 18px;
   }
-  .container-as{
+  .container-as {
     padding: 0 0.5rem;
     margin-top: 100px;
   }
@@ -1021,62 +1028,155 @@ a:hover {
   /* ================ About Page End =================== */
 
   /* =================== Sponsor Page Start ==============  */
-  .sponsor-title {
-    padding-top: 0px;
-  }
-
-  .sponsor-container {
-    padding: 0;
-    display: grid;
-    grid-template-columns: 300px;
-    gap: 1.8rem;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sponsor-container .box {
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
+  
 
   /* ===================== Sponsor Page End ============== */
 
   /* =============== Contact Page Start ================ */
+
+  
+
   .contact-container {
-    padding: 0 2rem;
-    margin-top: 100px;
+    margin-left: 9rem;
+    margin-right: 8rem;
   }
 
-  .organizer-container {
-    flex-direction: column;
-    gap: 2rem;
+  .contact {
+    margin-top: 5rem;
+    margin-left: 2rem;
+  }
+
+  .content{
+    margin-left: 0.1rem;
+  }
+
+
+
+  .right-section {
+    width: 85vw;
+    margin-top: 2rem;
+    margin-left: 0.25rem;
+    margin-right: 1rem;
+  }
+
+  .organizer-container div {
+    flex: 1 1 100%;
+
+    max-width: 100%;
+  }
+
+  .organizer h3,
+  .co-organizer h3 {
+    font-size: 15px;
+  }
+
+  .organizer h4,
+  .co-organizer h4 {
+    font-size: 12px;
+  }
+
+  .organizer h5,
+  .co-organizer h5 {
+    font-size: 10px;
   }
 
   .organizer-image {
-    height: 250px;
+    width: 200px;
+    height: 280px;
   }
+
+  
+
+  .map {
+    width: 50%;
+    margin-left: 0.25rem;
+    margin-right: 2rem;
+  }
+
+  
+  .organizer-container {
+    margin-left: 0.5rem;
+    margin-right: 9rem;
+  }
+
+  .organizer,
+  .co-organizer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .organizer h3,
+  .co-organizer h3,
+  .organizer h4,
+  .co-organizer h4,
+  .organizer h5,
+  .co-organizer h5 {
+    margin: 2px 0;
+  }
+
+  .organizer h3,
+  .co-organizer h3 {
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .organizer h5,
+  .co-organizer h5 {
+    white-space: nowrap;
+    font-size: 10px;
+  }
+
+  .organizer h4,
+  .co-organizer h4 {
+    white-space: nowrap;
+    font-size: 13px;
+  }
+
+  .form-footer a{
+    font-size: 5px;
+    /* width: 30%; */
+  }
+  
 
   /* =============== Contact Page End ================ */
 
   /* =============== Speakers Page Start ============== */
-  .speakers-container{
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: 250px;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem 0;
-  }
-  .speakers-container img {
-    width: 250px;
-  }
+  
   /* =============== Speakers Page End ============= */
 }
 
 
-@media (max-width: 950px) and (min-width:600px) {
+@media (max-width: 400px) {
+  .right-section {
+    width: 78%;
+    margin-right: 1rem;
+  }
+}
 
+
+
+@media (max-width: 768px) {
+  /* contact page start */
+
+  .organizer-container div {
+    flex: 1 1 80%;
+    max-width: 80%;
+  }
+
+  .organizer-image {
+    height: 250px;
+    width: 220px;
+  }
+  /* contact page end */
+}
+
+@media (max-width: 950px) and (min-width: 600px) {
   * {
     -webkit-tap-highlight-color: transparent;
   }
@@ -1088,7 +1188,7 @@ a:hover {
 
   /* container class */
   .container {
-    padding: 0 2rem;
+    padding: 0 1.2rem;
   }
 
   /* Hamburger Menu */
@@ -1106,7 +1206,7 @@ a:hover {
   }
 
   #toggle::before {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -1116,7 +1216,7 @@ a:hover {
   }
 
   #toggle::after {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -1126,7 +1226,7 @@ a:hover {
   }
 
   #toogle::selection {
-    content: '';
+    content: "";
     position: fixed;
     height: 2px;
     width: 1.5rem;
@@ -1217,8 +1317,7 @@ a:hover {
   .hero {
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
+   
     gap: 12px;
   }
 
@@ -1233,10 +1332,10 @@ a:hover {
     text-align: center;
     font-size: 1.5rem;
   }
-  .payment-button h3{
+  .payment-button h3 {
     font-size: 18px;
   }
-  .payment-button span{
+  .payment-button span {
     font-size: 20px;
   }
 
@@ -1266,7 +1365,6 @@ a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
   }
 
   .event p {
@@ -1277,7 +1375,16 @@ a:hover {
   /* ============================= Event Section End ============================= */
   /* ============================= Contact Section Start ============================= */
   .contact-sub {
-    margin-top: 3rem;
+    margin-top: 6rem;
+    margin-left: 5rem;
+  }
+
+.contact-sub img{
+  margin-left: -2rem;
+}
+
+  .contact-section {
+    margin-left: 0.00001rem;
   }
 
   .contact {
@@ -1302,7 +1409,6 @@ a:hover {
 
   /* ============================= Contact Section End ============================= */
 
-
   /* =============================== Footer Section Start =========================  */
   .footer-main {
     display: flex;
@@ -1319,44 +1425,115 @@ a:hover {
   /* =============================== About Page End ====================== */
 
   /* =============================== Sponsor Page Start ==================== */
-  .container-sponsor {
-    margin-top: 100px;
-  }
-
-  .sponsor-title {
-    padding-top: 0px;
-  }
-
-  .sponsor-container {
-    gap: 3rem;
-    display: grid;
-    grid-template-columns: repeat(2, 350px);
-  }
-
-  .sponsor-container .box {
-    align-items: center;
-    justify-content: center;
-    width: 85%;
-  }
+  
 
   /* ===================== Sponsor Page End ============== */
 
   /* =============== Contact Page Start ================ */
-  .contact-container {
-    margin-top: 100px;
+  
+
+  .left-section {
+    margin-left: -4rem;
   }
 
-  .organizer-image {
-    height: 250px;
+  .right-section {
+    margin-left: 0.1rem;
+    margin-right: -5rem;
+  }
+
+  .contact-sub {
+    margin-left: 1rem;
   }
 
   /* =============== Contact Page End ================ */
 
-  /* ================ Speakes Page Start ============= */
-  .speakers-container{
-    margin-top: 3rem;
-    padding:2rem 0;
-    display: grid;
-    grid-template-columns: repeat(2 , 300px);
-  }
+  /* ================ Speakers Page Start ============= */
+  /* ================ Speakers Page End ============= */
+ 
 }
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  /* contact section start */
+
+  .contact-sub {
+    margin-left: 1rem;
+  }
+
+  .contact {
+    margin-left: 3rem;
+  }
+  .left-section {
+    margin-right: 6rem;
+  }
+
+  /* contact section end */
+
+  /* contact page start */
+
+  .contact {
+    margin-left: 6rem;
+  }
+
+  .organizer-container div {
+    flex: 1 1 45%; /* Reduce the width for better fit */
+    max-width: 45%;
+  }
+
+  .organizer-image {
+    height: 250px; /* Adjust the image size for medium screens */
+  }
+
+  .right-section {
+    margin-right: 3rem;
+  }
+  /* contact page end */
+}
+
+@media (max-width: 1180px)  {
+  .nav {
+    padding: 1rem 2rem; /* Adjust padding for smaller screens */
+  }
+
+  .nav .nav-links a {
+    margin: 0 1rem; /* Reduce margin between links */
+  }
+
+  .nav .nav-logo img {
+    width: 12rem;
+  }
+
+  /* contact section start */
+  .left-section {
+    margin-right: 5rem;
+  }
+
+  .contact-sub {
+    margin-left: 4rem;
+  }
+  /* contact section end */
+
+  /* contact page start */
+
+  .organizer-container div {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+  /* contact page end */
+}
+
+/* coming soon style */
+.main-content {
+  padding-top: 10px; /
+}
+
+.image-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.responsive-image {
+  object-fit: fill;
+  width: 100%;
+  height: auto;
+}
+
