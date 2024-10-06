@@ -624,6 +624,7 @@ a:hover {
   display: flex;
   flex-wrap: wrap; /* Allows the items to wrap into multiple rows */
   justify-content: center;
+  align-items: center;
   gap: 3rem; /* Adds space between the organizers */
 }
 
