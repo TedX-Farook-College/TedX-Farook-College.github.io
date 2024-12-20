@@ -212,7 +212,7 @@ a:hover {
 .payment-button h3 {
   font-size: 20px;
   font-weight: 500;
-  
+
   letter-spacing: 1px;
 }
 .payment-button span {
@@ -652,7 +652,6 @@ a:hover {
 }
 
 .contact-container {
-  
   margin-top: 150px;
   padding: 0 2rem;
 }
@@ -661,13 +660,10 @@ a:hover {
   margin: 5rem 5.5rem 5rem 5.5rem;
 }
 
-
-
 /* ======================= Contact Page End ==================== */
 
 /* ====================== Speakers Page Start ================= */
 /* ====================== Speakers Page End ================= */
-
 
 /* ================================================================ */
 /* ================================================================ */
@@ -675,20 +671,13 @@ a:hover {
 /* ================================================================ */
 /* ================================================================ */
 
-
-
-
-
 @media (max-width: 600px) {
   * {
     -webkit-tap-highlight-color: transparent;
   }
 
   body {
-      
-    
-  
-      margin: 0;
+    margin: 0;
     padding: 0;
   }
 
@@ -905,14 +894,11 @@ a:hover {
     margin-left: 2rem;
   }
 
-  .contact-sub img{
+  .contact-sub img {
     margin-left: -2rem;
   }
 
- 
-
   .contact {
-    
     display: grid;
     grid-template-columns: 1fr;
     gap: 1px;
@@ -922,16 +908,9 @@ a:hover {
     margin-bottom: 1rem;
   }
 
-  
-
   .left-section {
     margin-left: 0.1rem;
   }
-
-  
-
-  
-
 
   /* .right-section {
     margin-right: 5rem;
@@ -954,8 +933,6 @@ a:hover {
     margin-right: 20px;
     margin-left: -25px;
   } */
-
-  
 
   /* ============================= Contact Section End ============================= */
   /* ============================= Footer Section Start ============================= */
@@ -1000,7 +977,9 @@ a:hover {
     max-width: 300px;
   }
 
-  .footer-company-about,.socials,.footer-right svg{
+  .footer-company-about,
+  .socials,
+  .footer-right svg {
     margin-left: -2rem;
   }
 
@@ -1028,13 +1007,10 @@ a:hover {
   /* ================ About Page End =================== */
 
   /* =================== Sponsor Page Start ==============  */
-  
 
   /* ===================== Sponsor Page End ============== */
 
   /* =============== Contact Page Start ================ */
-
-  
 
   .contact-container {
     margin-left: 9rem;
@@ -1046,11 +1022,9 @@ a:hover {
     margin-left: 2rem;
   }
 
-  .content{
+  .content {
     margin-left: 0.1rem;
   }
-
-
 
   .right-section {
     width: 85vw;
@@ -1085,15 +1059,12 @@ a:hover {
     height: 280px;
   }
 
-  
-
   .map {
     width: 50%;
     margin-left: 0.25rem;
     margin-right: 2rem;
   }
 
-  
   .organizer-container {
     margin-left: 0.5rem;
     margin-right: 9rem;
@@ -1138,19 +1109,17 @@ a:hover {
     font-size: 13px;
   }
 
-  .form-footer a{
+  .form-footer a {
     font-size: 5px;
     /* width: 30%; */
   }
-  
 
   /* =============== Contact Page End ================ */
 
   /* =============== Speakers Page Start ============== */
-  
+
   /* =============== Speakers Page End ============= */
 }
-
 
 @media (max-width: 400px) {
   .right-section {
@@ -1158,8 +1127,6 @@ a:hover {
     margin-right: 1rem;
   }
 }
-
-
 
 @media (max-width: 768px) {
   /* contact page start */
@@ -1317,7 +1284,7 @@ a:hover {
   .hero {
     display: flex;
     flex-direction: column;
-   
+
     gap: 12px;
   }
 
@@ -1379,9 +1346,9 @@ a:hover {
     margin-left: 5rem;
   }
 
-.contact-sub img{
-  margin-left: -2rem;
-}
+  .contact-sub img {
+    margin-left: -2rem;
+  }
 
   .contact-section {
     margin-left: 0.00001rem;
@@ -1425,12 +1392,10 @@ a:hover {
   /* =============================== About Page End ====================== */
 
   /* =============================== Sponsor Page Start ==================== */
-  
 
   /* ===================== Sponsor Page End ============== */
 
   /* =============== Contact Page Start ================ */
-  
 
   .left-section {
     margin-left: -4rem;
@@ -1449,7 +1414,6 @@ a:hover {
 
   /* ================ Speakers Page Start ============= */
   /* ================ Speakers Page End ============= */
- 
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
@@ -1489,7 +1453,7 @@ a:hover {
   /* contact page end */
 }
 
-@media (max-width: 1180px)  {
+@media (max-width: 1180px) {
   .nav {
     padding: 1rem 2rem; /* Adjust padding for smaller screens */
   }
@@ -1522,7 +1486,7 @@ a:hover {
 }
 
 /* coming soon style */
-.main-content {
+/* .main-content {
   padding-top: 10px; /
 }
 
@@ -1535,5 +1499,265 @@ a:hover {
   object-fit: fill;
   width: 100%;
   height: auto;
+} */
+
+/* book your tickets style */
+
+.main-content {
+  padding: 1px;
+  position: relative;
+  overflow: hidden;
+  /* background-image: url("../images/x2\ \(3\).png"); */
+  /* background-size: contain; */
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.main-content::before {
+  content: "";
+  position: absolute;
+  top: 150px; /* Start below the header */
+  left: 0;
+  right: 0;
+  height: calc(100% - 200px);
+  background-image: url("../images/x2\ \(3\).png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.center-text {
+  font-size: 5vw; /* Smaller for better scaling */
+  font-weight: bold;
+  margin: 10px 0;
+  color: white;
+}
+
+span {
+  color: #ff0000; /* Highlighted text */
+}
+
+.subheading {
+  font-size: 2vw; /* Proportional text size */
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Button styling */
+.button {
+  padding: 12px 25px;
+  font-size: 1em; /* Ensure size is consistent */
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Prevent text wrapping */
+  text-align: center; /* Center-align text */
+}
+
+.button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+/* Glowing circle styling */
+.glowing-circle {
+  width: 30vw; /* Smaller, proportional size */
+  height: 30vw;
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.4) 15%,
+    rgba(255, 0, 0, 0.1) 50%,
+    rgba(255, 0, 0, 0) 100%
+  );
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+/* Responsive design using media queries */
+@media (max-width: 1024px) {
+  .center-text {
+    font-size: 6vw; /* Slightly larger text for tablets */
+  }
+
+  .subheading {
+    font-size: 3vw; /* Adjusted for medium screens */
+  }
+
+  .button {
+    padding: 10px 20px; /* Smaller button */
+    font-size: 0.9em;
+  }
+
+  .glowing-circle {
+    width: 25vw;
+    height: 25vw; /* Adjusted for tablet screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .center-text {
+    font-size: 6.5vw;
+  }
+
+  .subheading {
+    font-size: 3.5vw;
+    margin-bottom: 15px;
+  }
+
+  .button {
+    /* width: 75%;  */
+    padding: 10px;
+    font-size: 0.85em; /* Slightly smaller font size */
+  }
+
+  .glowing-circle {
+    width: 30vw;
+    height: 30vw; /* Adjusted circle size */
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    min-height: 60vh;
+  }
+  .center-text {
+    font-size: 7.5vw; /* Adjusted font size for smaller devices */
+  }
+
+  .subheading {
+    font-size: 3vw; /* Adjusted subheading */
+  }
+
+  .button {
+    width: 30%; /* Full-width button on mobile */
+    padding: 9px;
+    font-size: 0.7em;
+  }
+
+  .glowing-circle {
+    width: 35vw;
+    height: 35vw; /* Adjusted for mobile screens */
+  }
+}
+
+/* @media (max-width: 300px) {
+  .main-content {
+    min-height: 50vh;
+  }
+} */
+/* date style */
+
+.responsive-image-container {
+  width: 100%; /* Ensures the container spans the full width */
+  overflow: hidden; /* Prevents overflow if needed */
+}
+
+/* Image responsiveness */
+.responsive-image-container img {
+  display: block; /* Removes any inline spacing */
+  width: 100%; /* Makes the image adapt to the container's width */
+  height: auto; /* Maintains the image's aspect ratio */
+  object-fit: cover; /* Ensures it fills the container while keeping proportions */
+}
+
+@media (max-width: 480px) {
+  .responsive-image-container {
+    height: 20vh;
+  }
+}
+
+/* @media (max-width: 300px) {
+  .responsive-image-container {
+    height: 20vh;
+  }
+} */
+
+/* event theme heading style */
+
+/* Base styling for the heading */
+.event-theme-heading {
+  margin: 30px; /* Adds space on all sides of the heading */
+  margin-left: 10%; /* Adjusts the left margin for alignment */
+  margin-right: 10%; /* Adds breathing room on the right side */
+  font-size: 1rem; /* Sets a responsive font size */
+  font-family: Arial, sans-serif; /* Optional: Set a clean font */
+  /* Optional: A neutral color for better readability */
+  text-align: left; /* Ensures the text is left-aligned */
+  line-height: 1.5; /* Improves readability by spacing lines */
+  font-size: x-large;
+  background: linear-gradient(90deg, #ff2500 2%, #ffffff 20%);
+  font-weight: 750;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+  z-index: -1;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .event-theme-heading {
+    font-size: 1.5rem; /* Adjusts font size for smaller screens */
+    margin-left: 5%; /* Reduces side margins for smaller viewports */
+    margin-right: 5%;
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+  .event-theme-heading {
+    font-size: 2.5rem; /* Increases font size for larger screens */
+  }
+}
+
+/* theme style */
+
+.centered-image-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+}
+
+@media (max-width: 480px) {
+  .centered-image-container {
+    height: 40vh;
+  }
+}
+
+/* Styling for the image */
+.centered-image-container img {
+  max-width: 90%; /* Prevents the image from overflowing horizontally */
+  max-height: 90%; /* Prevents the image from overflowing vertically */
+  width: auto; /* Maintains the image's original aspect ratio */
+  height: auto; /* Ensures the image doesn't stretch */
+  object-fit: contain; /* Adjusts content to fit within the defined space */
+}
+
+/* General styles for sections */
+.main-content,
+.responsive-image-container,
+.centered-image-container,
+.event-theme-heading {
+  margin-bottom: 20px; /* Consistent spacing between sections */
+}
