@@ -504,6 +504,7 @@
             </div>
             <div class="description">
               <p>• Only for College students*</p>
+              <p>• Bring your student ID for entry*</p>
             </div>
           </div>
 
@@ -539,6 +540,7 @@
 
         // Get the value of the selected ticket and set the hidden input
         ticketType = card.getAttribute("data-value");
+
         document.getElementById("ticketType").value = ticketType;
       }
       document.addEventListener("DOMContentLoaded", function () {
@@ -630,6 +632,11 @@
             const category = document.getElementById("category").value;
             const ticketType = document.getElementById("ticketType").value;
 
+            if (!ticketType) {
+              alert("Please select a ticket type");
+              return;
+            }
+
             let ticketData = {};
             if (ticketType === "TEDx General") {
               ticketData = {
@@ -653,6 +660,8 @@
             formData.append("tickets[]", JSON.stringify(ticketData));
 
             submitButton.disabled = true;
+            submitButton.style.backgroundColor = "gray";
+            submitButton.style.cursor = "not-allowed";
 
             try {
               const response = await fetch(
@@ -718,6 +727,8 @@
               alert("There was a network error. Please try again.");
             } finally {
               submitButton.disabled = false;
+              submitButton.style.backgroundColor = "red";
+              submitButton.style.cursor = "allowed";
             }
           });
       });
