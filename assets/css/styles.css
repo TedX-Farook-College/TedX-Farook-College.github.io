@@ -615,7 +615,10 @@ a:hover {
 /* ====================About page End============ */
 
 /* ====================Sponsor Page Start ============= */
-
+.image-container {
+  margin-top: 250px;
+  object-fit: contain;
+}
 /* ==================== Sponsor Page End =============== */
 
 /* =============contact page Start ================== */
@@ -1007,6 +1010,10 @@ a:hover {
   /* ================ About Page End =================== */
 
   /* =================== Sponsor Page Start ==============  */
+
+  .image-container {
+    margin: 600px;
+  }
 
   /* ===================== Sponsor Page End ============== */
 

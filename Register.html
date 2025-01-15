@@ -340,7 +340,80 @@
         }
       }
 
-      /* Responsive adjustments for 2nd section*/
+      /* Phone Input Container */
+      .phone-input-container {
+        display: flex;
+        align-items: flex-start; /* Aligns items vertically in the center */
+        gap: 10px; /* Adds spacing between the dropdown and input */
+        width: 100%; /* Full width of the container */
+        margin-top: 6px;
+      }
+
+      /* Country Code Dropdown */
+      .country-code {
+        flex: 0 0 auto; /* Prevents shrinking or growing */
+        width: 70px; /* Sets a consistent width */
+        padding: 10px 5px; /* Padding adjusted for better spacing */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: white;
+        text-align: left;
+      }
+
+      /* Phone Number Input */
+      .phone-number {
+        flex: 1; /* Takes up remaining space */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      /* Focus Styles */
+      .phone-input-container select:focus,
+      .phone-input-container input:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+      }
+
+      /* Responsive Adjustments for Small Screens */
+      @media (max-width: 500px) {
+        .phone-input-container {
+          gap: 8px;
+          justify-content: center;
+        }
+
+        .country-code {
+          font-size: 13px;
+          padding: 8px 2px;
+          width: 65px;
+          /* Full width on small screens */
+        }
+
+        .phone-number {
+          padding: 5px;
+        }
+      }
+
+      @media (max-width: 365px) {
+        .phone-input-container {
+          gap: 8px;
+          justify-content: center;
+        }
+
+        .country-code {
+          font-size: 11px;
+
+          width: 55px;
+          /* Full width on small screens */
+        }
+
+        .phone-number {
+          padding: 5px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -367,17 +440,23 @@
               <span class="error-message" id="nameError"></span>
             </div>
 
-            <div class="form-group">
-              <label for="phone">Phone:</label>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <div class="phone-input-container">
+              <select id="countryCode" name="countryCode" class="country-code">
+                <option value="+91" selected>+91</option>
+              </select>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 required
                 placeholder="Phone Number"
+                class="phone-number"
               />
-              <span class="error-message" id="phoneError"></span>
             </div>
+            <span class="error-message" id="phoneError"></span>
+          </div>
 
             <div class="form-group">
               <label for="email">Email:</label>
@@ -430,44 +509,35 @@
               </div>
             </div>
 
-            <div
-              class="ticket-card ticket-option"
-              data-value="Farookians"
-              onclick="selectTicket(this)"
-            >
-              <div class="ticket-info">
-                <h3>Student Ticket</h3>
-                <h2><sup>₹</sup>600</h2>
-              </div>
-              <div class="description">
-                <p>• Only for College students*</p>
-              </div>
+          <div
+            class="ticket-card ticket-option"
+            data-value="Farookians"
+            onclick="selectTicket(this)"
+          >
+            <div class="ticket-info">
+              <h3>Student Ticket</h3>
+              <h2><sup>₹</sup>600</h2>
             </div>
+            <div class="description">
+              <p>• Only for College students*</p>
+              <p>• Bring your student ID for entry*</p>
+            </div>
+          </div>
 
             <input type="hidden" id="ticketType" name="ticketType" />
 
-            <div class="button-container">
-              <button type="button" id="backButton">Back</button>
-              <button type="submit">Pay Now!</button>
-            </div>
-          </form>
-        </div>
+          <div class="button-container">
+            <button type="button" id="backButton">Back</button>
+            <button type="submit" id="submit-button">Pay Now!</button>
+          </div>
+        </form>
       </div>
-    </main>
-
-    <footer>
-      <p style="font-size: smaller">
-        Form Powered by
-        <a style="text-decoration: none" href="https://makemypass.com/"
-          >MakeMyPass</a
-        >
-      </p>
-    </footer>
+    </div>
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
       function hideDummyOption() {
-        const selectElement = document.getElementById("ticketSelect");
+        const selectElement = document.getElementById("category");
         const dummyOption = selectElement.querySelector('option[value=""]');
 
         if (selectElement.value !== "") {
@@ -486,6 +556,7 @@
 
         // Get the value of the selected ticket and set the hidden input
         ticketType = card.getAttribute("data-value");
+
         document.getElementById("ticketType").value = ticketType;
       }
       document.addEventListener("DOMContentLoaded", function () {
@@ -493,8 +564,10 @@
         const step2 = document.getElementById("step-2");
         const nextBtn = document.getElementById("next-btn");
         const backButton = document.getElementById("backButton");
+        const submitButton = document.getElementById("submit-button");
 
         const nameInput = document.getElementById("name");
+        const countryCodeSelect = document.getElementById("countryCode");
         const phoneInput = document.getElementById("phone");
         const emailInput = document.getElementById("email");
         const nameError = document.getElementById("nameError");
@@ -517,6 +590,21 @@
               ? "Name must be at least 2 characters*"
               : "";
         });
+
+        fetch("phoneCountryCodes.json")
+          .then((response) => response.json())
+          .then((data) => {
+            // Populate the country code dropdown
+            data.forEach((country) => {
+              const option = document.createElement("option");
+              option.value = country.dial_code;
+              option.textContent = `${country.dial_code}`;
+              countryCodeSelect.appendChild(option);
+            });
+          })
+          .catch((error) =>
+            console.error("Error loading country codes:", error)
+          );
 
         phoneInput.addEventListener("input", () => {
           phoneError.textContent = phonePattern.test(phoneInput.value)
@@ -553,8 +641,17 @@
           .addEventListener("submit", async function (event) {
             event.preventDefault();
 
+            const countryCode = countryCodeSelect.value;
+            const phoneNumber = phoneInput.value;
+            const fullPhoneNumber = countryCode + phoneNumber;
+
             const category = document.getElementById("category").value;
             const ticketType = document.getElementById("ticketType").value;
+
+            if (!ticketType) {
+              alert("Please select a ticket type");
+              return;
+            }
 
             let ticketData = {};
             if (ticketType === "TEDx General") {
@@ -573,10 +670,14 @@
 
             const formData = new FormData();
             formData.append("name", nameInput.value);
-            formData.append("phone", phoneInput.value);
+            formData.append("phone", fullPhoneNumber);
             formData.append("email", emailInput.value);
             formData.append("category", category);
             formData.append("tickets[]", JSON.stringify(ticketData));
+
+            submitButton.disabled = true;
+            submitButton.style.backgroundColor = "gray";
+            submitButton.style.cursor = "not-allowed";
 
             try {
               const response = await fetch(
@@ -640,6 +741,10 @@
             } catch (error) {
               console.error("Network error:", error);
               alert("There was a network error. Please try again.");
+            } finally {
+              submitButton.disabled = false;
+              submitButton.style.backgroundColor = "red";
+              submitButton.style.cursor = "allowed";
             }
           });
       });
