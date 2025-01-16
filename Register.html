@@ -231,9 +231,9 @@
         transition: background 0.3s ease;
       }
 
-      .button-container button:hover {
+      /* .button-container button:hover {
         background: #ff2e2e;
-      }
+      } */
 
       @media (max-width: 768px) {
         .heading {
@@ -420,10 +420,13 @@
         padding: 5px;
         margin-bottom: 15px;
         color: white;
+        font-weight: 500;
 
+        border: 1px solid red;
+        background-color: red;
         border-radius: 5px;
-        font-size: 25px;
-        font-weight: 600;
+        font-size: 12px;
+
         text-align: center;
       }
     </style>
@@ -719,11 +722,8 @@
 
               const responseData = await response.json();
 
-              if (
-                responseData.hasError &&
-                responseData.message?.general?.includes("Event is full")
-              ) {
-                errorMessage.textContent = "Event is full";
+              if (responseData.hasError && responseData.message?.general?.[0]) {
+                errorMessage.textContent = responseData.message.general[0];
                 errorMessage.style.display = "block";
                 return;
               }
@@ -783,7 +783,7 @@
               alert("There was a network error. Please try again.");
             } finally {
               submitButton.disabled = false;
-              submitButton.style.backgroundColor = "red";
+              submitButton.style.backgroundColor = "";
               submitButton.style.cursor = "allowed";
             }
           });
