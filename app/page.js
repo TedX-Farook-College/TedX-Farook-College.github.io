@@ -1,103 +1,139 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { Marquee } from '@/components/magicui/marquee';
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
-}
+const Home = () => {
+	const [timeLeft, setTimeLeft] = useState({
+		days: 0,
+		hours: 0,
+		minutes: 0,
+		seconds: 0,
+	});
+
+	useEffect(() => {
+		const targetDate = new Date('2025-12-31T23:59:59').getTime();
+
+		const interval = setInterval(() => {
+			const now = new Date().getTime();
+			const distance = targetDate - now;
+
+			if (distance < 0) {
+				clearInterval(interval);
+				return;
+			}
+
+			setTimeLeft({
+				days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+				hours: Math.floor(
+					(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+				),
+				minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+				seconds: Math.floor((distance % (1000 * 60)) / 1000),
+			});
+		}, 1000);
+
+		return () => clearInterval(interval);
+	}, []);
+
+	return (
+		<div className="relative min-h-screen bg-[#111111] flex flex-col items-center justify-center overflow-hidden">
+			{/* Background Image */}
+			<div className="absolute inset-0 bg-[url('/images/brutalist-pattern.jpg')] bg-center bg-no-repeat bg-cover opacity-30" />
+
+			{/* Marquee */}
+			{/* Desktop: diagonal marquee */}
+			<div className="hidden sm:block absolute top-0 left-0 -translate-x-96 xl:translate-y-96 lg:-translate-x-[38rem] xl:-translate-x-[42rem] 2xl:-translate-x-[90rem] w-[150%] transform origin-top-left z-20">
+				<Marquee className="[--duration:5s] bg-[#E62B1E] flex items-center justify-center transform -rotate-45">
+					<p className="py-2 sm:py-3 md:py-4 text-white text-xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-8xl font-bold">
+						Coming Soon
+					</p>
+				</Marquee>
+			</div>
+			{/* Mobile: horizontal marquee */}
+			<div className="block sm:hidden w-full z-20 top-0">
+				<Marquee className="[--duration:5s] bg-[#E62B1E] text-white text-lg font-bold flex items-center justify-center">
+					Coming Soon
+				</Marquee>
+			</div>
+
+			{/* TEDx Logo - Mobile Above Countdown */}
+			<div className="block sm:hidden mt-6 z-10">
+				<Image
+					src="/images/tedx-logo.png"
+					alt="TEDx Logo"
+					width={160}
+					height={160}
+					className="w-28 mx-auto"
+				/>
+			</div>
+
+			{/* Countdown */}
+			<div className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-extrabold text-white text-center mt-6 sm:mt-20 z-10">
+				<div className="flex justify-center gap-4 sm:gap-6 md:gap-8">
+					<div>
+						<span>{timeLeft.days}</span>
+						<span className="block text-xs sm:text-sm md:text-base">Days</span>
+					</div>
+					<div>
+						<span>{timeLeft.hours}</span>
+						<span className="block text-xs sm:text-sm md:text-base">Hours</span>
+					</div>
+					<div>
+						<span>{timeLeft.minutes}</span>
+						<span className="block text-xs sm:text-sm md:text-base">
+							Minutes
+						</span>
+					</div>
+					<div>
+						<span>{timeLeft.seconds}</span>
+						<span className="block text-xs sm:text-sm md:text-base">
+							Seconds
+						</span>
+					</div>
+				</div>
+			</div>
+
+			{/* Subtext */}
+			<p className="text-base sm:text-lg md:text-xl text-[#CCCCCC] text-center mt-4 sm:mt-8 z-10 px-4">
+				Season 3 awaits
+			</p>
+
+			{/* TEDx Logo - Desktop Bottom Left */}
+			<div className="hidden sm:block absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10">
+				<Image
+					src="/images/tedx-logo.png"
+					alt="TEDx Logo"
+					width={160}
+					height={160}
+					className="w-24 sm:w-32 md:w-40 lg:w-56 xl:w-72 2xl:w-96"
+				/>
+			</div>
+
+			{/* Brutalist Object Image */}
+			{/* Desktop: bottom right small */}
+			<div className="hidden sm:flex absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-10 w-full justify-end">
+				<Image
+					src="/images/brutalist-object.png"
+					alt="Brutalist Object"
+					width={1700}
+					height={900}
+					className="w-1/3 rounded-3xl"
+				/>
+			</div>
+			{/* Mobile: full width bottom */}
+			<div className="block sm:hidden mt-6 w-full px-4 z-10">
+				<Image
+					src="/images/brutalist-object.png"
+					alt="Brutalist Object"
+					width={1700}
+					height={900}
+					className="w-full rounded-3xl"
+				/>
+			</div>
+		</div>
+	);
+};
+
+export default Home;
