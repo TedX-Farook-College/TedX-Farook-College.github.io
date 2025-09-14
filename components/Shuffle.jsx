@@ -347,8 +347,16 @@ const Shuffle = ({
 		}
 	);
 
-	const baseTw =
-		'inline-block whitespace-normal break-words will-change-transform uppercase text-[4rem] leading-none';
+const baseTw =
+	'inline-block whitespace-normal break-words will-change-transform uppercase ' +
+	// fluid font size
+	'text-[clamp(1.25rem,5vw,4rem)] ' +
+	// line-height responsive
+	'leading-snug sm:leading-snug md:leading-tight lg:leading-none ' +
+	// tracking responsive
+	'tracking-normal sm:tracking-wide md:tracking-wider lg:tracking-[0.15em]';
+
+
 	const commonStyle = {
 		textAlign,
 		fontFamily: `'Press Start 2P', sans-serif`,

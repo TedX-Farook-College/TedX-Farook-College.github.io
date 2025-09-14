@@ -6,6 +6,7 @@ import { Marquee } from '@/components/magicui/marquee';
 import Shuffle from '@/components/Shuffle';
 import { Press_Start_2P } from 'next/font/google';
 import { TextAnimate } from '@/components/magicui/text-animate';
+import CountUp from '@/components/CountUp';
 
 const Press2P = Press_Start_2P({
 	variable: '--font-Press_Start_2P',
@@ -51,9 +52,17 @@ const Home = () => {
 		<div className="relative min-h-screen bg-[#000000] flex flex-col items-center justify-center overflow-hidden">
 			{/* Background Texture */}
 			<div className="absolute inset-0 bg-[url('/images/brutalist-pattern.jpg')] bg-center bg-no-repeat bg-cover opacity-20" />
+			<div className="sm:hidden fixed top-0 left-0 right-0 z-20">
+				<Marquee
+					repeat={10}
+					className="[--duration:5s] bg-[#E62B1E] text-white text-lg font-bold flex items-center justify-center"
+				>
+					COMING SOON
+				</Marquee>
+			</div>
 
 			{/* Marquee */}
-			<div className="hidden sm:block absolute top-0 left-0 -translate-x-96 xl:translate-y-96 lg:-translate-x-[38rem] xl:-translate-x-[42rem] 2xl:-translate-x-[90rem] w-[150%] transform origin-top-left z-20">
+			<div className="hidden sm:block absolute top-0 left-0 -translate-x-96 lg:translate-y-80 2xl:translate-y-96 lg:-translate-x-[38rem] xl:-translate-x-[42rem] 2xl:-translate-x-[90rem] w-[150%] transform origin-top-left z-20">
 				<Marquee className="[--duration:5s] bg-[#E62B1E] flex items-center justify-center transform -rotate-45">
 					<p className="py-2 sm:py-3 md:py-4  text-xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-8xl font-bold title text-[#E62B1E]">
 						COMING SOON
@@ -62,11 +71,6 @@ const Home = () => {
 			</div>
 
 			{/* Mobile: horizontal marquee */}
-			<div className="block sm:hidden w-full z-20 top-0">
-				<Marquee className="[--duration:5s] bg-[#E62B1E] text-white text-lg font-bold flex items-center justify-center">
-					COMING SOON
-				</Marquee>
-			</div>
 
 			{/* TEDx Logo - Mobile */}
 			<div className="block sm:hidden mt-6 z-10">
@@ -83,7 +87,7 @@ const Home = () => {
 			<div className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-extrabold text-[#FFFFFF] text-center mt-6 sm:mt-20 z-10">
 				<div className="flex justify-center gap-4 sm:gap-6 md:gap-8">
 					<div>
-						<span>{timeLeft.days}</span>
+						<CountUp to={timeLeft.days} duration={0.8} className="block" />
 						<TextAnimate
 							animation="blurInUp"
 							by="character"
@@ -94,7 +98,7 @@ const Home = () => {
 						</TextAnimate>
 					</div>
 					<div>
-						<span>{timeLeft.hours}</span>
+						<CountUp to={timeLeft.hours} duration={0.8} className="block" />
 						<TextAnimate
 							animation="blurInUp"
 							by="character"
@@ -105,7 +109,7 @@ const Home = () => {
 						</TextAnimate>
 					</div>
 					<div>
-						<span>{timeLeft.minutes}</span>
+						<CountUp to={timeLeft.minutes} duration={0.8} className="block" />
 						<TextAnimate
 							animation="blurInUp"
 							by="character"
@@ -148,22 +152,22 @@ const Home = () => {
 			</div>
 
 			{/* Brutalist Object */}
-			<div className="hidden sm:flex absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-full justify-end">
+			<div className="hidden sm:flex absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-full justify-end ">
 				<Image
-					src="/images/brutalist-object.png"
-					alt="Brutalist Object"
+					src="/images/poster.webp"
+					alt="poster"
 					width={1700}
 					height={900}
-					className="w-1/3 rounded-3xl"
+					className="w-3/5 lg:w-1/3 rounded-3xl ring-2 ring-[#E62B1E]"
 				/>
 			</div>
 			<div className="block sm:hidden mt-6 w-full px-4 z-10">
 				<Image
-					src="/images/brutalist-object.png"
-					alt="Brutalist Object"
+					src="/images/poster.webp"
+					alt="poster"
 					width={1700}
 					height={900}
-					className="w-full rounded-3xl"
+					className="w-full rounded-3xl ring ring-[#E62B1E]"
 				/>
 			</div>
 		</div>
