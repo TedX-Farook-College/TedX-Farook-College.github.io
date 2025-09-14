@@ -145,8 +145,8 @@ const Home = () => {
 				<Image
 					src="/images/tedx-logo.png"
 					alt="TEDx Logo"
-					width={160}
-					height={160}
+					width={1998}
+					height={701}
 					className="w-24 sm:w-32 md:w-40 lg:w-56 xl:w-72 2xl:w-96"
 				/>
 			</div>
@@ -156,8 +156,8 @@ const Home = () => {
 				<Image
 					src="/images/poster.webp"
 					alt="poster"
-					width={1700}
-					height={900}
+					width={1280}
+					height={720}
 					className="w-3/5 lg:w-1/3 rounded-3xl ring-2 ring-[#E62B1E]"
 				/>
 			</div>
@@ -165,8 +165,8 @@ const Home = () => {
 				<Image
 					src="/images/poster.webp"
 					alt="poster"
-					width={1700}
-					height={900}
+					width={1280}
+					height={720}
 					className="w-full rounded-3xl ring ring-[#E62B1E]"
 				/>
 			</div>
