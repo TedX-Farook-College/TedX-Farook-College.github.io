@@ -3,62 +3,72 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Marquee } from '@/components/magicui/marquee';
+import Shuffle from '@/components/Shuffle';
+import { Press_Start_2P } from 'next/font/google';
+import { TextAnimate } from '@/components/magicui/text-animate';
+
+const Press2P = Press_Start_2P({
+	variable: '--font-Press_Start_2P',
+	weight: '400',
+});
 
 const Home = () => {
 	const [timeLeft, setTimeLeft] = useState({
-		days: 0,
-		hours: 0,
-		minutes: 0,
-		seconds: 0,
+		days: '00',
+		hours: '00',
+		minutes: '00',
 	});
 
 	useEffect(() => {
-		const targetDate = new Date('2025-12-31T23:59:59').getTime();
-
-		const interval = setInterval(() => {
+		const targetDate = new Date('2025-11-28T23:59:59').getTime();
+		const calculateTimeLeft = () => {
 			const now = new Date().getTime();
 			const distance = targetDate - now;
 
 			if (distance < 0) {
-				clearInterval(interval);
 				return;
 			}
 
 			setTimeLeft({
-				days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-				hours: Math.floor(
-					(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+				days: String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(
+					2,
+					'0'
 				),
-				minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-				seconds: Math.floor((distance % (1000 * 60)) / 1000),
+				hours: String(
+					Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+				).padStart(2, '0'),
+				minutes: String(
+					Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+				).padStart(2, '0'),
 			});
-		}, 1000);
-
+		};
+		calculateTimeLeft();
+		const interval = setInterval(calculateTimeLeft, 1000);
 		return () => clearInterval(interval);
 	}, []);
 
 	return (
-		<div className="relative min-h-screen bg-[#111111] flex flex-col items-center justify-center overflow-hidden">
-			{/* Background Image */}
-			<div className="absolute inset-0 bg-[url('/images/brutalist-pattern.jpg')] bg-center bg-no-repeat bg-cover opacity-30" />
+		<div className="relative min-h-screen bg-[#000000] flex flex-col items-center justify-center overflow-hidden">
+			{/* Background Texture */}
+			<div className="absolute inset-0 bg-[url('/images/brutalist-pattern.jpg')] bg-center bg-no-repeat bg-cover opacity-20" />
 
 			{/* Marquee */}
-			{/* Desktop: diagonal marquee */}
 			<div className="hidden sm:block absolute top-0 left-0 -translate-x-96 xl:translate-y-96 lg:-translate-x-[38rem] xl:-translate-x-[42rem] 2xl:-translate-x-[90rem] w-[150%] transform origin-top-left z-20">
 				<Marquee className="[--duration:5s] bg-[#E62B1E] flex items-center justify-center transform -rotate-45">
-					<p className="py-2 sm:py-3 md:py-4 text-white text-xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-8xl font-bold">
-						Coming Soon
+					<p className="py-2 sm:py-3 md:py-4  text-xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-8xl font-bold title text-[#E62B1E]">
+						COMING SOON
 					</p>
 				</Marquee>
 			</div>
+
 			{/* Mobile: horizontal marquee */}
 			<div className="block sm:hidden w-full z-20 top-0">
 				<Marquee className="[--duration:5s] bg-[#E62B1E] text-white text-lg font-bold flex items-center justify-center">
-					Coming Soon
+					COMING SOON
 				</Marquee>
 			</div>
 
-			{/* TEDx Logo - Mobile Above Countdown */}
+			{/* TEDx Logo - Mobile */}
 			<div className="block sm:hidden mt-6 z-10">
 				<Image
 					src="/images/tedx-logo.png"
@@ -70,37 +80,63 @@ const Home = () => {
 			</div>
 
 			{/* Countdown */}
-			<div className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-extrabold text-white text-center mt-6 sm:mt-20 z-10">
+			<div className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-extrabold text-[#FFFFFF] text-center mt-6 sm:mt-20 z-10">
 				<div className="flex justify-center gap-4 sm:gap-6 md:gap-8">
 					<div>
 						<span>{timeLeft.days}</span>
-						<span className="block text-xs sm:text-sm md:text-base">Days</span>
+						<TextAnimate
+							animation="blurInUp"
+							by="character"
+							once
+							className="block text-xs sm:text-sm md:text-base text-[#CCCCCC]"
+						>
+							Days
+						</TextAnimate>
 					</div>
 					<div>
 						<span>{timeLeft.hours}</span>
-						<span className="block text-xs sm:text-sm md:text-base">Hours</span>
+						<TextAnimate
+							animation="blurInUp"
+							by="character"
+							once
+							className="block text-xs sm:text-sm md:text-base text-[#CCCCCC]"
+						>
+							Hours
+						</TextAnimate>
 					</div>
 					<div>
 						<span>{timeLeft.minutes}</span>
-						<span className="block text-xs sm:text-sm md:text-base">
+						<TextAnimate
+							animation="blurInUp"
+							by="character"
+							once
+							className="block text-xs sm:text-sm md:text-base text-[#CCCCCC]"
+						>
 							Minutes
-						</span>
-					</div>
-					<div>
-						<span>{timeLeft.seconds}</span>
-						<span className="block text-xs sm:text-sm md:text-base">
-							Seconds
-						</span>
+						</TextAnimate>
 					</div>
 				</div>
 			</div>
 
 			{/* Subtext */}
-			<p className="text-base sm:text-lg md:text-xl text-[#CCCCCC] text-center mt-4 sm:mt-8 z-10 px-4">
-				Season 3 awaits
-			</p>
+			<div className=" text-[#E62B1E] text-center mt-4 sm:mt-8 z-10 px-4">
+				<Shuffle
+					text="Season 3 Awaits"
+					className={`${Press2P.variable}`}
+					shuffleDirection="right"
+					duration={0.8}
+					shuffleTimes={1}
+					loop={true}
+					loopDelay={3}
+					ease="power3.out"
+					stagger={0.03}
+					threshold={0.1}
+					triggerOnHover={true}
+					respectReducedMotion={true}
+				/>
+			</div>
 
-			{/* TEDx Logo - Desktop Bottom Left */}
+			{/* TEDx Logo - Desktop */}
 			<div className="hidden sm:block absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10">
 				<Image
 					src="/images/tedx-logo.png"
@@ -111,9 +147,8 @@ const Home = () => {
 				/>
 			</div>
 
-			{/* Brutalist Object Image */}
-			{/* Desktop: bottom right small */}
-			<div className="hidden sm:flex absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-10 w-full justify-end">
+			{/* Brutalist Object */}
+			<div className="hidden sm:flex absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-full justify-end">
 				<Image
 					src="/images/brutalist-object.png"
 					alt="Brutalist Object"
@@ -122,7 +157,6 @@ const Home = () => {
 					className="w-1/3 rounded-3xl"
 				/>
 			</div>
-			{/* Mobile: full width bottom */}
 			<div className="block sm:hidden mt-6 w-full px-4 z-10">
 				<Image
 					src="/images/brutalist-object.png"
