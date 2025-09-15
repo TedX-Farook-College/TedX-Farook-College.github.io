@@ -49,9 +49,9 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div className="relative min-h-screen bg-[#000000] flex flex-col items-center justify-center overflow-hidden">
+		<div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
 			{/* Background Texture */}
-			<div className="absolute inset-0 bg-[url('/images/brutalist-pattern.jpg')] bg-center bg-no-repeat bg-cover opacity-20" />
+			<div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000]  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,0,0,0.3),rgba(255,255,255,0))]"></div>
 			<div className="sm:hidden fixed top-0 left-0 right-0 z-20">
 				<Marquee
 					repeat={10}
@@ -62,9 +62,9 @@ const Home = () => {
 			</div>
 
 			{/* Marquee */}
-			<div className="hidden sm:block absolute top-0 left-0 -translate-x-96 lg:translate-y-80 2xl:translate-y-96 lg:-translate-x-[38rem] xl:-translate-x-[42rem] 2xl:-translate-x-[90rem] w-[150%] transform origin-top-left z-20">
+			<div className="hidden sm:block absolute top-0 left-0 -translate-x-96 lg:translate-y-24 2xl:translate-y-64 lg:-translate-x-[38rem] xl:-translate-x-[42rem] 2xl:-translate-x-[80rem] w-[150%] transform origin-top-left z-20">
 				<Marquee className="[--duration:5s] bg-[#E62B1E] flex items-center justify-center transform -rotate-45">
-					<p className="py-2 sm:py-3 md:py-4  text-xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-8xl font-bold title text-[#E62B1E]">
+					<p className="py-2 sm:py-3 md:py-4  text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold title text-[#E62B1E]">
 						COMING SOON
 					</p>
 				</Marquee>
@@ -151,7 +151,7 @@ const Home = () => {
 				/>
 			</div>
 
-			{/* Brutalist Object */}
+			{/* Brutalist Object
 			<div className="hidden sm:flex absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-full justify-end ">
 				<Image
 					src="/images/poster.webp"
@@ -160,7 +160,7 @@ const Home = () => {
 					height={720}
 					className="w-3/5 lg:w-1/3 rounded-3xl ring-2 ring-[#E62B1E]"
 				/>
-			</div>
+			</div> */}
 			<div className="block sm:hidden mt-6 w-full px-4 z-10">
 				<Image
 					src="/images/poster.webp"
