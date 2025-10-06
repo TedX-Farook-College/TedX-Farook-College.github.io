@@ -80,56 +80,56 @@ export default function Season1() {
 		{
 			name: 'Bobit Abraham',
 			role: 'TEDx Speaker Farook College',
-			image: '/images/speakers/bobit-abraham.jpg',
+			image: '/images/speaker1.webp',
 		},
 		{
 			name: 'Sreen Kandath',
 			role: 'TEDx Speaker Farook College',
-			image: '/images/speakers/sreen-kandath.jpg',
+			image: '/images/speaker2.webp',
 		},
 		{
 			name: 'Amritha R',
 			role: 'TEDx Speaker Farook College',
-			image: '/images/speakers/amritha-r.jpg',
+			image: '/images/speaker3.webp',
 		},
 		{
 			name: 'Adithya Krishna',
 			role: 'TEDx Speaker Farook College',
-			image: '/images/speakers/adithya-krishna.jpg',
+			image: '/images/speaker4.webp',
 		},
 		{
 			name: 'Noor Jahan',
 			role: 'TEDx Speaker Farook College',
-			image: '/images/speakers/noor-jahan.jpg',
+			image: '/images/noor-jahan.webp',
 		},
 		{
 			name: 'Akhil V',
 			role: 'TEDx Speaker Farook College',
-			image: '/images/speakers/akhil-v.jpg',
+			image: '/images/speaker5.webp',
 		},
 		{
 			name: 'Sunny P Sarath',
 			role: 'TEDx Speaker Farook College',
-			image: '/images/speakers/sunny-p-sarath.jpg',
+			image: '/images/speaker6.webp',
 		},
 		{
 			name: 'Rahul Menon',
 			role: 'TEDx Speaker Farook College',
-			image: '/images/speakers/rahul-menon.jpg',
+			image: '/images/speaker7.webp',
 		},
 	];
 
 	const sponsors = [
-		{ name: 'Meitra', logo: '/images/sponsors/meitra.png' },
+		{ name: 'Meitra', logo: '/images/meitra.webp' },
 		{
 			name: 'Harris&Co. Academy',
-			logo: '/images/sponsors/harris-co-academy.png',
+			logo: '/images/Haris&co-academy-logo.webp',
 		},
-		{ name: 'TIE LOGO BRAND', logo: '/images/sponsors/tie-logo-brand.png' },
-		{ name: 'Bluince', logo: '/images/sponsors/bluince.png' },
-		{ name: 'GreenShore', logo: '/images/sponsors/greenshore.png' },
-		{ name: 'Mego', logo: '/images/sponsors/mego.png' },
-		{ name: 'Arabic Logo', logo: '/images/sponsors/arabic-logo.png' },
+		{ name: 'TIE LOGO BRAND', logo: '/images/logobrand.webp' },
+		{ name: 'Bluince', logo: '/images/logo_elance.webp' },
+		{ name: 'GreenShore', logo: '/images/seashore.webp' },
+		{ name: 'Mego', logo: '/images/mego.png' },
+		{ name: 'Arabic Logo', logo: '/images/light-house.webp' },
 	];
 
 	return (
@@ -238,24 +238,17 @@ export default function Season1() {
 				viewport={{ once: true }}
 				variants={containerVariants}
 			>
-				<div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
-					{advisors.map((advisor, index) => (
-						<motion.div
-							key={advisor.name}
-							className="text-center"
-							variants={itemVariants}
-							transition={{ delay: index * 0.1 }}
-						>
-							<img
-								src={advisor.image}
-								alt={advisor.name}
-								className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-2 object-cover"
-							/>
-							<p className="text-xs sm:text-sm font-semibold">{advisor.name}</p>
-							<p className="text-xs text-gray-400">{advisor.role}</p>
-						</motion.div>
-					))}
-				</div>
+				<motion.div
+					className="text-center"
+					variants={itemVariants}
+					transition={{ delay: 0 }}
+				>
+					<img
+						src="/images/leads.webp"
+						alt="A single wide image leads"
+						className="w-full mx-auto mb-2 object-cover"
+					/>
+				</motion.div>
 			</motion.section>
 
 			<motion.section
@@ -273,7 +266,7 @@ export default function Season1() {
 				</motion.p>
 				<div className="flex justify-center">
 					<motion.img
-						src="/images/lumiere-collage.png"
+						src="/images/Lumiere with glow.webp"
 						alt="LUMIERE"
 						className="w-full max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl rounded-xl border-2 sm:border-4 border-red-500/50 shadow-lg"
 						variants={itemVariants}
@@ -321,7 +314,7 @@ export default function Season1() {
 				>
 					• Talks
 				</motion.p>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 items-center justify-center place-items-center">
 					{speakers.map((speaker, index) => (
 						<motion.div
 							key={speaker.name}
@@ -332,16 +325,8 @@ export default function Season1() {
 							<img
 								src={speaker.image}
 								alt={speaker.name}
-								className="w-full h-40 sm:h-48 object-cover"
+								className="object-cover"
 							/>
-							<div className="p-3 sm:p-4 text-center">
-								<h3 className="text-base sm:text-lg font-semibold">
-									{speaker.name}
-								</h3>
-								<p className="text-xs sm:text-sm text-gray-400">
-									{speaker.role}
-								</p>
-							</div>
 						</motion.div>
 					))}
 				</div>
@@ -356,11 +341,11 @@ export default function Season1() {
 			>
 				<div className="flex overflow-x-auto gap-3 sm:gap-4 pb-4 scrollbar-hide">
 					{[
-						'/images/gallery/1.png',
-						'/images/gallery/2.png',
-						'/images/gallery/3.png',
-						'/images/gallery/4.png',
-						'/images/gallery/5.png',
+						'/images/1.webp',
+						'/images/2.webp',
+						'/images/3.webp',
+						'/images/4.webp',
+						'/images/5.webp',
 					].map((img, index) => (
 						<motion.img
 							key={index}

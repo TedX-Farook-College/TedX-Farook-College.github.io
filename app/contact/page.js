@@ -52,25 +52,25 @@ export default function Contact() {
 			name: 'Lyman Rasheed',
 			role: 'Organizer',
 			phone: '+91 9638 5890',
-			image: '/images/lyman.jpg',
+			image: '/images/Iymen.webp',
 		},
 		{
 			name: 'Hawwa Ayub',
 			role: 'Co-organizer',
 			phone: '+91 7029 2614',
-			image: '/images/hawwa.jpg',
+			image: '/images/Hawwa.webp',
 		},
 		{
 			name: 'Hanan Sulficar',
 			role: 'Curator',
 			phone: '+91 9638 7634',
-			image: '/images/hanan.jpg',
+			image: '/images/Hanan.webp',
 		},
 		{
 			name: 'Ridwan Mujeeb',
 			role: 'Curator',
 			phone: '+91 9186 4917',
-			image: '/images/ridwan.jpg',
+			image: '/images/Ridwan4.webp',
 		},
 	];
 
