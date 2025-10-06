@@ -180,8 +180,11 @@ export default function Home() {
 						entertainment. Reserve your slot before seats run out!
 					</motion.p>
 					<motion.div variants={itemVariants} className="mt-6 sm:mt-8">
-						<button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-black rounded-full font-semibold shadow-lg hover:scale-105 hover:bg-gray-200 transition-transform text-sm sm:text-base">
-							Book Now!
+						<button
+							disabled
+							className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-black rounded-full font-semibold shadow-lg hover:scale-105 hover:bg-gray-200 transition-transform text-sm sm:text-base"
+						>
+							Coming Soon
 						</button>
 					</motion.div>
 				</div>
