@@ -1,206 +1,170 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { Marquee } from '@/components/magicui/marquee';
-import Shuffle from '@/components/Shuffle';
-import { Press_Start_2P } from 'next/font/google';
-import { TextAnimate } from '@/components/magicui/text-animate';
-import CountUp from '@/components/CountUp';
-import { FlipText } from '@/components/ui/flip-text';
+import React from 'react';
+import { motion } from 'motion/react';
 
-const Press2P = Press_Start_2P({
-	variable: '--font-Press_Start_2P',
-	weight: '400',
-});
+export default function Home() {
+	const containerVariants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.1,
+			},
+		},
+	};
 
-const Home = () => {
-	const [timeLeft, setTimeLeft] = useState({
-		days: '00',
-		hours: '00',
-		minutes: '00',
-	});
-
-	useEffect(() => {
-		const targetDate = new Date('2025-11-28T23:59:59').getTime();
-
-		const calculateTimeLeft = () => {
-			const now = new Date().getTime();
-			const distance = targetDate - now;
-
-			if (distance < 0) return;
-
-			const newTime = {
-				days: String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(
-					2,
-					'0'
-				),
-				hours: String(
-					Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-				).padStart(2, '0'),
-				minutes: String(
-					Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-				).padStart(2, '0'),
-			};
-
-			// ✅ Only update if something actually changed
-			setTimeLeft((prev) => {
-				if (
-					prev.days !== newTime.days ||
-					prev.hours !== newTime.hours ||
-					prev.minutes !== newTime.minutes
-				) {
-					return newTime;
-				}
-				return prev; // no change → no re-render → no unwanted flip
-			});
-		};
-
-		calculateTimeLeft();
-		const interval = setInterval(calculateTimeLeft, 1000);
-		return () => clearInterval(interval);
-	}, []);
+	const itemVariants = {
+		hidden: { y: 20, opacity: 0 },
+		visible: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.5,
+			},
+		},
+	};
 
 	return (
-		<div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-			{/* Background Texture */}
-			<div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000]  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,0,0,0.3),rgba(255,255,255,0))]"></div>
-			<div className="sm:hidden fixed top-0 left-0 right-0 z-20">
-				<Marquee
-					repeat={10}
-					className="[--duration:5s] bg-[#E62B1E] text-white text-lg font-bold flex items-center justify-center"
+		<div className="bg-black min-h-screen text-white font-sans relative overflow-hidden">
+			<div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/60 rounded-full blur-[250px] opacity-30 pointer-events-none"></div>
+			<div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-red-800/50 rounded-full blur-[300px] opacity-20 pointer-events-none"></div>
+
+			<motion.nav
+				className="flex justify-between items-center py-10 px-16 relative z-20"
+				initial="hidden"
+				animate="visible"
+				variants={containerVariants}
+			>
+				<motion.img
+					src="/images/logo-white.png"
+					alt="TedxFarook College Logo"
+					className="text-2xl w-60 font-bold tracking-wider"
+					variants={itemVariants}
+				/>
+				<ul className="flex gap-8 text-md text-white/90">
+					{[
+						'Home',
+						'About',
+						'Speakers',
+						'Sponsors',
+						'Season 1',
+						'Season 2',
+						'Contact',
+					].map((item) => (
+						<motion.a
+							key={item}
+							href={
+								item === 'Home'
+									? '/'
+									: `/${item.toLowerCase().replace(/\s/g, '-')}`
+							}
+							className={`cursor-pointer transition-colors hover:text-white ${
+								item === 'Home' ? 'text-red-500 font-bold' : ''
+							}`}
+							variants={itemVariants}
+						>
+							{item}
+						</motion.a>
+					))}
+				</ul>
+			</motion.nav>
+
+			<motion.section
+				className="min-h-[90vh] flex flex-col items-center justify-center text-center px-6 relative overflow-hidden"
+				initial="hidden"
+				animate="visible"
+				variants={containerVariants}
+			>
+				<h1
+					className="absolute inset-0 text-[40rem] font-bold text-transparent select-none tracking-tight z-0"
+					style={{
+						WebkitTextStroke: '4px rgba(255, 0, 0, 0.1)',
+						lineHeight: '0.8',
+					}}
+					aria-hidden="true"
 				>
-					COMING SOON
-				</Marquee>
-			</div>
+					X3
+				</h1>
 
-			{/* Marquee */}
-			<div className="hidden sm:block absolute top-0 left-0 -translate-x-96 lg:translate-y-24 2xl:translate-y-64 lg:-translate-x-[38rem] xl:-translate-x-[42rem] 2xl:-translate-x-[80rem] w-[150%] transform origin-top-left z-20">
-				<Marquee className="[--duration:5s] bg-[#E62B1E] flex items-center justify-center transform -rotate-45">
-					<p className="py-2 sm:py-3 md:py-4  text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold title text-[#E62B1E]">
-						COMING SOON
-					</p>
-				</Marquee>
-			</div>
-
-			{/* Mobile: horizontal marquee */}
-
-			{/* TEDx Logo - Mobile */}
-			<div className="block sm:hidden mt-6 z-10">
-				<Image
-					src="/images/tedx-logo.png"
-					alt="TEDx Logo"
-					width={160}
-					height={160}
-					className="w-28 mx-auto"
-				/>
-			</div>
-
-			{/* Countdown */}
-			<div className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-extrabold text-[#FFFFFF] text-center mt-6 sm:mt-20 z-10">
-				<div className="flex justify-center gap-4 sm:gap-6 md:gap-8">
-					<div className="text-center">
-						<FlipText
-							duration={0.5}
-							className="block text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-extrabold text-white"
-						>
-							{timeLeft.days}
-						</FlipText>
-						<TextAnimate
-							animation="blurInUp"
-							by="character"
-							once
-							className="block text-xs sm:text-sm md:text-base text-[#CCCCCC]"
-						>
-							Days
-						</TextAnimate>
-					</div>
-
-					<div className="text-center">
-						<FlipText
-							duration={0.5}
-							className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-extrabold text-[#FFFFFF]"
-						>
-							{timeLeft.hours}
-						</FlipText>
-						<TextAnimate
-							animation="blurInUp"
-							by="character"
-							once
-							className="block text-xs sm:text-sm md:text-base text-[#CCCCCC]"
-						>
-							Hours
-						</TextAnimate>
-					</div>
-					<div className="text-center">
-						<FlipText
-							duration={0.5}
-							className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-extrabold text-[#FFFFFF]"
-						>
-							{timeLeft.minutes}
-						</FlipText>
-						<TextAnimate
-							animation="blurInUp"
-							by="character"
-							once
-							className="block text-xs sm:text-sm md:text-base text-[#CCCCCC]"
-						>
-							Minutes
-						</TextAnimate>
-					</div>
+				<div className="relative z-10 max-w-2xl">
+					<motion.h2
+						className="text-5xl md:text-6xl font-extrabold leading-tight"
+						variants={itemVariants}
+					>
+						Book Your <span className="text-red-500">Tickets</span> Now!
+					</motion.h2>
+					<motion.p
+						className="text-white/70 mt-6 max-w-xl mx-auto"
+						variants={itemVariants}
+					>
+						Don't miss out on a full day of ideas worth sharing and refreshing
+						entertainment. Reserve your slot before seats run out!
+					</motion.p>
+					<motion.div variants={itemVariants} className="mt-8">
+						<button className="mt-8 px-8 py-3 bg-white text-black rounded-full font-semibold shadow-lg hover:scale-105 hover:bg-gray-200 transition-transform">
+							Book Now!
+						</button>
+					</motion.div>
 				</div>
-			</div>
+			</motion.section>
 
-			{/* Subtext */}
-			<div className=" text-[#E62B1E] text-center mt-4 sm:mt-8 z-10 px-4">
-				<Shuffle
-					text="Season 3 Awaits"
-					className={`${Press2P.variable}`}
-					shuffleDirection="right"
-					duration={0.8}
-					shuffleTimes={1}
-					loop={true}
-					loopDelay={3}
-					ease="power3.out"
-					stagger={0.03}
-					threshold={0.1}
-					triggerOnHover={true}
-					respectReducedMotion={true}
-				/>
-			</div>
+			<hr className="border-t border-red-500 mx-10" />
 
-			{/* TEDx Logo - Desktop */}
-			<div className="hidden sm:block absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10">
-				<Image
-					src="/images/tedx-logo.png"
-					alt="TEDx Logo"
-					width={1998}
-					height={701}
-					className="w-24 sm:w-32 md:w-40 lg:w-56 xl:w-72 2xl:w-96"
-				/>
-			</div>
+			<motion.section
+				className="flex flex-col items-center justify-center py-20 relative z-10 min-h-[50vh]"
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.5 }}
+				variants={containerVariants}
+			>
+				<div className="relative w-full max-w-md flex justify-center items-center">
+					<div className="absolute w-full px-6 h-[3px] bg-gradient-to-r from-transparent via-red-500/50 to-transparent"></div>
+					<motion.div
+						className="flex space-x-2 md:space-x-4 text-5xl font-bold z-10"
+						variants={containerVariants}
+					>
+						{['28', '11', '25'].map((num) => (
+							<motion.div
+								key={num}
+								className="bg-[#1c0000] border-t border-white/10 px-6 py-4 rounded-md shadow-lg"
+								variants={itemVariants}
+							>
+								{num}
+							</motion.div>
+						))}
+					</motion.div>
+				</div>
 
-			{/* Brutalist Object
-			<div className="hidden sm:flex absolute top-4 right-4 sm:top-6 sm:right-6 z-10 w-full justify-end ">
-				<Image
-					src="/images/poster.webp"
-					alt="poster"
-					width={1280}
-					height={720}
-					className="w-3/5 lg:w-1/3 rounded-3xl ring-2 ring-[#E62B1E]"
-				/>
-			</div> */}
-			<div className="block sm:hidden mt-6 w-full px-4 z-10">
-				<Image
-					src="/images/poster.webp"
-					alt="poster"
-					width={1280}
-					height={720}
-					className="w-full rounded-3xl ring ring-[#E62B1E]"
-				/>
-			</div>
+				<motion.p
+					className="mt-8 text-white/80 text-center max-w-xl text-sm"
+					variants={itemVariants}
+				>
+					<span className="font-semibold text-white">
+						TEDxFarookCollege Season 3
+					</span>{' '}
+					will convene at the Farook College campus on{' '}
+					<span className="font-semibold text-white">28th November 2025</span>
+				</motion.p>
+			</motion.section>
+
+			<hr className="border-t border-red-500 mx-10" />
+
+			<motion.section
+				className="flex justify-center items-center py-20 px-4"
+				initial={{ opacity: 0, y: 50 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true, amount: 0.3 }}
+				transition={{ duration: 0.7 }}
+			>
+				<div className="bg-black/20 border border-gray-800 p-2 rounded-2xl shadow-2xl shadow-red-900/10">
+					<img
+						src="/images/poster.png"
+						alt="TEDx Poster"
+						className="w-[280px] md:w-[350px] object-cover rounded-lg"
+					/>
+				</div>
+			</motion.section>
 		</div>
 	);
-};
-
-export default Home;
+}
