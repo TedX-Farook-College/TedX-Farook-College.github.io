@@ -3,6 +3,7 @@ import './globals.css';
 
 const InterSans = Inter({
 	variable: '--font-Inter',
+	subsets: ['latin'],
 });
 
 export const metadata = {
