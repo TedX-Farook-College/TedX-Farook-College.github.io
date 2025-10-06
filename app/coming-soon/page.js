@@ -12,6 +12,7 @@ import { FlipText } from '@/components/ui/flip-text';
 const Press2P = Press_Start_2P({
 	variable: '--font-Press_Start_2P',
 	weight: '400',
+	subsets: ['latin'],
 });
 
 const Home = () => {
