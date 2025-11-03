@@ -64,8 +64,11 @@ export const metadata = {
 			url: '/apple-touch-icon-precomposed.png',
 		},
 	},
-	themeColor: '#ed2635',
 	manifest: '/site.webmanifest',
+};
+
+export const viewport = {
+	themeColor: '#ed2635',
 };
 
 export default function RootLayout({ children }) {

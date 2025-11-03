@@ -109,22 +109,22 @@ export default function Contact() {
 		{
 			name: 'Lyman Rasheed',
 			phone: '+91 96385890',
-			image: 'https://placehold.co/300x300/1a1a1a/666?text=Lyman',
+			image: '/images/contacts/lymen.webp',
 		},
 		{
 			name: 'Hawwa Ayub',
 			phone: '+91 70292614',
-			image: 'https://placehold.co/300x300/1a1a1a/666?text=Hawwa',
+			image: '/images/contacts/Hawwa.webp',
 		},
 		{
 			name: 'Hanan Sulficar',
 			phone: '+91 96387634',
-			image: 'https://placehold.co/300x300/1a1a1a/666?text=Hanan',
+			image: '/images/contacts/Hanan.webp',
 		},
 		{
 			name: 'Ridwan Mujeeb',
 			phone: '+91 91864917',
-			image: 'https://placehold.co/300x300/1a1a1a/666?text=Ridwan',
+			image: '/images/contacts/Ridwan4.webp',
 		},
 	];
 
