@@ -28,7 +28,6 @@ export default function GlassNavigation() {
 					/>
 				</Link>
 
-				{/* --- Desktop Menu (Hover Animation Added) --- */}
 				<div className="hidden md:flex items-center gap-2">
 					<Link
 						href="/about"
@@ -120,7 +119,6 @@ export default function GlassNavigation() {
 				</div>
 			</nav>
 
-			{/* --- Mobile Menu (Stagger Animation Added) --- */}
 			<div
 				className={`fixed inset-0 top-20 p-6 bg-black/80 backdrop-blur-xl md:hidden
        transition-opacity duration-300 ease-in-out z-50

@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -52,10 +53,12 @@ export default function Footer() {
 					</div>
 
 					<div className="hidden md:col-start-2 col-span-1 relative md:flex md:items-end md:justify-center overflow-hidden blur-[2px]">
-						<img
+						<Image
 							src="/images/footer-crack.png"
 							alt="crack"
 							className="w-full object-cover pointer-events-none md:absolute md:bottom-0 md:left-0"
+							width={500}
+							height={500}
 						/>
 					</div>
 

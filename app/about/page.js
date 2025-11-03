@@ -1,7 +1,7 @@
 import GlassNavigation from '@/components/main/navbar';
 import Footer from '@/components/main/footer';
 import GradualBlurMemo from '@/components/GradualBlur';
-import { SponsorsHero } from '@/components/sections/SponsorsHero';
+import { About } from '@/components/sections/About';
 import Image from 'next/image';
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
 			<div className="h-0 w-[40rem] absolute top-[20%] right-[0] shadow-[0_0_900px_20px_#ff2b06] rotate-[30deg] -z-10"></div>
 
 			<GlassNavigation />
-			<SponsorsHero />
+			<About />
 
 			<Footer />
 			<GradualBlurMemo

@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import GlassNavigation from '@/components/main/navbar';
 import Footer from '@/components/main/footer';
+import Image from 'next/image';
 
 const cn = (...classes) => classes.filter(Boolean).join(' ');
 
@@ -305,7 +306,9 @@ export default function Contact() {
 								transition={{ delay: i * 0.15 }}
 								className="relative rounded-xl overflow-hidden group"
 							>
-								<img
+								<Image
+									width={500}
+									height={500}
 									src={person.image}
 									alt={person.name}
 									onError={handleImageError}

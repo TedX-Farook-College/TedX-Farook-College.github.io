@@ -1,6 +1,3 @@
-// components/sections/SponsorsHero.jsx
-
-// Import our new responsive wrapper
 import { ResponsiveSponsors } from '@/components/main/ResponsiveSponsors';
 
 export function SponsorsHero() {
