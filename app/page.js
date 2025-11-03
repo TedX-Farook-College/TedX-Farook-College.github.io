@@ -3,6 +3,7 @@ import GlassNavigation from '@/components/main/navbar';
 import Footer from '@/components/main/footer';
 import GradualBlurMemo from '@/components/GradualBlur';
 import X3Model from '@/components/model/X3MODEL';
+import { Theme } from '@/components/sections/Theme';
 
 export default function Home() {
 	return (
@@ -41,6 +42,8 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+
+			<Theme />
 
 			<Footer />
 			<GradualBlurMemo
