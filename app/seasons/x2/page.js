@@ -148,12 +148,33 @@ const Season2 = () => {
 					<h1 className="text-white text-4xl sm:text-3xl lg:text-7xl  font-bold mb-2 text-center">
 						Glimpses of Season 2
 					</h1>
-					Leads
-					<img
-						src="/images/s2/leads.svg"
-						alt="A single wide image leads"
-						className="w-full mx-auto mb-2 object-cover"
-					/>
+					{/* replace single image with a wrapper that adds blurred edges */}
+					<motion.div
+						className="w-full mx-auto mb-2 relative rounded-xl overflow-hidden"
+						variants={itemVariants}
+					>
+						<div
+							aria-hidden="true"
+							className="absolute inset-0 z-0 pointer-events-none"
+							style={{
+								backgroundImage: `url("/images/s2/leads.svg")`,
+								backgroundSize: 'cover',
+								backgroundPosition: 'center',
+								transform: 'scale(1.06)',
+								filter: 'blur(28px) saturate(0.9)',
+								WebkitMaskImage:
+									'radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%)',
+								maskImage:
+									'radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%)',
+							}}
+						/>
+						<motion.img
+							src="/images/s2/leads.svg"
+							alt="A single wide image leads"
+							className="w-full mx-auto mb-2 object-cover relative z-10"
+							variants={itemVariants}
+						/>
+					</motion.div>
 				</motion.div>
 			</motion.section>
 
@@ -298,7 +319,7 @@ const Season2 = () => {
 				</div>
 			</motion.section>
 
-            <Footer />
+			<Footer />
 		</div>
 	);
 };
