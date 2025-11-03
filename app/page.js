@@ -4,6 +4,7 @@ import Footer from '@/components/main/footer';
 import GradualBlurMemo from '@/components/GradualBlur';
 import X3Model from '@/components/model/X3MODEL';
 import { Theme } from '@/components/sections/Theme';
+import Link from 'next/link';
 
 export default function Home() {
 	return (
@@ -36,14 +37,18 @@ export default function Home() {
 					</p>
 
 					<div className="flex justify-center pointer-events-auto">
-						<button className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full font-medium transition-colors">
-							Book Now
-						</button>
+						<Link
+							href={'/book'}
+							className="group relative overflow-hidden rounded-full bg-red-800 ring-2 ring-white px-14 py-4 text-lg transition-all"
+						>
+							<span className="absolute bottom-0 left-0 h-48 w-full origin-bottom translate-y-full transform overflow-hidden rounded-full bg-white/25 transition-all duration-300 ease-out group-hover:translate-y-14"></span>
+							<span className="font-semibold text-red-100">Book Now</span>
+						</Link>
 					</div>
 				</div>
 			</section>
 
-			<Theme />
+			{/** <Theme /> */}
 
 			<Footer />
 			<GradualBlurMemo

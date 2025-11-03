@@ -39,6 +39,7 @@ export function Theme() {
 						/>
 					</div>
 				</div>
+				<p className="text-white text-center">Releases Soon</p>
 			</div>
 		</section>
 	);

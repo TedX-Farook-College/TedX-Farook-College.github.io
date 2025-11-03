@@ -48,15 +48,15 @@ export default function GlassNavigation() {
 							/>
 						</button>
 
-						<div className="absolute left-0 mt-3 w-full bg-white/10 backdrop-blur-md border border-white/10 rounded-lg shadow-lg opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 ease-out z-50 text-center">
+						<div className="absolute left-0 mt-3 w-full bg-black/50 backdrop-blur-md border border-white/10 rounded-lg shadow-lg opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 ease-out z-50 text-center">
 							<Link
-								href="/past-seasons/season-1"
+								href="/seasons/x1"
 								className="block px-5 py-3 text-sm text-white/90 hover:bg-white/20 rounded-lg transition"
 							>
 								Season 1
 							</Link>
 							<Link
-								href="/past-seasons/season-2"
+								href="/seasons/x2"
 								className="block px-5 py-3 text-sm text-white/90 hover:bg-white/20 rounded-lg transition"
 							>
 								Season 2
