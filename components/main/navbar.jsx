@@ -164,14 +164,14 @@ export default function GlassNavigation() {
 						>
 							<div className="flex flex-col space-y-3 pl-4 pt-3">
 								<Link
-									href="/past-seasons/season-1"
+									href="/seasons/x1"
 									className="text-white/90 hover:text-white"
 									onClick={closeAllMenus}
 								>
 									Season 1
 								</Link>
 								<Link
-									href="/past-seasons/season-2"
+									href="/seasons/x2"
 									className="text-white/90 hover:text-white"
 									onClick={closeAllMenus}
 								>
