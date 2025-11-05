@@ -43,7 +43,7 @@ export default function BookPage() {
 
 				<div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
 					{/* Left Side: Form */}
-					<div className="w-full h-3/4">
+					<div className="w-full h-full">
 						<BookingForm />
 					</div>
 
