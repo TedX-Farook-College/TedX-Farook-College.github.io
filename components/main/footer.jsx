@@ -10,7 +10,7 @@ export default function Footer() {
 				<div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-1 items-stretch w-full gap-8 md:gap-0">
 					<div className="col-span-1 row-span-1 flex flex-col justify-between">
 						<div>
-							<h3 className="text-3xl md:text-4xl font-extrabold text-white/90 my-2 blur-[1px]">
+							<h3 className="text-3xl md:text-4xl font-extrabold hover:blur-none transition-all text-white/90 my-2 blur-[1px]">
 								Socials
 							</h3>
 
@@ -39,7 +39,7 @@ export default function Footer() {
 							</ul>
 						</div>
 
-						<div className="w-full inline-flex my-4 blur-[1px] md:blur-[2px]">
+						<div className="w-full inline-flex my-4 hover:blur-none transition-all blur-none md:blur-[2px]">
 							<div className="text-3xl md:text-9xl font-extrabold leading-[0.9] text-white">
 								TED
 							</div>
