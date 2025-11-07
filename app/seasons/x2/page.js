@@ -1,22 +1,9 @@
 'use client';
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import GlassNavigation from '@/components/main/navbar';
 import Footer from '@/components/main/footer';
 
 const Season2 = () => {
-	const [isOpen, setIsOpen] = useState(false);
-
-	const navItems = [
-		'Home',
-		'About',
-		'Speakers',
-		'Sponsors',
-		'Season 1',
-		'Season 2',
-		'Contact',
-	];
-
 	const containerVariants = {
 		hidden: { opacity: 0 },
 		visible: {
@@ -33,40 +20,6 @@ const Season2 = () => {
 			transition: { duration: 0.5 },
 		},
 	};
-
-	const mobileItemVariants = {
-		closed: { x: 20, opacity: 0 },
-		open: { x: 0, opacity: 1 },
-	};
-
-	const advisors = [
-		{
-			name: 'C.P. Abdul Sathar',
-			role: 'Faculty Advisor',
-			image: '/images/advisors/cp-abdul-sathar.jpg',
-		},
-		{
-			name: 'Suhail Shoukath',
-			role: 'Organizer',
-			image: '/images/advisors/suhail-shoukath.jpg',
-		},
-		{ name: 'Lazin', role: 'Organizer', image: '/images/advisors/lazin.jpg' },
-		{
-			name: 'Fathima Hind',
-			role: 'Curator',
-			image: '/images/advisors/fathima-hind.jpg',
-		},
-		{
-			name: 'Dr. K. Rizwana Sultana',
-			role: 'Faculty Advisor',
-			image: '/images/advisors/dr-k-rizwana-sultana.jpg',
-		},
-		{
-			name: 'Dr. P. Yaqub',
-			role: 'Faculty Advisor',
-			image: '/images/advisors/dr-p-yaqub.jpg',
-		},
-	];
 
 	const speakers = [
 		{
