@@ -48,24 +48,22 @@ function SlideArrowButton({
 export default function Contact() {
 	const organizers = [
 		{
-			name: 'Lyman Rasheed',
-			phone: '+91 96385890',
-			image: '/images/contacts/lymen.webp',
+			name: 'Naheel Bran',
+			phone: '+91 8590659086',
+			role: 'Organizer',
+			image: '/images/contacts/Naheel.webp',
 		},
 		{
-			name: 'Hawwa Ayub',
-			phone: '+91 70292614',
+			name: 'Muhammed Sahal',
+			phone: '+91 9061905314',
+			role: 'Co-Organizer',
+			image: '/images/contacts/Sahal.webp',
+		},
+		{
+			name: 'Hawwa Ayyoob',
+			phone: '+91 9072920614',
+			role: 'Curator',
 			image: '/images/contacts/Hawwa.webp',
-		},
-		{
-			name: 'Hanan Sulficar',
-			phone: '+91 96387634',
-			image: '/images/contacts/Hanan.webp',
-		},
-		{
-			name: 'Ridwan Mujeeb',
-			phone: '+91 91864917',
-			image: '/images/contacts/Ridwan4.webp',
 		},
 	];
 
@@ -238,7 +236,7 @@ export default function Contact() {
 					<p className="text-white/60 mb-6 text-sm md:text-base tracking-wide">
 						or Contact a team Member Directly
 					</p>
-					<div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+					<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
 						{organizers.map((person, i) => (
 							<motion.div
 								key={i}
@@ -253,7 +251,7 @@ export default function Contact() {
 									src={person.image}
 									alt={person.name}
 									onError={handleImageError}
-									className="w-full h-44 object-cover grayscale group-hover:grayscale-0 transition duration-500"
+									className="w-full h-52 object-cover grayscale group-hover:grayscale-0 transition duration-500"
 								/>
 								<motion.div
 									initial={{ opacity: 0 }}
@@ -262,6 +260,9 @@ export default function Contact() {
 								>
 									<p className="text-white font-semibold text-base">
 										{person.name}
+									</p>
+									<p className="text-white/50 font-semibold text-sm">
+										{person.role}
 									</p>
 									<p className="text-white/70 text-sm">{person.phone}</p>
 								</motion.div>

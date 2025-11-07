@@ -8,7 +8,7 @@ export function SponsorsHero() {
 					<p className="text-lg font-semibold leading-7 text-gray-400">
 						The ones who make it possible
 					</p>
-					<h1 className="mt-4 text-5xl font-bold tracking-tight text-red-600 sm:text-6xl">
+					<h1 className="mt-4 text-5xl font-bold tracking-tight text-red-700 sm:text-6xl">
 						Our Sponsors
 					</h1>
 					<p className="mt-6 px-3 text-base leading-relaxed max-w-prose mx-auto text-gray-300 break-words">

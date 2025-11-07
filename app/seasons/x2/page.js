@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import AutoSlider from '@/components/AutoSlider';
 import GlassNavigation from '@/components/main/navbar';
 import Footer from '@/components/main/footer';
 
@@ -32,15 +31,6 @@ const Season2 = () => {
 			y: 0,
 			opacity: 1,
 			transition: { duration: 0.5 },
-		},
-	};
-
-	const mobileMenuVariants = {
-		closed: { opacity: 0, x: '100%', transition: { duration: 0.3 } },
-		open: {
-			opacity: 1,
-			x: 0,
-			transition: { duration: 0.3, staggerChildren: 0.05 },
 		},
 	};
 
@@ -83,11 +73,6 @@ const Season2 = () => {
 			name: 'Ashik Aseem',
 			role: 'TEDx Speaker Farook College',
 			image: '/images/s2/speakers/1.webp',
-		},
-		{
-			name: 'PB Nooh',
-			role: 'TEDx Speaker Farook College',
-			image: '/images/s2/speakers/2.webp',
 		},
 		{
 			name: 'RJ Lishna',

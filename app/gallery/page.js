@@ -19,7 +19,7 @@ export default function Home() {
 						<p className="text-lg font-semibold leading-7 text-gray-400">
 							All the memories along the way.
 						</p>
-						<h1 className="mt-4 text-5xl font-bold tracking-tight text-red-600 sm:text-6xl md:pb-10">
+						<h1 className="mt-4 text-5xl font-bold tracking-tight text-red-700 sm:text-6xl md:pb-10">
 							Gallery
 						</h1>
 					</div>
