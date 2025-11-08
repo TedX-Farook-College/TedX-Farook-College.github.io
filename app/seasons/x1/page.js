@@ -184,33 +184,6 @@ export default function Season1() {
 			</motion.section>
 
 			<motion.section
-				className="py-12 sm:py-16 md:py-20 px-4 sm:px-8 md:px-12 lg:px-16 relative z-10 text-center bg-red-900/10"
-				initial="hidden"
-				whileInView="visible"
-				viewport={{ once: true }}
-				variants={containerVariants}
-			>
-				<motion.p
-					className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4"
-					variants={itemVariants}
-				>
-					Main-event
-				</motion.p>
-				<motion.h2
-					className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-2"
-					variants={itemVariants}
-				>
-					Avenir
-				</motion.h2>
-				<motion.p
-					className="text-lg sm:text-xl text-white/80"
-					variants={itemVariants}
-				>
-					Ignite your future
-				</motion.p>
-			</motion.section>
-
-			<motion.section
 				className="py-12 sm:py-16 md:py-20 px-4 sm:px-8 md:px-12 lg:px-16 relative z-10"
 				initial="hidden"
 				whileInView="visible"
