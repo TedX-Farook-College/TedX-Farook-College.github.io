@@ -71,7 +71,7 @@ export default function GlassNavigation() {
 						Speakers
 					</Link>
 					<Link
-						href="/event"
+						href="/"
 						className="relative rounded-lg px-3 py-2 text-white/90 hover:text-white transition-all duration-200 hover:-translate-y-0.5"
 					>
 						Event
@@ -193,7 +193,7 @@ export default function GlassNavigation() {
 						Speakers
 					</Link>
 					<Link
-						href="/event"
+						href="/"
 						className={`text-lg text-white/90 hover:text-white transition-all duration-300 ${
 							isMobileMenuOpen
 								? 'opacity-100 translate-y-0 delay-250'
