@@ -12,8 +12,14 @@ export function SponsorCard({ logo, name, link, className }) {
 			)}
 		>
 			<div className="flex flex-col items-center justify-center p-4 min-h-[12rem]">
-				<div className="relative h-20 w-20 mb-4">
-					<Image src={logo} alt={`${name} logo`} width={100} height={100} />
+				<div className="relative h-26 w-full mb-4">
+					<Image
+						src={logo}
+						alt={`${name} logo`}
+						width={200}
+						height={200}
+						className="object-cover object-center"
+					/>
 				</div>
 				<CardTitle className="text-center text-zinc-100">{name}</CardTitle>
 			</div>

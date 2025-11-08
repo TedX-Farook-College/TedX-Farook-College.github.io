@@ -27,7 +27,7 @@ export default function Home() {
 						<DomeGallery
 							grayscale={false}
 							overlayShow={['top', 'bottom', 'left', 'right']}
-							maxVerticalRotationDeg={2}
+							maxVerticalRotationDeg={10}
 							minRadius={700}
 							fit={1}
 							segments={24}

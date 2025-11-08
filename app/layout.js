@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+	metadataBase: new URL('https://tedx.farookcollege.ac.in'),
 	title: 'TEDxFC X3',
 	description:
 		'TEDx Farook College is an independently organized TED event serving as a hub of ideas and knowledge for the thinkers of Malabar. Hosted by the Arts and Science college in Malabar, it offers a platform for students across Kerala to share, learn, and aspire. With a futuristic approach to knowledge and progress, TEDxFarookCollege is guided by the idea of advancing academic and personal growth. It represents both a solace and an inspiration for young minds, while setting the stage for future events and innovation.',
@@ -47,7 +48,7 @@ export const metadata = {
 		title: 'TedXFC X3 - Ideas Worth Spreading',
 		description:
 			'Join us for an unforgettable journey of innovation, inspiration, and ideas that will shape our future.',
-		images: ['/twitter-image.jpg'], // need to add our twitter image
+		images: ['/twitter-image.jpg'],
 		creator: '@tedxfarookcollege',
 		site: '@tedxfarookcollege',
 	},
@@ -58,9 +59,9 @@ export const metadata = {
 	icons: {
 		icon: '/favicon.ico',
 		shortcut: '/favicon.ico',
-		apple: '/apple-touch-icon.png', // need to add apple touch icon
+		apple: '/apple-touch-icon.png',
 		other: {
-			rel: 'apple-touch-icon-precomposed', // here too
+			rel: 'apple-touch-icon-precomposed',
 			url: '/apple-touch-icon.png',
 		},
 	},

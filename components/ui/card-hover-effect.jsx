@@ -18,6 +18,7 @@ export const HoverEffect = ({ items, className }) => {
 				<Link
 					href={item?.link}
 					key={item?.link}
+					target="_blank"
 					className="relative group block p-2 h-full w-full"
 					onMouseEnter={() => setHoveredIndex(idx)}
 					onMouseLeave={() => setHoveredIndex(null)}
@@ -42,11 +43,11 @@ export const HoverEffect = ({ items, className }) => {
 					<Card>
 						{item.logo && (
 							<Image
-								width={100}
-								height={100}
+								width={300}
+								height={300}
 								src={item.logo}
 								alt={item.logo || 'logo'}
-								className="w-full mb-4 h-48 object-cover rounded-t-2xl"
+								className="w-full mb-4 h-48 object-contain rounded-t-2xl"
 							/>
 						)}
 
