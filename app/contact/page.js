@@ -140,18 +140,39 @@ export default function Contact() {
 							initial={{ scale: 0.9, opacity: 0 }}
 							whileInView={{ scale: 1, opacity: 1 }}
 							transition={{ duration: 0.8 }}
-							className="w-full h-[300px] rounded-xl overflow-hidden"
+							className="w-full rounded-xl overflow-hidden aspect-[5/4]"
 						>
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31254.89085005649!2d75.8111!3d11.1795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65decd9a16edb%3A0xa8b93a17ee7c87b3!2sFarook%20College!5e0!3m2!1sen!2sin!4v16987654321"
-								width="100%"
-								height="100%"
-								style={{ border: 0 }}
-								allowFullScreen=""
-								loading="lazy"
-								referrerPolicy="no-referrer-downgrade"
-							></iframe>
+							<div className="mapouter w-full h-full">
+								<div className="gmap_canvas w-full h-full">
+									<iframe
+										className="w-full h-full border-0"
+										allowFullScreen
+										loading="lazy"
+										referrerPolicy="no-referrer-when-downgrade"
+										src="https://www.google.com/maps/embed/v1/place?q=Farook%20college%2C%20Calicut&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+									></iframe>
+								</div>
+							</div>
 						</motion.div>
+
+						<style jsx>{`
+							.mapouter {
+								position: relative;
+								text-align: right;
+								width: 100%;
+								height: 100%;
+							}
+							.gmap_canvas {
+								overflow: hidden;
+								background: none !important;
+								width: 100%;
+								height: 100%;
+							}
+							.gmap_canvas iframe {
+								width: 100%;
+								height: 100%;
+							}
+						`}</style>
 					</motion.div>
 
 					<motion.div
