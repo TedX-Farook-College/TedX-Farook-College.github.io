@@ -64,7 +64,7 @@ export default function Home() {
 						transition={{ duration: 0.5, ease: "easeOut" }}
 					>
 						<Link
-							href="https://app.makemypass.com/event/tedx-fc-s3"
+							href={'/book'}
 							className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition z-10 relative inline-block"
 						>
 							Book Now
