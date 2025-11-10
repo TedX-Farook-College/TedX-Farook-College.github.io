@@ -22,49 +22,41 @@ const Speakers = () => {
 		},
 	};
 
-	// replaced: use stable picsum placeholders and add short bio
 	const speakers = [
 		{
 			name: 'Aisha Rahman',
 			role: 'Climate Researcher',
-			image: 'https://picsum.photos/seed/aisha/600/600',
-			bio: 'Explores climate resilience and community-driven solutions.',
+			image: '/images/speakers/Aleena-Aakashamittayi.webp',
 		},
 		{
 			name: 'Ravi Menon',
 			role: 'Social Entrepreneur',
-			image: 'https://picsum.photos/seed/ravi/600/600',
-			bio: 'Building sustainable ventures that empower local youth.',
+			image: '/images/speakers/Dr.-Habeeb-C.webp',
 		},
 		{
 			name: 'Dr. Meera Nair',
 			role: 'Neuroscientist',
-			image: 'https://picsum.photos/seed/meera/600/600',
-			bio: 'Researching cognition and creative learning techniques.',
+			image: '/images/speakers/Naseef-Kalayath.webp',
 		},
 		{
 			name: 'Lucas Pereira',
 			role: 'AI Ethicist',
-			image: 'https://picsum.photos/seed/lucas/600/600',
-			bio: 'Focuses on responsible AI and human-centered design.',
+			image: '/images/speakers/pbnt.webp',
 		},
 		{
 			name: 'Sana Iqbal',
 			role: 'Documentary Filmmaker',
-			image: 'https://picsum.photos/seed/sana/600/600',
-			bio: 'Tells untold stories from marginalized communities.',
+			image: '/images/speakers/pma-gafoor5.webp',
 		},
 		{
 			name: 'Arjun Varma',
 			role: 'Product Designer',
-			image: 'https://picsum.photos/seed/arjun/600/600',
-			bio: 'Designs delightful, accessible products for everyone.',
+			image: '/images/speakers/pt-muhammed.webp',
 		},
 		{
 			name: 'Maya Chen',
 			role: 'Public Health Advocate',
-			image: 'https://picsum.photos/seed/maya/600/600',
-			bio: 'Works on preventive health programs and outreach.',
+			image: '/images/speakers/RJ-Twinkle-Sheethal.webp',
 		},
 	];
 
@@ -85,40 +77,29 @@ const Speakers = () => {
 			<GlassNavigation />
 
 			<motion.section
-				className="py-6 sm:py-8 md:py-10 px-4 sm:px-8 md:px-12 lg:px-16 relative z-10 mt-24"
+				className="py-6 sm:py-8 md:py-10 px-4 sm:px-8 md:px-12 lg:px-16 relative z-10 mt-16"
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: true }}
 				variants={containerVariants}
 			>
 				<motion.div variants={itemVariants} transition={{ delay: 0 }}>
-					<h1 className="text-white text-6xl lg:text-7xl sm:text-4xl font-bold mb-10 text-center">
+					<h1 className="text-white text-4xl sm:text-3xl lg:text-7xl font-bold mb-10 text-center">
 						Speakers
 					</h1>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 items-center justify-center place-items-center">
 						{speakers.map((speaker, index) => (
 							<motion.div
 								key={speaker.name}
-								className="bg-red-900/10 rounded-xl overflow-hidden w-64"
+								className="bg-red-900/20 rounded-xl overflow-hidden"
 								variants={itemVariants}
-								transition={{ delay: index * 0.06 }}
+								transition={{ delay: index * 0.1 }}
 							>
-								<div className="h-64 w-full overflow-hidden bg-gray-800">
-									<img
-										src={speaker.image}
-										alt={speaker.name}
-										className="w-full h-full object-cover"
-									/>
-								</div>
-								<div className="p-4">
-									<h3 className="text-lg font-semibold text-white">
-										{speaker.name}
-									</h3>
-									<p className="text-sm text-red-300 mb-2">{speaker.role}</p>
-									<p className="text-sm text-white/80 line-clamp-3">
-										{speaker.bio}
-									</p>
-								</div>
+								<img
+									src={speaker.image}
+									alt={speaker.name}
+									className="object-cover w-100 h-100"
+								/>
 							</motion.div>
 						))}
 					</div>

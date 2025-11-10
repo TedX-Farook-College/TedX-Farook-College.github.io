@@ -60,7 +60,7 @@ export default function Home() {
 				{/**  mix-blend-difference*/}
 				<div className="relative text-center max-w-2xl pointer-events-none">
 					<h1 className="text-5xl md:text-7xl font-bold mb-6 pointer-events-auto text-white">
-						Book Your Tickets Now!
+						Book Your <span className="text-red-600">Tickets</span> Now!
 					</h1>
 					<p className="text-lg md:text-xl  mb-8 max-w-2xl mx-auto pointer-events-auto  text-white">
 						Don&apos;t miss out on a full day of ideas worth sharing and
@@ -70,10 +70,12 @@ export default function Home() {
 					<div className="flex justify-center pointer-events-auto">
 						<Link
 							href={'/book'}
-							className="group relative overflow-hidden rounded-full bg-red-800 ring-2 ring-white px-14 py-4 text-lg transition-all"
+							className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-full bg-red-800/30 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:shadow-gray-600/50 border border-red-200/20"
 						>
-							<span className="absolute bottom-0 left-0 h-48 w-full origin-bottom translate-y-full transform overflow-hidden rounded-full bg-white/25 transition-all duration-300 ease-out group-hover:translate-y-14"></span>
-							<span className="font-semibold text-red-100">Book Now</span>
+							<span className="text-lg">Book Now</span>
+							<div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
+								<div className="relative h-full w-10 bg-white/20"></div>
+							</div>
 						</Link>
 					</div>
 				</div>

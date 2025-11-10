@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import AutoSlider from '@/components/AutoSlider';
 import GlassNavigation from '@/components/main/navbar';
 import Footer from '@/components/main/footer';
 
