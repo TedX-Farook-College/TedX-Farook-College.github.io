@@ -69,11 +69,13 @@ export function About() {
 							className="text-base leading-relaxed break-words"
 						>
 							TEDx is a grassroots initiative in the spirit of TED's mission to
-							research and discover "ideas worth spreading". It brings TED to
-							local communities through independently organized events. TEDx
-							makes ideas accessible to students, inspiring learning minds to go
-							beyond textbooks and classrooms, expanding into the future with
-							more open perspectives.
+							research and discover "ideas worth spreading." It brings TED to
+							local communities through independently organized events. On its
+							40th anniversary, TED has sharpened its goals through the slogan
+							'Ideas Change Everything,' focusing on the impact good ideas can
+							bring. TEDx makes ideas accessible to students, inspiring learning
+							minds to go beyond textbooks and classrooms, expanding into the
+							future with more open perspectives.
 						</TextAnimate>
 					</div>
 
@@ -99,7 +101,7 @@ export function About() {
 						>
 							TEDx Farook College is an independently organized TED event
 							serving as a hub of ideas and knowledge for the thinkers of
-							Malabar. Hosted by the Arts and Science college in Malabar, it
+							Malabar. Hosted by the Arts and Science college in Kozhikode, it
 							offers a platform for students across Kerala to share, learn, and
 							aspire. With a futuristic approach to knowledge and progress,
 							TEDxFarookCollege is guided by the idea of advancing academic and

@@ -1,13 +1,8 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-	variable: '--font-geist-sans',
-	subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-	variable: '--font-geist-mono',
+const InterSans = Inter({
+	variable: '--font-Inter',
 	subsets: ['latin'],
 });
 
@@ -79,11 +74,7 @@ export default function RootLayout({ children }) {
 				<meta name="apple-mobile-web-app-title" content="TEDxFC" />
 			</head>
 
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
-				{children}
-			</body>
+			<body className={`${InterSans.variable} antialiased`}>{children}</body>
 		</html>
 	);
 }
