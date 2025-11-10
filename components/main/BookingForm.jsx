@@ -621,7 +621,7 @@ export function BookingForm() {
 					<label className="text-sm text-white/70 font-medium tracking-wide">
 						Ticket Type
 					</label>
-					<div className="grid grid-cols-3 gap-2 md:gap-3">
+					<div className="grid grid-cols-2 gap-2 md:gap-3">
 						{ticketOptions.map((option) => (
 							<button
 								key={option.id}
