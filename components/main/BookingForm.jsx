@@ -516,7 +516,12 @@ export function BookingForm() {
 						<p className="text-white/60 text-sm mt-4">
 							{eventInfo?.redirection
 								? 'You will be redirected shortly...'
-								: 'You can now close this page.'}
+								: <Link href="/" passHref>
+									<a className="flex items-center text-white text-lg font-medium mt-6 hover:text-red-500 transition-all duration-200">
+										Go Back to Home
+										<Icon icon="fe:arrow-right" className="ml-2 text-xl" />
+									</a>
+								</Link>}
 						</p>
 					</motion.div>
 				) : (
