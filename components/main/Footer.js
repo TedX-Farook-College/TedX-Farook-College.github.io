@@ -17,7 +17,7 @@ const Footer = () => {
     { name: 'Season 1', href: '/season-1' },
     { name: 'Season 2', href: '/season-2' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Gallery', href: '/' },
+    { name: 'Gallery', href: '/gallery' },
 
   ];
   return (
@@ -32,20 +32,33 @@ const Footer = () => {
           <p className="flex gap-2 items-center hover:text-red-500 transition-colors duration-300">
             <CiLocationOn /> Farook College (Autonomous), Calicut
           </p>
-          <p>
+          <p className="flex gap-4 items-center">
+            <CiPhone />
+            <span className="font-medium">Adam Zakif:</span>
             <a
-              href="tel:+91000000"
-              className="hover:text-red-500 transition-colors duration-300 flex gap-2 items-center"
+              href="tel:+917012200234"
+              className="hover:text-red-500 transition-colors duration-300"
             >
-              <CiPhone /> +91 000000
+              +91 7012200234
+            </a>
+          </p>
+
+          <p className="flex gap-4 items-center">
+            <CiPhone />
+            <span className="font-medium">Hana Fathima np:</span>
+            <a
+              href="tel:+919544888786"
+              className="hover:text-red-500 transition-colors duration-300"
+            >
+              +91 9544888786
             </a>
           </p>
           <p>
             <a
-              href="mailto:contact.tedx@gmail.com"
+              href="mailto:contacttedxfarook@gmail.com"
               className="hover:text-red-500 transition-colors duration-300 flex gap-2 items-center"
             >
-              <CiMail /> contact.tedx@gmail.com
+              <CiMail /> contacttedxfarook@gmail.com
             </a>
           </p>
 
