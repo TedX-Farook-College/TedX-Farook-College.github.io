@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 
 const InterSans = Inter({
@@ -75,6 +76,7 @@ export default function RootLayout({ children }) {
 			</head>
 
 			<body className={`${InterSans.variable} antialiased`}>{children}</body>
+			<GoogleAnalytics gaId="G-F4673C0949" />
 		</html>
 	);
 }
