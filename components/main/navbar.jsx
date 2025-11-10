@@ -16,14 +16,14 @@ export default function GlassNavigation() {
 
 	return (
 		<>
-			<nav className="fixed top-0 left-0 right-0 z-100 md:mx-auto max-w-6xl px-4 py-3 mx-3 my-2 flex items-center justify-between border border-white/10 bg-white/5 backdrop-blur-md md:left-6 md:right-6 md:top-6 rounded-xl">
+			<nav className="fixed top-0 left-0 right-0 z-100 md:mx-auto max-w-6xl px-4 py-3 mx-2 my-1 flex items-center justify-between border border-white/10 bg-white/5 backdrop-blur-md md:left-6 md:right-6 md:top-6 rounded-xl">
 				<Link href="/" onClick={closeAllMenus}>
 					<Image
 						src="/tedx-logo.png"
 						alt="TEDx Logo"
 						width={480}
 						height={160}
-						className="h-10 w-auto"
+						className="h-8 w-auto"
 						priority
 					/>
 				</Link>
