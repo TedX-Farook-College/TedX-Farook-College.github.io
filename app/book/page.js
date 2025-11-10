@@ -24,7 +24,7 @@ export default function BookPage() {
             <div className="h-0 w-[40rem] absolute top-[20%] right-0 shadow-[0_0_900px_20px_#ff2b06] -z-10"></div>
             <div className="h-0 w-[40rem] absolute top-[10%] left-0 shadow-[0_0_900px_20px_#ff2b06] -z-10"></div>
 
-            <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-24 md:pt-32 pb-16 text-white overflow-hidden">
+            <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-8 md:pt-18 pb-16 text-white overflow-hidden">
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
                     whileInView={{ opacity: 1, y: 0 }}
