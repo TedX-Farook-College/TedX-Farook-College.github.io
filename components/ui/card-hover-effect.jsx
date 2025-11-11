@@ -50,12 +50,15 @@ export const HoverEffect = ({ items, className }) => {
 							/>
 						)}
 
-						<CardTitle>{item.title}</CardTitle>
-						<CardDescription>{item.description}</CardDescription>
+						{/* Apply responsive classes directly here */}
+						<CardTitle className="hidden sm:block">{item.title}</CardTitle>
+						<CardDescription className="hidden sm:block">{item.description}</CardDescription>
 					</Card>
 				</Link>
 			))}
 		</div>
+
+
 	);
 };
 
@@ -72,23 +75,19 @@ export const Card = ({ className, children }) => {
 	);
 };
 
-export const CardTitle = ({ className, children }) => {
-	return (
-		<h4 className={cn('text-zinc-100 font-bold tracking-wide mt-4', className)}>
-			{children}
-		</h4>
-	);
+export const CardTitle = ({ children }) => {
+  return (
+    <h4 className="text-zinc-100 font-bold tracking-wide mt-4 hidden sm:block">
+      {children}
+    </h4>
+  );
 };
 
-export const CardDescription = ({ className, children }) => {
-	return (
-		<p
-			className={cn(
-				'mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm',
-				className
-			)}
-		>
-			{children}
-		</p>
-	);
+export const CardDescription = ({ children }) => {
+  return (
+    <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm hidden sm:block">
+      {children}
+    </p>
+  );
 };
+
