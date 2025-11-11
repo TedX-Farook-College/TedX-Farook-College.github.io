@@ -172,7 +172,7 @@ export default function BookPage() {
                             <Icon icon="lucide:info" className="text-red-600 size-5 mt-0.5" />
                             <span>
                                 <strong>NB:</strong> If your ticket type is a <strong>Student Ticket</strong>, please upload
-                                your valid student ID card during booking and don’t forget to bring it with you
+                                your <strong>valid student ID card</strong> during booking and don’t forget to bring it with you
                                 to the event.
                             </span>
                         </motion.div>

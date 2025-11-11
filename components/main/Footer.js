@@ -32,7 +32,7 @@ const Footer = () => {
           <p className="flex gap-2 items-center hover:text-red-500 transition-colors duration-300">
             <CiLocationOn /> Farook College (Autonomous), Calicut
           </p>
-          <p className="flex gap-4 items-center">
+          <p className="flex gap-2 items-center">
             <CiPhone />
             <span className="font-medium">Adam Zakif:</span>
             <a
@@ -43,7 +43,7 @@ const Footer = () => {
             </a>
           </p>
 
-          <p className="flex gap-4 items-center">
+          <p className="flex gap-2 items-center">
             <CiPhone />
             <span className="font-medium">Hana Fathima np:</span>
             <a

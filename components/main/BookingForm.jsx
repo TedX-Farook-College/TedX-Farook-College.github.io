@@ -13,7 +13,7 @@ const EVENT_ID = 'ea1b4199-c0b4-47c7-91f4-93ac32949251';
 
 const MAX_FILE_SIZE_KB = 5000;
 const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_KB * 1024;
-const MAX_FILE_SIZE_MB = MAX_FILE_SIZE_KB / 1024;
+const MAX_FILE_SIZE_MB = Math.round(MAX_FILE_SIZE_KB / 1024);
 const VALID_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 
 const loadScript = (src) => {
