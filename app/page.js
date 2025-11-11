@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X } from 'lucide-react';
+import { useRouter } from "next/router";
 import Footer from '../components/main/Footer';
 import Link from 'next/link';
 import Navbar from '@/components/main/Navbar';
@@ -25,6 +25,12 @@ export default function Home() {
 			transition: { duration: 0.5 },
 		},
 	};
+
+	const [loading, setLoading] = useState(false);
+
+	const handleClick = async () => {
+		setLoading(true);
+	}
 
 	return (
 		<div className="bg-black min-h-screen text-white font-sans relative overflow-hidden ">
@@ -63,11 +69,20 @@ export default function Home() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, ease: "easeOut" }}
 					>
-						<Link
-							href={'/book'}
-							className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition z-10 relative inline-block"
-						>
-							Book Now
+						<Link href="/book" passHref>
+							<button
+								onClick={handleClick} // Trigger loading on button click
+								className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition z-10 relative inline-block"
+								disabled={loading} // Disable button during loading
+								style={{ minWidth: '200px' }} // Ensure the button width stays consistent (adjust as needed)
+							>
+								{loading ? (
+									<div className="loader"></div> // Loading spinner when loading
+								) : (
+									"Book Now" // Normal button text
+								)}
+							</button>
+
 						</Link>
 					</motion.div>
 				</div>
