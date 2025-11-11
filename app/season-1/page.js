@@ -1,11 +1,14 @@
 'use client';
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+
+import React from 'react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { motion } from 'motion/react';
 import Footer from '@/components/main/Footer';
 import Navbar from '@/components/main/Navbar';
+import Image from 'next/image';
 
 export default function Season1() {
-
 	const containerVariants = {
 		hidden: { opacity: 0 },
 		visible: {
@@ -97,20 +100,22 @@ export default function Season1() {
 
 	const sponsors = [
 		{ name: 'Meitra', logo: '/images/s1/sponsors/Meitra.webp' },
-		{ name: 'Haris&Co. Academy', logo: '/images/s1/sponsors/Haris&co-academy-logo.webp' },
+		{
+			name: 'Haris&Co. Academy',
+			logo: '/images/s1/sponsors/Haris&co-academy-logo.webp',
+		},
 		{ name: 'TIE LOGO BRAND', logo: '/images/s1/sponsors/logobrand.webp' },
 		{ name: 'Bluince', logo: '/images/s1/sponsors/logo_elance.webp' },
 		{ name: 'GreenShore', logo: '/images/s1/sponsors/seashore.webp' },
 		{ name: 'Arabic Logo', logo: '/images/s1/sponsors/light-house.webp' },
 	];
 
-
 	return (
 		<div className="bg-black min-h-screen text-white font-sans relative overflow-hidden">
 			<div className="absolute top-0 right-0 w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] bg-red-600/60 rounded-full blur-[150px] sm:blur-[200px] md:blur-[250px] opacity-30 pointer-events-none"></div>
 			<div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[500px] md:w-[600px] h-[400px] sm:h-[500px] md:h-[600px] bg-red-800/50 rounded-full blur-[200px] sm:blur-[250px] md:blur-[300px] opacity-20 pointer-events-none"></div>
 
-		<Navbar activePage="Season 1" />
+			<Navbar activePage="Season 1" />
 
 			<motion.section
 				className="py-6 sm:py-8 md:py-10 px-4 sm:px-8 md:px-12 lg:px-16 relative z-10"
@@ -119,16 +124,15 @@ export default function Season1() {
 				viewport={{ once: true }}
 				variants={containerVariants}
 			>
-				<motion.div
-					variants={itemVariants}
-					transition={{ delay: 0 }}
-				>
+				<motion.div variants={itemVariants} transition={{ delay: 0 }}>
 					<h1 className="text-white text-4xl sm:text-3xl lg:text-7xl  font-bold mb-10 text-center">
 						Glimpses of Season 1
 					</h1>
 					Leads
-					<img
+					<Image
 						src="/images/s1/leads.webp"
+						width={2915}
+						height={1025}
 						alt="A single wide image leads"
 						className="w-full mx-auto mb-2 object-cover"
 					/>
@@ -206,9 +210,11 @@ export default function Season1() {
 							variants={itemVariants}
 							transition={{ delay: index * 0.1 }}
 						>
-							<img
+							<Image
 								src={speaker.image}
 								alt={speaker.name}
+								width={500}
+								height={500}
 								className="object-cover"
 							/>
 						</motion.div>
@@ -266,7 +272,9 @@ export default function Season1() {
 							variants={itemVariants}
 							transition={{ delay: index * 0.1 }}
 						>
-							<img
+							<Image
+								width={500}
+								height={500}
 								src={sponsor.logo}
 								alt={sponsor.name}
 								className="max-h-12 sm:max-h-14 md:max-h-16 object-contain"

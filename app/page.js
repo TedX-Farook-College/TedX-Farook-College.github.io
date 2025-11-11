@@ -1,14 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { useRouter } from "next/router";
+import React from 'react';
+import { motion } from 'motion/react';
 import Footer from '../components/main/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import Navbar from '@/components/main/Navbar';
 
 export default function Home() {
-
 	const containerVariants = {
 		hidden: { opacity: 0 },
 		visible: {
@@ -35,11 +34,16 @@ export default function Home() {
 
 			{/* Hero */}
 			<section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative -mt-12 sm:mt-0 md:mt-0">
-
 				<div className=" absolute inset-0 bg-[radial-gradient(circle_at_center,#ff000015,transparent_70%)]"></div>
 
-
-				<motion.h1 className="absolute inset-0 flex items-center justify-center text-[22rem] md:text-[32rem] font-extrabold select-none opacity-40 text-red-800/30 drop-shadow-[0_0_50px_rgba(255,0,0,0.4)]" style={{ WebkitTextStroke: '4px rgba(255,0,0,0.6)' }} animate={{ scale: [1, 1.03, 1], y: [0, -15, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} > X3 </motion.h1>
+				<motion.h1
+					className="absolute inset-0 flex items-center justify-center text-[22rem] md:text-[32rem] font-extrabold select-none opacity-40 text-red-800/30 drop-shadow-[0_0_50px_rgba(255,0,0,0.4)]"
+					style={{ WebkitTextStroke: '4px rgba(255,0,0,0.6)' }}
+					animate={{ scale: [1, 1.03, 1], y: [0, -15, 0] }}
+					transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+				>
+					X3
+				</motion.h1>
 
 				<motion.h2
 					className="text-4xl md:text-6xl font-extrabold relative z-10"
@@ -54,16 +58,17 @@ export default function Home() {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 				>
-					Don't miss out on a full day of ideas worth sharing and refreshing entertainment. Reserve your slot before seats run out!
+					Don't miss out on a full day of ideas worth sharing and refreshing
+					entertainment. Reserve your slot before seats run out!
 				</motion.p>
 
 				<div className="flex justify-center pointer-events-auto">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5, ease: "easeOut" }}
+						transition={{ duration: 0.5, ease: 'easeOut' }}
 					>
-						<a
+						<Link
 							href="https://app.makemypass.com/event/tedx-fc-s3"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -74,10 +79,9 @@ export default function Home() {
 							>
 								Book Now
 							</button>
-						</a>
+						</Link>
 					</motion.div>
 				</div>
-
 			</section>
 
 			<hr className="border-t border-red-500 mx-4 sm:mx-6 md:mx-10" />
@@ -129,10 +133,13 @@ export default function Home() {
 				transition={{ duration: 0.7 }}
 			>
 				<div className="bg-black/20 border border-gray-800 p-2 rounded-2xl shadow-2xl shadow-red-900/10 max-w-sm sm:max-w-md md:max-w-lg">
-					<img
-						src="/images/s3/poster.png"
+					<Image
+						src="/images/s3/poster.webp"
 						alt="TEDx Poster"
+						width={1280}
+						height={720}
 						className="w-full object-cover rounded-lg"
+						unoptimized
 					/>
 				</div>
 			</motion.section>
