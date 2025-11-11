@@ -255,36 +255,41 @@ export default function Contact() {
 					<p className="text-white/60 mb-6 text-sm md:text-base tracking-wide">
 						or Contact a team Member Directly
 					</p>
-					<div className="max-w-4xl mx-auto px-4">
-						<div className="flex flex-col items-center sm:grid sm:grid-cols-3 gap-6">
-							{organizers.map((person, i) => (
+					<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+						{organizers.map((person, i) => (
+							<motion.div
+								key={i}
+								initial={{ opacity: 0, y: 30 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ delay: i * 0.15 }}
+								className="relative rounded-xl overflow-hidden group"
+							>
+								<img
+									width={500}
+									height={500}
+									src={person.image}
+									alt={person.name}
+									className="w-full h-52 object-cover grayscale-0 sm:grayscale group-hover:grayscale-0 transition duration-500"
+								/>
+
+								<div className="absolute bottom-0 left-0 right-0 bg-black/50 sm:hidden flex flex-col p-2">
+									<p className="text-white font-semibold text-base">{person.name}</p>
+									<p className="text-white/50 font-semibold text-sm">{person.role}</p>
+									<p className="text-white/70 text-sm">{person.phone}</p>
+								</div>
+
 								<motion.div
-									key={i}
-									initial={{ opacity: 0, y: 40 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									transition={{ delay: i * 0.15, duration: 0.5 }}
-									className="relative rounded-xl overflow-hidden shadow-md bg-neutral-900 w-64 sm:w-full group"
+									initial={{ opacity: 0 }}
+									whileHover={{ opacity: 1 }}
+									className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent hidden sm:flex flex-col justify-end p-4"
 								>
-									<img
-										src={person.image}
-										alt={person.name}
-										width={300}
-										height={300}
-										className="w-full h-44 object-cover rounded-t-xl transition duration-500 group-hover:scale-105"
-									/>
-
-									{/* Info Section */}
-									<div className="p-3 bg-neutral-900 text-center sm:text-left">
-										<p className="text-white font-semibold text-base">{person.name}</p>
-										<p className="text-white/60 text-sm">{person.role}</p>
-										<p className="text-white/40 text-sm">{person.phone}</p>
-									</div>
+									<p className="text-white font-semibold text-base">{person.name}</p>
+									<p className="text-white/50 font-semibold text-sm">{person.role}</p>
+									<p className="text-white/70 text-sm">{person.phone}</p>
 								</motion.div>
-							))}
-						</div>
+							</motion.div>
+						))}
 					</div>
-
-
 				</motion.div>
 			</div>
 			<Footer />
