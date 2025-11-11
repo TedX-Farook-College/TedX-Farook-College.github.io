@@ -233,10 +233,8 @@ export function BookingForm() {
 	};
 
 	const displayRazorpay = async (orderData) => {
-		console.log(
-			'[DEBUG] displayRazorpay: Initializing Razorpay with order data:',
-			orderData
-		);
+		console.log('[DEBUG] displayRazorpay: Initializing Razorpay with order data:', orderData);
+
 		try {
 			await loadScript('https://checkout.razorpay.com/v1/checkout.js');
 			if (!window.Razorpay) {
@@ -252,10 +250,8 @@ export function BookingForm() {
 				order_id: orderData.order_id,
 
 				handler: async (response) => {
-					console.log(
-						'[DEBUG] Razorpay Handler: Success response from Razorpay:',
-						response
-					);
+					console.log('[DEBUG] Razorpay Handler: Success response from Razorpay:', response);
+
 					try {
 						const paymentValidation = await fetch(
 							`${API_BASE_URL}/makemypass/public-form/validate-payment/`,
@@ -272,68 +268,68 @@ export function BookingForm() {
 						);
 
 						const ticketData = await paymentValidation.json();
-						console.log(
-							'[DEBUG] Razorpay Handler: Payment validation response:',
-							ticketData
-						);
+						console.log('[DEBUG] Razorpay Handler: Payment validation response:', ticketData);
 
 						if (!paymentValidation.ok || ticketData.hasError) {
-							throw new Error(
-								ticketData.message || 'Payment validation failed.'
-							);
+							throw new Error(ticketData.message || 'Payment validation failed.');
 						}
 
 						const finalTicketData = ticketData.response;
-						console.log(
-							'[DEBUG] Razorpay Handler: Payment validation SUCCESS',
-							finalTicketData
-						);
+						console.log('[DEBUG] Razorpay Handler: Payment validation SUCCESS', finalTicketData);
 
 						setSubmitStatus('success');
-						setSubmitMessage(
-							finalTicketData.followup_msg ||
-							'Booking successful! Check your email.'
-						);
-						setIsSubmitting(false);
-
-						if (finalTicketData.redirection) {
-							console.log(finalTicketData);
-							router.push(finalTicketData.redirection);
-						}
+						setSubmitMessage(finalTicketData.followup_msg || 'Booking successful! Check your email.');
 					} catch (error) {
-						console.error(
-							'[DEBUG] Razorpay Handler: Payment validation FAILED',
-							error
-						);
+						console.error('[DEBUG] Razorpay Handler: Payment validation FAILED', error);
 						setSubmitStatus('error');
-						setSubmitMessage(
-							'Payment successful, but ticket confirmation failed. Please contact support.'
-						);
-						setIsSubmitting(false);
+						setSubmitMessage('Payment successful, but ticket confirmation failed. Please contact support.');
+					} finally {
+						console.log('[DEBUG] Handler completed. Resetting isSubmitting...');
+						setIsSubmitting(false); // ✅ Reset button text always
+					}
+
+					if (ticketData?.response?.redirection) {
+						router.push(ticketData.response.redirection);
 					}
 				},
-				ondismiss: () => {
-					console.warn(
-						'[DEBUG] displayRazorpay: User dismissed Razorpay modal.'
-					);
-					setSubmitStatus('error');
-					setSubmitMessage('Payment was cancelled. Please try again.');
-					setIsSubmitting(false);
+
+				modal: {
+					ondismiss: () => {
+						console.warn('[DEBUG] displayRazorpay: User dismissed Razorpay modal.');
+						setSubmitStatus('error');
+						setSubmitMessage('Payment was cancelled. Please try again.');
+						setIsSubmitting(false); // ✅ Reset button text if user closes popup
+					},
 				},
+
+				// Optional: Handle payment failure directly from Razorpay
+				callback_url: null, // Not needed unless using backend redirect
+				theme: { color: '#ff2b06' },
 			};
 
 			const rzp = new window.Razorpay(options);
+
+			// ✅ Handle payment failures (like declined cards)
+			rzp.on('payment.failed', (response) => {
+				console.error('[DEBUG] Razorpay: Payment failed', response.error);
+				setSubmitStatus('error');
+				setSubmitMessage('Payment failed. Please try again.');
+				setIsSubmitting(false); // ✅ Reset button text
+			});
+
 			rzp.open();
 		} catch (error) {
-			console.error(
-				'[DEBUG] displayRazorpay: FAILED to load script or open modal',
-				error
-			);
+			console.error('[DEBUG] displayRazorpay: FAILED to load script or open modal', error);
 			setSubmitStatus('error');
 			setSubmitMessage(error.message || 'Payment gateway failed to load.');
-			setIsSubmitting(false);
+			setIsSubmitting(false); // ✅ Reset button on script load failure
 		}
 	};
+
+
+
+
+
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -758,18 +754,15 @@ export function BookingForm() {
 								Total: ₹{finalPrice.toFixed(2)}
 							</span>
 						</div>
-
+						{/* Button */}
 						<div className="mt-4 w-full">
 							<GetStartedButton
-								text={
-									isSubmitting
-										? 'Processing...'
-										: `Book for ₹${finalPrice.toFixed(2)}`
-								}
+								text={isSubmitting ? 'Processing...' : `Book for ₹${finalPrice.toFixed(2)}`}
 								type="submit"
 								disabled={isSubmitting || isLoading}
 							/>
 						</div>
+
 
 						{submitStatus === 'error' && (
 							<motion.div
