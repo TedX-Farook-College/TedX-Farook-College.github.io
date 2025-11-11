@@ -69,7 +69,7 @@ export default function Home() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, ease: "easeOut" }}
 					>
-						<Link href="/book" passHref>
+						<Link href="https://app.makemypass.com/event/tedx-fc-s3">
 							<button
 								onClick={handleClick} // Trigger loading on button click
 								className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition z-10 relative inline-block"
