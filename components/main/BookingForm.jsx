@@ -285,7 +285,7 @@ export function BookingForm() {
 						setSubmitMessage('Payment successful, but ticket confirmation failed. Please contact support.');
 					} finally {
 						console.log('[DEBUG] Handler completed. Resetting isSubmitting...');
-						setIsSubmitting(false); // ✅ Reset button text always
+						setIsSubmitting(false);
 					}
 
 					if (ticketData?.response?.redirection) {
@@ -298,23 +298,21 @@ export function BookingForm() {
 						console.warn('[DEBUG] displayRazorpay: User dismissed Razorpay modal.');
 						setSubmitStatus('error');
 						setSubmitMessage('Payment was cancelled. Please try again.');
-						setIsSubmitting(false); // ✅ Reset button text if user closes popup
+						setIsSubmitting(false);
 					},
 				},
 
-				// Optional: Handle payment failure directly from Razorpay
-				callback_url: null, // Not needed unless using backend redirect
+				callback_url: null,
 				theme: { color: '#ff2b06' },
 			};
 
 			const rzp = new window.Razorpay(options);
 
-			// ✅ Handle payment failures (like declined cards)
 			rzp.on('payment.failed', (response) => {
 				console.error('[DEBUG] Razorpay: Payment failed', response.error);
 				setSubmitStatus('error');
 				setSubmitMessage('Payment failed. Please try again.');
-				setIsSubmitting(false); // ✅ Reset button text
+				setIsSubmitting(false);
 			});
 
 			rzp.open();
@@ -322,14 +320,9 @@ export function BookingForm() {
 			console.error('[DEBUG] displayRazorpay: FAILED to load script or open modal', error);
 			setSubmitStatus('error');
 			setSubmitMessage(error.message || 'Payment gateway failed to load.');
-			setIsSubmitting(false); // ✅ Reset button on script load failure
+			setIsSubmitting(false);
 		}
 	};
-
-
-
-
-
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -488,7 +481,7 @@ export function BookingForm() {
 			initial={{ opacity: 0, x: -60 }}
 			whileInView={{ opacity: 1, x: 0 }}
 			transition={{ duration: 0.7 }}
-			className="bg-neutral-900/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col justify-center h-full min-h-[700px]" // <-- Added min-h-[700px]
+			className="bg-neutral-900/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col justify-center min-h-[700px]"
 		>
 
 			<AnimatePresence mode="wait">
