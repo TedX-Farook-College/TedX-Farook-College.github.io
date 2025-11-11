@@ -490,10 +490,9 @@ export function BookingForm() {
 			transition={{ duration: 0.7 }}
 			className="bg-neutral-900/60 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl flex flex-col justify-center h-full min-h-[700px]" // <-- Added min-h-[700px]
 		>
-			{/* --- CHANGE: Added AnimatePresence --- */}
+
 			<AnimatePresence mode="wait">
 				{submitStatus === 'success' ? (
-					// --- CHANGE: NEW Success View ---
 					<motion.div
 						key="success"
 						initial={{ opacity: 0, y: 20 }}
@@ -537,7 +536,6 @@ export function BookingForm() {
 							</div>
 						)}
 
-						{/* ... (All form fields remain unchanged) ... */}
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}

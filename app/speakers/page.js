@@ -43,7 +43,6 @@ const Speakers = () => {
                 backgroundAttachment: 'fixed',
             }}
         >
-            {/* Red glowing accents */}
             <div className="absolute top-0 right-0 w-[250px] sm:w-[350px] md:w-[500px] h-[250px] sm:h-[350px] md:h-[500px] bg-red-600/60 rounded-full blur-[150px] sm:blur-[200px] md:blur-[250px] opacity-30 pointer-events-none"></div>
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[350px] sm:w-[500px] md:w-[600px] h-[350px] sm:h-[500px] md:h-[600px] bg-red-800/50 rounded-full blur-[200px] sm:blur-[250px] md:blur-[300px] opacity-20 pointer-events-none"></div>
 
@@ -61,7 +60,6 @@ const Speakers = () => {
                         Speakers
                     </h1>
 
-                    {/* Responsive Grid */}
                     <div
                         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 md:gap-8 justify-items-center"
                     >

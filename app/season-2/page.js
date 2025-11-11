@@ -198,7 +198,6 @@ const Season2 = () => {
                 variants={containerVariants}
             >
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
-                    {/* === Row 1: Normal images === */}
                     {images.slice(0, 4).map((img, index) => (
                         <motion.div
                             key={`normal-${index}`}
@@ -213,7 +212,6 @@ const Season2 = () => {
                         </motion.div>
                     ))}
 
-                    {/* === Row 2: Blurred images with overlay === */}
                     <div className="relative col-span-full">
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
                             {images.slice(4, 8).map((img, index) => (
@@ -231,7 +229,6 @@ const Season2 = () => {
                             ))}
                         </div>
 
-                        {/* Overlay covering the blurred row */}
                         <motion.div
                             
                             whileHover={{ scale: 1.02 }}

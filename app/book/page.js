@@ -40,14 +40,12 @@ export default function BookPage() {
                     </p>
                 </motion.div>
 
-                {/* Combined Event Details & What's Included Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7 }}
                     className="w-full max-w-7xl mx-auto mb-12"
                 >
-                    {/* Container for both sections, but keeping them in their own grids */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {/* Event Details Section */}
                         <motion.div
@@ -162,8 +160,22 @@ export default function BookPage() {
 
                 {/* Booking Form and Lanyard */}
                 <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+
                     {/* Left Side: Form */}
                     <div className="w-full h-full">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 0.5 }}
+                            className="text-white/80 mb-6 text-sm bg-white/10 border border-white/20 rounded-lg p-3 flex items-start gap-3"
+                        >
+                            <Icon icon="lucide:info" className="text-red-600 size-5 mt-0.5" />
+                            <span>
+                                <strong>NB:</strong> If your ticket type is a <strong>Student Ticket</strong>, please upload
+                                your valid student ID card during booking and don’t forget to bring it with you
+                                to the event.
+                            </span>
+                        </motion.div>
                         <BookingForm />
                     </div>
 
