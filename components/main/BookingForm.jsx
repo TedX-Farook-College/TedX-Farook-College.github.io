@@ -152,9 +152,8 @@ export function BookingForm() {
 		}
 		if (!formData.phone.trim()) {
 			tempErrors.phone = 'Mobile number is required.';
-		} else if (!/^\+[1-9]\d{1,14}$/.test(formData.phone.replace(/\s/g, ''))) {
-			tempErrors.phone =
-				'Mobile number must include country code (e.g., +919876543210)';
+		} else if (!/^[6-9]\d{9}$/.test(formData.phone.trim())) {
+			tempErrors.phone = 'Mobile number should contain 10 digits';
 		}
 
 		if (!formData.are_you_a_student_) {
@@ -345,7 +344,7 @@ export function BookingForm() {
 			const rsvpFormData = new FormData();
 			rsvpFormData.append('name', formData.name);
 			rsvpFormData.append('email', formData.email);
-			rsvpFormData.append('phone', formData.phone);
+			rsvpFormData.append('phone', `+91${formData.phone}`);
 			rsvpFormData.append('food', formData.food);
 			rsvpFormData.append('are_you_a_student_', formData.are_you_a_student_);
 
@@ -380,7 +379,7 @@ export function BookingForm() {
 			const orderFormData = new FormData();
 			orderFormData.append('name', formData.name);
 			orderFormData.append('email', formData.email);
-			orderFormData.append('phone', formData.phone);
+			orderFormData.append('phone', `+91${formData.phone}`);
 			orderFormData.append('food', formData.food);
 			orderFormData.append('are_you_a_student_', formData.are_you_a_student_);
 
@@ -599,21 +598,30 @@ export function BookingForm() {
 								htmlFor="phone"
 								className="text-sm text-white/70 font-medium tracking-wide"
 							>
-								Mobile Number (with Country Code)
+								Mobile Number
 							</label>
-							<input
-								type="tel"
-								name="phone"
-								id="phone"
-								placeholder="e.g., +919876543210"
-								value={formData.phone}
-								onChange={handleChange}
-								disabled={isSubmitting}
-								className={cn(
-									inputBaseClass,
-									errors.phone && 'border-red-500 ring-red-500'
-								)}
-							/>
+							<div className="flex items-center">
+								<span className="px-3 py-2 bg-red-600 text-white font-semibold rounded-l-md border border-red-600">
+									+91
+								</span>
+								<input
+									type="tel"
+									name="phone"
+									id="phone"
+									placeholder="9876543210"
+									value={formData.phone}
+									onChange={handleChange}
+									disabled={isSubmitting}
+									className={cn(
+										inputBaseClass,
+										"rounded-l-none border-l-0 bg-black text-white placeholder-gray-500 focus:ring-red-600 focus:border-red-600",
+										errors.phone && "border-red-500 ring-red-500"
+									)}
+								/>
+							</div>
+
+
+
 							{errors.phone && (
 								<p className="text-xs text-red-400">{errors.phone}</p>
 							)}

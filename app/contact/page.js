@@ -255,41 +255,46 @@ export default function Contact() {
 					<p className="text-white/60 mb-6 text-sm md:text-base tracking-wide">
 						or Contact a team Member Directly
 					</p>
-					<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+					<div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-lg sm:max-w-5xl mx-auto px-4">
 						{organizers.map((person, i) => (
 							<motion.div
 								key={i}
 								initial={{ opacity: 0, y: 30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ delay: i * 0.15 }}
-								className="relative rounded-xl overflow-hidden group"
+								className="relative rounded-2xl overflow-hidden group shadow-md sm:shadow-none hover:shadow-lg transition-all duration-300 mx-auto w-10/12 sm:w-full"
 							>
 								<img
 									width={500}
 									height={500}
 									src={person.image}
 									alt={person.name}
-									className="w-full h-52 object-cover grayscale-0 sm:grayscale group-hover:grayscale-0 transition duration-500"
+									className="w-full h-64 sm:h-52 object-cover rounded-2xl sm:rounded-xl grayscale-0 sm:grayscale group-hover:grayscale-0 transition duration-500"
 								/>
 
-								<div className="absolute bottom-0 left-0 right-0 bg-black/50 sm:hidden flex flex-col p-2">
-									<p className="text-white font-semibold text-base">{person.name}</p>
-									<p className="text-white/50 font-semibold text-sm">{person.role}</p>
-									<p className="text-white/70 text-sm">{person.phone}</p>
+								{/* Mobile overlay (always visible) */}
+								<div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent sm:hidden flex flex-col justify-end p-3 rounded-b-2xl">
+									<p className="text-white font-semibold text-lg leading-tight">{person.name}</p>
+									<p className="text-white/70 text-sm">{person.role}</p>
+									<p className="text-white/60 text-xs mt-1">{person.phone}</p>
 								</div>
 
+								{/* Desktop hover overlay */}
 								<motion.div
 									initial={{ opacity: 0 }}
 									whileHover={{ opacity: 1 }}
-									className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent hidden sm:flex flex-col justify-end p-4"
+									className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent hidden sm:flex flex-col justify-end p-4 rounded-xl"
 								>
 									<p className="text-white font-semibold text-base">{person.name}</p>
-									<p className="text-white/50 font-semibold text-sm">{person.role}</p>
-									<p className="text-white/70 text-sm">{person.phone}</p>
+									<p className="text-white/60 text-sm">{person.role}</p>
+									<p className="text-white/50 text-xs mt-1">{person.phone}</p>
 								</motion.div>
 							</motion.div>
 						))}
 					</div>
+
+
+
 				</motion.div>
 			</div>
 			<Footer />
