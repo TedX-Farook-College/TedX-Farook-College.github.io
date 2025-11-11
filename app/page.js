@@ -26,12 +26,6 @@ export default function Home() {
 		},
 	};
 
-	const [loading, setLoading] = useState(false);
-
-	const handleClick = async () => {
-		setLoading(true);
-	}
-
 	return (
 		<div className="bg-black min-h-screen text-white font-sans relative overflow-hidden ">
 			<div className="absolute top-0 right-0 w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] bg-red-600/60 rounded-full blur-[150px] sm:blur-[200px] md:blur-[250px] opacity-30 pointer-events-none"></div>
@@ -69,23 +63,21 @@ export default function Home() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, ease: "easeOut" }}
 					>
-						<Link href="https://app.makemypass.com/event/tedx-fc-s3">
+						<a
+							href="https://app.makemypass.com/event/tedx-fc-s3"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<button
-								onClick={handleClick} // Trigger loading on button click
 								className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition z-10 relative inline-block"
-								disabled={loading} // Disable button during loading
-								style={{ minWidth: '200px' }} // Ensure the button width stays consistent (adjust as needed)
+								style={{ minWidth: '200px' }}
 							>
-								{loading ? (
-									<div className="loader"></div> // Loading spinner when loading
-								) : (
-									"Book Now" // Normal button text
-								)}
+								Book Now
 							</button>
-
-						</Link>
+						</a>
 					</motion.div>
 				</div>
+
 			</section>
 
 			<hr className="border-t border-red-500 mx-4 sm:mx-6 md:mx-10" />
