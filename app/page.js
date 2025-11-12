@@ -62,26 +62,43 @@ export default function Home() {
 					entertainment. Reserve your slot before seats run out!
 				</motion.p>
 
-				<div className="flex justify-center pointer-events-auto">
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5, ease: 'easeOut' }}
-					>
-						<Link
-							href="https://app.makemypass.com/event/tedx-fc-s3"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<button
-								className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition z-10 relative inline-block"
-								style={{ minWidth: '200px' }}
-							>
-								Book Now
-							</button>
-						</Link>
-					</motion.div>
-				</div>
+				<div className="flex flex-col sm:flex-row justify-center items-center pointer-events-auto space-y-5 sm:space-y-0 sm:space-x-3 mt-8">
+	<motion.div
+		initial={{ opacity: 0, y: 20 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.5, ease: 'easeOut' }}
+	>
+		<Link
+			href="https://app.makemypass.com/event/tedx-fc-s3"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<button
+				className="bg-white text-black px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition z-10 relative inline-block w-full sm:w-auto"
+				style={{ minWidth: '200px' }}
+			>
+				Book Now
+			</button>
+		</Link>
+	</motion.div>
+
+	<motion.div
+		initial={{ opacity: 0, y: 20 }}
+		animate={{ opacity: 1, y: 0 }}
+		transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
+	>
+		<Link href="/speakers">
+			<button
+				className="border-2 border-red-500 text-red-500 px-8 py-3 rounded-full font-semibold shadow hover:bg-red-500 hover:text-white hover:scale-105 transition z-10 relative inline-flex items-center justify-center gap-2 w-full sm:w-auto"
+				style={{ minWidth: '200px' }}
+			>
+				<span>Meet the Speakers</span>
+				<span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+			</button>
+		</Link>
+	</motion.div>
+</div>
+
 			</section>
 
 			<hr className="border-t border-red-500 mx-4 sm:mx-6 md:mx-10" />
