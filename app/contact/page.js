@@ -1,9 +1,10 @@
 'use client';
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React from 'react';
+import { motion } from 'motion/react';
 import Footer from '@/components/main/Footer';
 import { GetStartedButton } from '@/components/ui/GetStartedButton';
 import Navbar from '@/components/main/Navbar';
+import Image from 'next/image';
 
 const cn = (...classes) => classes.filter(Boolean).join(' ');
 
@@ -45,7 +46,6 @@ function SlideArrowButton({
 }
 
 export default function Contact() {
-
 	const organizers = [
 		{
 			name: 'Naheel Bran',
@@ -68,7 +68,6 @@ export default function Contact() {
 	];
 
 	return (
-
 		<div className="bg-black min-h-screen text-white font-sans relative overflow-hidden">
 			<div className="absolute top-0 right-0 w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] bg-red-600/60 rounded-full blur-[150px] sm:blur-[200px] md:blur-[250px] opacity-30 pointer-events-none"></div>
 			<div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[500px] md:w-[600px] h-[400px] sm:h-[500px] md:h-[600px] bg-red-800/50 rounded-full blur-[200px] sm:blur-[250px] md:blur-[300px] opacity-20 pointer-events-none"></div>
@@ -154,23 +153,23 @@ export default function Contact() {
 						</motion.div>
 
 						<style jsx>{`
-      .mapouter {
-        position: relative;
-        text-align: right;
-        width: 100%;
-        height: 100%;
-      }
-      .gmap_canvas {
-        overflow: hidden;
-        background: none !important;
-        width: 100%;
-        height: 100%;
-      }
-      .gmap_canvas iframe {
-        width: 100%;
-        height: 100%;
-      }
-    `}</style>
+							.mapouter {
+								position: relative;
+								text-align: right;
+								width: 100%;
+								height: 100%;
+							}
+							.gmap_canvas {
+								overflow: hidden;
+								background: none !important;
+								width: 100%;
+								height: 100%;
+							}
+							.gmap_canvas iframe {
+								width: 100%;
+								height: 100%;
+							}
+						`}</style>
 					</motion.div>
 
 					<motion.div
@@ -264,7 +263,7 @@ export default function Contact() {
 								transition={{ delay: i * 0.15 }}
 								className="relative rounded-2xl overflow-hidden group shadow-md sm:shadow-none hover:shadow-lg transition-all duration-300 mx-auto w-10/12 sm:w-full"
 							>
-								<img
+								<Image
 									width={500}
 									height={500}
 									src={person.image}
@@ -274,7 +273,9 @@ export default function Contact() {
 
 								{/* Mobile overlay (always visible) */}
 								<div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent sm:hidden flex flex-col justify-end p-3 rounded-b-2xl">
-									<p className="text-white font-semibold text-lg leading-tight">{person.name}</p>
+									<p className="text-white font-semibold text-lg leading-tight">
+										{person.name}
+									</p>
 									<p className="text-white/70 text-sm">{person.role}</p>
 									<p className="text-white/60 text-xs mt-1">{person.phone}</p>
 								</div>
@@ -285,16 +286,15 @@ export default function Contact() {
 									whileHover={{ opacity: 1 }}
 									className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent hidden sm:flex flex-col justify-end p-4 rounded-xl"
 								>
-									<p className="text-white font-semibold text-base">{person.name}</p>
+									<p className="text-white font-semibold text-base">
+										{person.name}
+									</p>
 									<p className="text-white/60 text-sm">{person.role}</p>
 									<p className="text-white/50 text-xs mt-1">{person.phone}</p>
 								</motion.div>
 							</motion.div>
 						))}
 					</div>
-
-
-
 				</motion.div>
 			</div>
 			<Footer />
