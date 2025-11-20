@@ -58,8 +58,7 @@ export default function Home() {
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 				>
-					Tickets are sold out! Don't miss out on a full day of ideas worth
-					sharing and refreshing entertainment.
+					Catch us at the event at Farook College on the 28th of November!
 				</motion.p>
 
 				<div className="flex flex-col sm:flex-row justify-center items-center pointer-events-auto space-y-5 sm:space-y-0 sm:space-x-3 mt-8">
