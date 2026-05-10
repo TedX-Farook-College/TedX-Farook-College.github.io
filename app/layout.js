@@ -11,7 +11,7 @@ export const metadata = {
 	metadataBase: new URL('https://tedx.farookcollege.ac.in'),
 	title: 'TEDxFC X3',
 	description:
-		'TEDx Farook College is an independently organized TED event serving as a hub of ideas and knowledge for the thinkers of Malabar. Hosted by the Arts and Science college in Malabar, it offers a platform for students across Kerala to share, learn, and aspire. With a futuristic approach to knowledge and progress, TEDxFarookCollege is guided by the idea of advancing academic and personal growth. It represents both a solace and an inspiration for young minds, while setting the stage for future events and innovation.',
+		'TEDx Farook College is an independently organized TED event serving as a hub of ideas and knowledge for the thinkers of Malabar.',
 	keywords: [
 		'TEDx',
 		'Farook College',
@@ -19,13 +19,12 @@ export const metadata = {
 		'Ideas',
 		'Innovation',
 		'Education',
-		'Conference',
 	],
 	authors: [{ name: 'TEDx Farook College' }],
 	openGraph: {
 		title: 'TedXFC X3 - Ideas Worth Spreading',
 		description:
-			'Join us for an unforgettable journey of innovation, inspiration, and ideas that will shape our future.',
+			'Join us for an unforgettable journey of innovation, inspiration.',
 		url: 'https://tedx.farookcollege.ac.in',
 		siteName: 'TEDx Farook College',
 		images: [
@@ -33,20 +32,16 @@ export const metadata = {
 				url: '/og-image.jpg',
 				width: 1200,
 				height: 630,
-				alt: 'TEDx Farook College',
 			},
 		],
-		locale: 'en_US',
 		type: 'website',
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'TedXFC X3 - Ideas Worth Spreading',
+		title: 'TedXFC X3',
 		description:
-			'Join us for an unforgettable journey of innovation, inspiration, and ideas that will shape our future.',
+			'Join us for innovation and inspiration.',
 		images: ['/twitter-image.jpg'],
-		creator: '@tedxfarookcollege',
-		site: '@tedxfarookcollege',
 	},
 	robots: {
 		index: true,
@@ -54,14 +49,7 @@ export const metadata = {
 	},
 	icons: {
 		icon: '/favicon.ico',
-		shortcut: '/favicon.ico',
-		apple: '/apple-touch-icon.png',
-		other: {
-			rel: 'apple-touch-icon-precomposed',
-			url: '/apple-touch-icon.png',
-		},
 	},
-	manifest: '/site.webmanifest',
 };
 
 export const viewport = {
@@ -75,8 +63,15 @@ export default function RootLayout({ children }) {
 				<meta name="apple-mobile-web-app-title" content="TEDxFC" />
 			</head>
 
-			<body className={`${InterSans.variable} antialiased`}>{children}</body>
-			<GoogleAnalytics gaId="G-F4673C0949" />
+			<body className={`${InterSans.variable} antialiased bg-black text-white`}>
+				{/* ✅ GLOBAL SPACING FOR FIXED NAVBAR */}
+				<main className="pt-28">
+					{children}
+				</main>
+
+				{/* ✅ Correct placement */}
+				<GoogleAnalytics gaId="G-F4673C0949" />
+			</body>
 		</html>
 	);
 }

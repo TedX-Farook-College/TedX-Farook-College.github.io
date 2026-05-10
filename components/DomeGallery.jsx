@@ -112,6 +112,74 @@ const DEFAULT_IMAGES = [
     src: '/images/s2/gallery/20.jpg',
     alt: 'Social media image'
   },
+  {
+    src: '/images/s3/gallery/1.jpg',
+    alt: 'Textured surface'
+  },
+  {
+    src: '/images/s3/gallery/2.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/3.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/4.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/5.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/6.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/7.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/8.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/8.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/9.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/9.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/10.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/11.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/12.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/13.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/14.jpg',
+    alt: 'Social media image'
+  },
+  {
+    src: '/images/s3/gallery/team.jpeg',
+    alt: 'Social media image'
+  },
 ];
 
 const DEFAULTS = {
