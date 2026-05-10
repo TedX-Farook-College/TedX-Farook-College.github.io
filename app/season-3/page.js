@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { Marquee } from '@/components/ui/marquee';
 import { SponsorCard } from '@/components/main/SponsorCard';
 import { marqueeSponsors } from '@/lib/sponsors';
-
+ 
 const Season2 = () => {
     const containerVariants = {
         hidden: { opacity: 0 },
