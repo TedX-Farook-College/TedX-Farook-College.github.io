@@ -48,22 +48,14 @@ function SlideArrowButton({
 export default function Contact() {
 	const organizers = [
 		{
-			name: 'Naheel Bran',
-			phone: '+91 8590659086',
+			name: 'Amal Hussain K',
 			role: 'Organizer',
-			image: '/images/organizers/Naheel.webp',
+			image: '/images/organizers/Amal.webp',
 		},
 		{
-			name: 'Muhammed Sahal',
-			phone: '+91 9061905314',
-			role: 'Co-Organizer',
-			image: '/images/organizers/Sahal.webp',
-		},
-		{
-			name: 'Hawwa Ayyoob',
-			phone: '+91 9072920614',
+			name: 'Anjali T A',
 			role: 'Curator',
-			image: '/images/organizers/Hawwa.webp',
+			image: '/images/organizers/Anjali.webp',
 		},
 	];
 
@@ -254,7 +246,7 @@ export default function Contact() {
 					<p className="text-white/60 mb-6 text-sm md:text-base tracking-wide">
 						or Contact a team Member Directly
 					</p>
-					<div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-lg sm:max-w-5xl mx-auto px-4">
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg sm:max-w-2xl mx-auto px-4 justify-items-center">
 						{organizers.map((person, i) => (
 							<motion.div
 								key={i}
@@ -277,7 +269,6 @@ export default function Contact() {
 										{person.name}
 									</p>
 									<p className="text-white/70 text-sm">{person.role}</p>
-									<p className="text-white/60 text-xs mt-1">{person.phone}</p>
 								</div>
 
 								{/* Desktop hover overlay */}
@@ -290,7 +281,6 @@ export default function Contact() {
 										{person.name}
 									</p>
 									<p className="text-white/60 text-sm">{person.role}</p>
-									<p className="text-white/50 text-xs mt-1">{person.phone}</p>
 								</motion.div>
 							</motion.div>
 						))}
