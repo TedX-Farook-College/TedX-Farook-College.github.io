@@ -55,7 +55,7 @@ export default function Contact() {
 		{
 			name: 'Aman Riyas',
 			role: 'Co-organizer',
-			image: '/images/organizers/Aman3.jpeg'
+			image: '/images/organizers/Aman.webp'
 		},
 		{
 			name: 'Anjali T A',

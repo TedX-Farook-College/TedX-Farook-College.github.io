@@ -9,7 +9,7 @@ const InterSans = Inter({
 
 export const metadata = {
 	metadataBase: new URL('https://tedx.farookcollege.ac.in'),
-	title: 'TEDxFC X3',
+	title: 'TEDxFC X4',
 	description:
 		'TEDx Farook College is an independently organized TED event serving as a hub of ideas and knowledge for the thinkers of Malabar.',
 	keywords: [
@@ -38,7 +38,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'TedXFC X3',
+		title: 'TedXFC X4',
 		description:
 			'Join us for innovation and inspiration.',
 		images: ['/twitter-image.jpg'],
