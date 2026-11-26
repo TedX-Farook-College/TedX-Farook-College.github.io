@@ -6,21 +6,22 @@ import { CiLocationOn, CiPhone, CiMail } from "react-icons/ci";
 
 const Footer = () => {
 
-  const pages1 = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Speakers', href: '/speakers' },
-    { name: 'Sponsors', href: '/sponsors' },
+	const pages1 = [
+		{ name: 'Home', href: '/' },
+		{ name: 'About', href: '/about' },
+		{ name: 'Speakers', href: '/speakers' },
+		{ name: 'Sponsors', href: '/sponsors' },
 
-  ];
-  const pages2 = [
-    { name: 'Season 1', href: '/season-1' },
-    { name: 'Season 2', href: '/season-2' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Gallery', href: '/gallery' },
+	];
+	const pages2 = [
+		{ name: 'Season 1', href: '/season-1' },
+		{ name: 'Season 2', href: '/season-2' },
+		{ name: 'Season 3', href: '/season-3' },
+		{ name: 'Contact', href: '/contact' },
+		{ name: 'Gallery', href: '/gallery' },
 
-  ];
-  return (
+	];
+	return (
 		<div className="bg-gradient-to-b from-neutral-900 to-black text-gray-300 px-6 md:px-16 lg:px-24 py-5 border-t border-neutral-800">
 			<div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10 text-base md:text-lg">
 				{/* Contact Section */}
@@ -34,23 +35,23 @@ const Footer = () => {
 					</p>
 					<p className="flex gap-2 items-center">
 						<CiPhone />
-						<span className="font-medium">Adam Zakif:</span>
+						<span className="font-medium">Amal Hussain K:</span>
 						<a
-							href="tel:+917012200234"
+							href="tel:+918848980780"
 							className="hover:text-red-500 transition-colors duration-300"
 						>
-							+91 7012200234
+							+91 8848980780
 						</a>
 					</p>
 
 					<p className="flex gap-2 items-center">
 						<CiPhone />
-						<span className="font-medium">Hana Fathima np:</span>
+						<span className="font-medium">Aman Riyas:</span>
 						<a
-							href="tel:+919544888786"
+							href="tel:+917799001001"
 							className="hover:text-red-500 transition-colors duration-300"
 						>
-							+91 9544888786
+							+91 7799001001
 						</a>
 					</p>
 					<p>

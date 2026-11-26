@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
 
 			<body className={`${InterSans.variable} antialiased bg-black text-white`}>
 				{/* ✅ GLOBAL SPACING FOR FIXED NAVBAR */}
-				<main className="pt-28">
+				<main>
 					{children}
 				</main>
 

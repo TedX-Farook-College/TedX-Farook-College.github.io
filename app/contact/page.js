@@ -53,6 +53,11 @@ export default function Contact() {
 			image: '/images/organizers/Amal.webp',
 		},
 		{
+			name: 'Aman Riyas',
+			role: 'Co-organizer',
+			image: '/images/organizers/Aman3.jpeg'
+		},
+		{
 			name: 'Anjali T A',
 			role: 'Curator',
 			image: '/images/organizers/Anjali.webp',
@@ -246,7 +251,7 @@ export default function Contact() {
 					<p className="text-white/60 mb-6 text-sm md:text-base tracking-wide">
 						or Contact a team Member Directly
 					</p>
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-lg sm:max-w-2xl mx-auto px-4 justify-items-center">
+					<div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-lg sm:max-w-2xl mx-auto px-4 justify-items-center">
 						{organizers.map((person, i) => (
 							<motion.div
 								key={i}
