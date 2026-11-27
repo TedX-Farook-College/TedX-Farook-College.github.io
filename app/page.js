@@ -27,9 +27,9 @@ export default function Home() {
 	return (
 		<div className="bg-black min-h-screen text-white font-sans relative overflow-hidden">
 			{/* Background Glow */}
-			<div className="absolute top-0 right-0 w-[300px] sm:w-[450px] md:w-[550px] h-[300px] sm:h-[450px] md:h-[550px] bg-red-600/50 rounded-full blur-[180px] opacity-30 pointer-events-none"></div>
+			<div aria-hidden="true" className="pointer-events-none absolute top-0 right-0 w-[300px] sm:w-[450px] md:w-[550px] h-[300px] sm:h-[450px] md:h-[550px] bg-red-600/50 rounded-full blur-[180px] opacity-30 pointer-events-none" />
 
-			<div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[550px] md:w-[650px] h-[400px] sm:h-[550px] md:h-[650px] bg-red-900/40 rounded-full blur-[220px] opacity-20 pointer-events-none"></div>
+			<div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[550px] md:w-[650px] h-[400px] sm:h-[550px] md:h-[650px] bg-red-900/40 rounded-full blur-[220px] opacity-20 pointer-events-none" />
 
 			<Navbar activePage="Home" />
 
@@ -111,7 +111,7 @@ export default function Home() {
 					>
 						<Link href="/season-3">
 							<button className="border border-red-500 text-red-400 hover:bg-red-500 hover:text-white px-8 py-3 rounded-full font-semibold transition duration-300 hover:scale-105 min-w-[240px]">
-								Explore Past Season 
+								Explore Past Season
 							</button>
 						</Link>
 					</motion.div>

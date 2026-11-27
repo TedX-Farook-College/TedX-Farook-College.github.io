@@ -7,10 +7,10 @@ import Navbar from '@/components/main/Navbar';
 export default function Home() {
 	return (
 		<main className="relative min-h-screen overflow-x-hidden">
-			<div className="absolute inset-0 bg-black -z-20"></div>
+			<div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black -z-20" />
 
-			<div className="h-0 w-[40rem] absolute top-[0%] right-[0] shadow-[0_0_900px_20px_#ff2b06] rotate-[30deg] -z-10"></div>
-			<div className="h-0 w-[40rem] absolute top-[0%] left-[10] shadow-[0_0_900px_20px_#ff2b06] rotate-[30deg] -z-10"></div>
+			<div aria-hidden="true" className="pointer-events-none h-0 w-[40rem] absolute top-[0%] right-[0] shadow-[0_0_900px_20px_#ff2b06] rotate-[30deg] -z-10" />
+			<div aria-hidden="true" className="pointer-events-none h-0 w-[40rem] absolute top-[0%] left-[10] shadow-[0_0_900px_20px_#ff2b06] rotate-[30deg] -z-10" />
 
 			<Navbar activePage="Gallery" />
 
