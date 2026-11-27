@@ -22,7 +22,7 @@ export const metadata = {
 	],
 	authors: [{ name: 'TEDx Farook College' }],
 	openGraph: {
-		title: 'TedXFC X3 - Ideas Worth Spreading',
+		title: 'TedXFC X4 - Ideas Worth Spreading',
 		description:
 			'Join us for an unforgettable journey of innovation, inspiration.',
 		url: 'https://tedx.farookcollege.ac.in',
