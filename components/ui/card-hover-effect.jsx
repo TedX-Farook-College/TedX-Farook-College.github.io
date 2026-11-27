@@ -41,11 +41,12 @@ export const HoverEffect = ({ items, className }) => {
 					</AnimatePresence>
 					<Card>
 						{item.logo && (
-							<img
+							<Image
 								width={300}
 								height={300}
 								src={item.logo}
-								alt={item.logo || 'logo'}
+								alt={`${item.name} logo`}
+								sizes="(max-width: 640px) 100vw, 300px"
 								className="w-full mb-4 h-48 object-contain rounded-t-2xl"
 							/>
 						)}
@@ -76,18 +77,18 @@ export const Card = ({ className, children }) => {
 };
 
 export const CardTitle = ({ children }) => {
-  return (
-    <h4 className="text-zinc-100 font-bold tracking-wide mt-4 hidden sm:block">
-      {children}
-    </h4>
-  );
+	return (
+		<h4 className="text-zinc-100 font-bold tracking-wide mt-4 hidden sm:block">
+			{children}
+		</h4>
+	);
 };
 
 export const CardDescription = ({ children }) => {
-  return (
-    <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm hidden sm:block">
-      {children}
-    </p>
-  );
+	return (
+		<p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm hidden sm:block">
+			{children}
+		</p>
+	);
 };
 

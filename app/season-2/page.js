@@ -191,9 +191,12 @@ const Season2 = () => {
 									variants={itemVariants}
 									className="relative rounded-lg overflow-hidden"
 								>
-									<img
+									<Image
+										width={500}
+										height={500}
 										src={img}
-										alt={`Gallery blurred ${index + 1}`}
+										alt={`Gallery image ${index + 1}`}
+										sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
 										className="w-full h-36 sm:h-40 md:h-48 lg:h-56 object-cover blur-[1.5px] brightness-90"
 									/>
 								</motion.div>
@@ -241,10 +244,12 @@ const Season2 = () => {
 							variants={itemVariants}
 							transition={{ delay: index * 0.1 }}
 						>
-							<img
+							<Image
+								width={500}
+								height={500}
 								src={sponsor.logo}
 								alt={sponsor.name}
-								className="max-h-12 sm:max-h-14 md:max-h-16 object-contain"
+								className="w-auto h-12 sm:h-14 md:h-16 object-contain"
 							/>
 						</motion.div>
 					))}

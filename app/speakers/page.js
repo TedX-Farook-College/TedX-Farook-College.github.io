@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import Footer from '@/components/main/Footer';
 import Navbar from '@/components/main/Navbar';
+import Image from 'next/image';
 
 const Speakers = () => {
     const containerVariants = {
@@ -85,9 +86,12 @@ const Speakers = () => {
                                 >
                                     {/* FRONT SIDE */}
                                     <div className="relative rounded-xl overflow-hidden backface-hidden border border-red-700">
-                                        <img
+                                        <Image
+                                            width={500}
+                                            height={500}
                                             src={speaker.image}
                                             alt={speaker.name}
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             className="w-full h-auto object-cover block"
                                         />
                                     </div>

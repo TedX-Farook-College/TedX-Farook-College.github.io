@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
+import Image from 'next/image';
 
 const DEFAULT_IMAGES = [
   {
@@ -979,15 +980,18 @@ export default function DomeGallery({
                       borderRadius: `var(--tile-radius, ${imageBorderRadius})`,
                       backfaceVisibility: 'hidden'
                     }}>
-                    <img
+                    <Image
+                      fill
                       src={it.src}
                       draggable={false}
-                      alt={it.alt}
-                      className="w-full h-full object-cover pointer-events-none"
+                      alt={it.alt || ""}
+                      sizes="100vw"
+                      className="object-cover pointer-events-none"
                       style={{
                         backfaceVisibility: 'hidden',
                         filter: `var(--image-filter, ${grayscale ? 'grayscale(1)' : 'none'})`
-                      }} />
+                      }}
+                    />
                   </div>
                 </div>
               ))}

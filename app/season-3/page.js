@@ -184,7 +184,9 @@ const Season2 = () => {
                                 >
                                     {/* FRONT SIDE */}
                                     <div className="relative rounded-xl overflow-hidden backface-hidden border border-red-700">
-                                        <img
+                                        <Image
+                                            width={500}
+                                            height={500}
                                             src={speaker.image}
                                             alt={speaker.name}
                                             className="w-full h-auto object-cover block"
@@ -240,9 +242,12 @@ const Season2 = () => {
                                     variants={itemVariants}
                                     className="relative rounded-lg overflow-hidden"
                                 >
-                                    <img
+                                    <Image
+                                        width={500}
+                                        height={500}
                                         src={img}
-                                        alt={`Gallery blurred ${index + 1}`}
+                                        alt={`Gallery image ${index + 1}`}
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                                         className="w-full h-36 sm:h-40 md:h-48 lg:h-56 object-cover blur-[1.5px] brightness-90"
                                     />
                                 </motion.div>
@@ -303,7 +308,9 @@ rounded-2xl p-4
 hover:scale-105 transition-transform duration-300
 "
                         >
-                            <img
+                            <Image
+                                width={500}
+                                height={500}
                                 src={sponsor.logo}
                                 alt={sponsor.name}
                                 className="h-20 w-full object-contain mb-3"

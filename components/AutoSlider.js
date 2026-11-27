@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Slider from 'react-slick';
+import Image from 'next/image';
 
 const AutoSlider = () => {
 
@@ -39,9 +40,12 @@ const AutoSlider = () => {
                 {sponsors.map((sponsor) => (
                     <div key={sponsor.name} className="!w-auto flex justify-center">
                         <div>
-                            <img
+                            <Image
+                                width={500}
+                                height={500}
                                 src={sponsor.logo}
                                 alt={sponsor.name}
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                                 className="h-10 sm:h-14 object-contain"
                             />
                         </div>
