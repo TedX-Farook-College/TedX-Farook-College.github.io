@@ -27,8 +27,8 @@ export default function About() {
 
 	return (
 		<div className="bg-black min-h-screen text-white font-sans relative overflow-hidden">
-			<div className="absolute top-0 right-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-red-600/40 rounded-full blur-[150px] sm:blur-[200px] opacity-30"></div>
-			<div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-red-800/40 rounded-full blur-[200px] sm:blur-[250px] opacity-20"></div>
+			<div className="pointer-events-none absolute top-0 right-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] bg-red-600/40 rounded-full blur-[150px] sm:blur-[200px] opacity-30" />
+			<div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-red-800/40 rounded-full blur-[200px] sm:blur-[250px] opacity-20" />
 
 			<Navbar activePage="About" />
 
