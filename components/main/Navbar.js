@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import Image from 'next/image';
 import { createPortal } from 'react-dom';
 
@@ -138,7 +139,7 @@ const Navbar = () => {
 														>
 															<div className="border-l border-white/10 pl-4">
 																{item.children.map((child) => (
-																	<a
+																	<Link
 																		key={child.href}
 																		href={child.href}
 																		onClick={() => setIsOpen(false)}
@@ -150,7 +151,7 @@ hover:translate-x-1
 "
 																	>
 																		{child.label}
-																	</a>
+																	</Link>
 																))}
 															</div>
 														</motion.div>
@@ -162,7 +163,7 @@ hover:translate-x-1
 
 									return (
 										<li key={item.href}>
-											<a
+											<Link
 												href={item.href}
 												onClick={() => setIsOpen(false)}
 												className={`block py-3 px-4 rounded-lg transition-colors ${isActive(item)
@@ -171,7 +172,7 @@ hover:translate-x-1
 													}`}
 											>
 												{item.label}
-											</a>
+											</Link>
 										</li>
 									);
 								})}
@@ -202,7 +203,7 @@ z-[1000]
 				animate={{ opacity: 1 }}
 			>
 				{/* Logo */}
-				<a href="/">
+				<Link href="/">
 					<Image
 						width={240}
 						height={40}
@@ -212,7 +213,7 @@ z-[1000]
 						className="w-32 sm:w-40 md:w-48 lg:w-60"
 						unoptimized
 					/>
-				</a>
+				</Link>
 
 				{/* Desktop Menu */}
 				<ul className="hidden lg:flex gap-6 text-white/90">
@@ -259,7 +260,7 @@ shadow-[0_20px_60px_rgba(0,0,0,0.6)]
 
 												<div className="relative py-2">
 													{item.children.map((child) => (
-														<a
+														<Link
 															key={child.href}
 															href={child.href}
 															onClick={() => setOpenDropdown(null)}
@@ -276,7 +277,7 @@ hover:text-white hover:bg-white/10
 															<span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">
 																{child.label}
 															</span>
-														</a>
+														</Link>
 													))}
 												</div>
 											</motion.div>
@@ -288,7 +289,7 @@ hover:text-white hover:bg-white/10
 
 						return (
 							<li key={item.href}>
-								<a
+								<Link
 									href={item.href}
 									className={`hover:text-white ${isActive(item)
 										? 'text-red-500 font-bold'
@@ -296,7 +297,7 @@ hover:text-white hover:bg-white/10
 										}`}
 								>
 									{item.label}
-								</a>
+								</Link>
 							</li>
 						);
 					})}
