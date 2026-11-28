@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import NavigationLoading from '@/components/main/NavigationLoading';
 import './globals.css';
 
 const InterSans = Inter({
@@ -65,9 +66,12 @@ export default function RootLayout({ children }) {
 
 			<body className={`${InterSans.variable} antialiased bg-black text-white`}>
 				{/* ✅ GLOBAL SPACING FOR FIXED NAVBAR */}
-				<main className="pt-28">
-					{children}
-				</main>
+				<NavigationLoading>
+					<main className="pt-28">
+						{children}
+					</main>
+				</NavigationLoading>
+
 
 				{/* ✅ Correct placement */}
 				<GoogleAnalytics gaId="G-F4673C0949" />
