@@ -10,6 +10,19 @@ export default function NavigationLoading({ children }) {
 	const fallbackTimeout = useRef(null);
 
 	useEffect(() => {
+		if (!isLoading) {
+			return;
+		}
+
+		const previousOverflow = document.documentElement.style.overflow;
+		document.documentElement.style.overflow = 'hidden';
+
+		return () => {
+			document.documentElement.style.overflow = previousOverflow;
+		};
+	}, [isLoading]);
+
+	useEffect(() => {
 		setIsLoading(false);
 		window.clearTimeout(fallbackTimeout.current);
 	}, [pathname]);
@@ -44,9 +57,9 @@ export default function NavigationLoading({ children }) {
 	}
 
 	return (
-		<div className="fixed inset-0 z-[2000] h-100vh overflow-hidden" onClickCapture={handleNavigation}>
-			{children}
+		<div onClickCapture={handleNavigation}>
 			{isLoading && <Loading />}
+			{children}
 		</div>
 	);
 }

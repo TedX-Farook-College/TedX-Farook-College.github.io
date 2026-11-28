@@ -66,11 +66,11 @@ export default function RootLayout({ children }) {
 
 			<body className={`${InterSans.variable} antialiased bg-black text-white`}>
 				{/* ✅ GLOBAL SPACING FOR FIXED NAVBAR */}
-				<NavigationLoading>
-					<main className="pt-28">
+				<main className="pt-28">
+					<NavigationLoading>
 						{children}
-					</main>
-				</NavigationLoading>
+					</NavigationLoading>
+				</main>
 
 
 				{/* ✅ Correct placement */}
