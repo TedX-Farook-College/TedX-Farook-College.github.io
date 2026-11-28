@@ -133,6 +133,7 @@ export default function Season1() {
 						src="/images/s1/leads.webp"
 						width={2915}
 						height={1025}
+						priority
 						alt="A single wide image leads"
 						className="w-full mx-auto mb-2 object-cover"
 					/>

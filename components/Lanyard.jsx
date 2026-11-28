@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
@@ -16,7 +16,7 @@ export default function Lanyard({
 	transparent = true,
 }) {
 	return (
-		<div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
+		<div className="relative z-0 flex h-full min-h-0 w-full items-center justify-center">
 			<Canvas
 				camera={{ position: position, fov: fov }}
 				gl={{ alpha: transparent }}
@@ -25,9 +25,11 @@ export default function Lanyard({
 				}
 			>
 				<ambientLight intensity={Math.PI} />
-				<Physics gravity={gravity} timeStep={1 / 60}>
-					<Band />
-				</Physics>
+				<Suspense fallback={null}>
+					<Physics gravity={gravity} timeStep={1 / 60}>
+						<Band />
+					</Physics>
+				</Suspense>
 				<Environment blur={0.75}>
 					<Lightformer
 						intensity={2}

@@ -18,6 +18,7 @@ export default function BookPage() {
 				className="absolute top-0 right-0 opacity-70 -z-10"
 				width={524}
 				height={520}
+				priority
 				alt="Gradient background"
 			/>
 			<Navbar activePage="Home" />

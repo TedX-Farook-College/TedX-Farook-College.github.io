@@ -98,6 +98,7 @@ const Season2 = () => {
 						height={2063}
 						src="/images/s2/leads.svg"
 						alt="A single wide image leads"
+						priority
 						className="w-full mx-auto mb-2 object-cover"
 					/>
 				</motion.div>
