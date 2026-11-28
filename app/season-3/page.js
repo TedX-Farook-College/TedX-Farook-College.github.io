@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { Marquee } from '@/components/ui/marquee';
 import { SponsorCard } from '@/components/main/SponsorCard';
 import { marqueeSponsors } from '@/lib/sponsors';
+import MotionImage from '@/components/ui/MotionImage';
 
 const Season2 = () => {
     const containerVariants = {
@@ -141,12 +142,14 @@ const Season2 = () => {
                     Pre-event
                 </motion.p>
                 <div className="flex justify-center">
-                    <motion.img
+                    <MotionImage
                         src="/images/s3/pre-event.jpeg"
                         alt="TEDx Season 3 Pre-event Poster"
-
+                        width={1024}
+                        height={1280}
+                        sizes="(min-width: 1024px) 896px, (min-width: 768px) 576px, (min-width: 640px) 672px, 320px"
+                        priority
                         className="w-auto max-w-xs sm:max-w-2xl md:max-w-xl lg:max-w-4xl max-h-svh rounded-xl border-2 sm:border-4 border-red-500/50 shadow-lg"
-
                         variants={itemVariants}
                     />
                 </div>

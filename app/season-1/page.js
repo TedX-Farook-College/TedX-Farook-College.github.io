@@ -7,6 +7,7 @@ import { motion } from 'motion/react';
 import Footer from '@/components/main/Footer';
 import Navbar from '@/components/main/Navbar';
 import Image from 'next/image';
+import MotionImage from '@/components/ui/MotionImage';
 
 export default function Season1() {
 	const containerVariants = {
@@ -154,9 +155,13 @@ export default function Season1() {
 					Pre-event
 				</motion.p>
 				<div className="flex justify-center">
-					<motion.img
+					<MotionImage
 						src="/images/s1/gallery/Lumiere with glow.webp"
 						alt="LUMIERE"
+						width={5831}
+						height={5256}
+						priority
+						sizes="(min-width: 1024px) 896px, (min-width: 768px) 768px, (min-width: 640px) 672px, calc(100vw - 2rem)"
 						className="w-full max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl rounded-xl border-2 sm:border-4 border-red-500/50 shadow-lg"
 						variants={itemVariants}
 					/>
@@ -232,16 +237,20 @@ export default function Season1() {
 			>
 				<div className="flex overflow-x-auto gap-3 sm:gap-4 pb-4 scrollbar-hide">
 					{[
-						'./images/s1/gallery/1.webp',
+						'/images/s1/gallery/1.webp',
 						'/images/s1/gallery/2.webp',
 						'/images/s1/gallery/3.webp',
 						'/images/s1/gallery/4.webp',
 						'/images/s1/gallery/5.webp',
 					].map((img, index) => (
-						<motion.img
+						<MotionImage
 							key={index}
 							src={img}
 							alt={`Gallery ${index + 1}`}
+							width={256}
+							height={160}
+							priority={index === 4}
+							sizes="(min-width: 768px) 256px, (min-width: 640px) 224px, 192px"
 							className="w-48 sm:w-56 md:w-64 h-32 sm:h-36 md:h-40 object-cover rounded-lg shadow-md flex-shrink-0"
 							variants={itemVariants}
 							transition={{ delay: index * 0.1 }}

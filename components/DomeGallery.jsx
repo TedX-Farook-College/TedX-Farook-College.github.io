@@ -985,7 +985,12 @@ export default function DomeGallery({
                       src={it.src}
                       draggable={false}
                       alt={it.alt || ""}
-                      sizes="100vw"
+                      priority={
+                        (it.src === '/images/s2/gallery/18.jpg' ||
+                          it.src === '/images/s3/gallery/team.jpeg') &&
+                        items.findIndex(item => item.src === it.src) === i
+                      }
+                      sizes="(min-width: 1280px) min(34vh, 21vw), (min-width: 1024px) min(34vh, 25vw), (min-width: 640px) 180px, 165px"
                       className="object-cover pointer-events-none"
                       style={{
                         backfaceVisibility: 'hidden',

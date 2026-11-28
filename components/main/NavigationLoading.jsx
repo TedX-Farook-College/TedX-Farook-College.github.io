@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import Loading from '@/app/loading';
+import LoadingPortal from '@/components/main/LoadingPortal';
 
 export default function NavigationLoading({ children }) {
 	const pathname = usePathname();
@@ -58,8 +58,8 @@ export default function NavigationLoading({ children }) {
 
 	return (
 		<div onClickCapture={handleNavigation}>
-			{isLoading && <Loading />}
 			{children}
+			{isLoading && <LoadingPortal />}
 		</div>
 	);
 }

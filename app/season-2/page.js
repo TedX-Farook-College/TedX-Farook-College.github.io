@@ -6,6 +6,7 @@ import Footer from '@/components/main/Footer';
 import Link from 'next/link';
 import Navbar from '@/components/main/Navbar';
 import Image from 'next/image';
+import MotionImage from '@/components/ui/MotionImage';
 
 const Season2 = () => {
 	const containerVariants = {
@@ -118,9 +119,13 @@ const Season2 = () => {
 					Pre-event
 				</motion.p>
 				<div className="flex justify-center">
-					<motion.img
+					<MotionImage
 						src="/images/s2/gallery/dhow.svg"
 						alt="DHOW"
+						width={4081}
+						height={2556}
+						priority
+						sizes="(min-width: 1024px) 896px, (min-width: 768px) 768px, (min-width: 640px) 672px, calc(100vw - 2rem)"
 						className="w-full max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl rounded-xl border-2 sm:border-4 border-red-500/50 shadow-lg"
 						variants={itemVariants}
 					/>
